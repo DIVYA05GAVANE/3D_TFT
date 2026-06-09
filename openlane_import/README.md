@@ -8,7 +8,9 @@ library at `../pdk/tft3d_platform/libs.ref/tft3d_macros/`.
 
 - `source/archives/`: original imported ZIP archives.
 - `source/gds/`: extracted source-layout GDS files.
+- `source/cif/`: original CIF source layouts when available.
 - `source/lef/`: source LEF abstracts using FreePDK45-style layer names.
+- `source/tech/`: source-specific layer maps, including the Stack SRAM layer map.
 - `metadata/cells.json`: size and placeholder-port metadata for the available cells.
 - `reports/gds_audit.txt`: audited top cells, dimensions, layers, child refs, and label status.
 - `tech/freepdk45.layermap`: retained source-layout layer map.

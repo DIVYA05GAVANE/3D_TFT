@@ -36,3 +36,24 @@ MSEL Y SEL mid VSS nch W=6u L=5u M=1
 MDAT mid A VSS VSS nch W=6u L=5u M=1
 COUT Y VSS 10f
 .ends wl_sel
+
+* Physical-only SRAM array flavour placeholders extracted from
+* Stack_SRAM_260605_F.gds. The source GDS has WL-number geometry on layer 40,
+* but no named electrical pin labels.
+.subckt stack_sram_array_f0
+.ends stack_sram_array_f0
+
+.subckt stack_sram_array_f1
+.ends stack_sram_array_f1
+
+.subckt stack_sram_array_f2
+.ends stack_sram_array_f2
+
+.subckt stack_sram_array_f3
+.ends stack_sram_array_f3
+
+.subckt stack_sram_array_f4
+.ends stack_sram_array_f4
+
+.subckt stack_sram_array_f5
+.ends stack_sram_array_f5

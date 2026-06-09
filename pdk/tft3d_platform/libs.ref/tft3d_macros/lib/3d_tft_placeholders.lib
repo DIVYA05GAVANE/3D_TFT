@@ -173,4 +173,34 @@ library (3d_tft_placeholders) {
     }
   }
 
+  cell (stack_sram_array_f0) {
+    dont_touch : true;
+    area : 8700000.000;
+  }
+
+  cell (stack_sram_array_f1) {
+    dont_touch : true;
+    area : 8700000.000;
+  }
+
+  cell (stack_sram_array_f2) {
+    dont_touch : true;
+    area : 8700000.000;
+  }
+
+  cell (stack_sram_array_f3) {
+    dont_touch : true;
+    area : 8700000.000;
+  }
+
+  cell (stack_sram_array_f4) {
+    dont_touch : true;
+    area : 8700000.000;
+  }
+
+  cell (stack_sram_array_f5) {
+    dont_touch : true;
+    area : 8700000.000;
+  }
+
 }

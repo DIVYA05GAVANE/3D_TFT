@@ -7,9 +7,10 @@ by the layout flow.
 
 The reusable 3D_TFT hard-macro views are kept in
 `libs.ref/tft3d_macros/`. These are the platform-layer LEF/GDS and placeholder
-Liberty, SPICE, Verilog, and simulation views used by OpenLane. The original
-source GDS/LEF files and import archives remain under `openlane_import/source/`
-at the repository root for traceability.
+Liberty, SPICE, Verilog, and simulation views used by OpenLane, including the
+six extracted Stack SRAM array flavour macros. The original source GDS/CIF/LEF
+files, source layer maps, and import archives remain under
+`openlane_import/source/` at the repository root for traceability.
 
 ## Basic Simulation Models
 

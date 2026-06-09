@@ -85,4 +85,28 @@ module wl_sel (
 );
 endmodule
 
+(* blackbox *)
+module stack_sram_array_f0;
+endmodule
+
+(* blackbox *)
+module stack_sram_array_f1;
+endmodule
+
+(* blackbox *)
+module stack_sram_array_f2;
+endmodule
+
+(* blackbox *)
+module stack_sram_array_f3;
+endmodule
+
+(* blackbox *)
+module stack_sram_array_f4;
+endmodule
+
+(* blackbox *)
+module stack_sram_array_f5;
+endmodule
+
 `endif

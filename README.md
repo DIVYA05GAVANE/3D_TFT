@@ -17,10 +17,11 @@ DESIGN=openlane/tft3d_macro_layout
 
 - `pdk/tft3d_platform/`: local OpenLane-compatible platform PDK shim.
 - `pdk/tft3d_platform/libs.ref/tft3d_macros/`: PDK-facing 3D_TFT hard-macro
-  LEF, GDS, Liberty, SPICE, Verilog, and simulation views used by OpenLane.
+  LEF, GDS, Liberty, SPICE, Verilog, and simulation views used by OpenLane,
+  including the extracted Stack SRAM array flavour macros.
 - `openlane/tft3d_macro_layout/`: OpenLane layout target using the available 3D_TFT hard macros.
 - `openlane_import/source/`: original imported ZIPs, source-layout GDS files,
-  and source LEF files retained for provenance.
+  CIF files, source LEF files, and source layer maps retained for provenance.
 - `openlane_import/metadata/` and `openlane_import/reports/`: import audit
   metadata and reports for the 3D_TFT macro blocks.
 - `openlane_import/tech/`: layer maps retained for interoperability.
