@@ -4,7 +4,7 @@
   "cells": [
     {
       "name": "nfet_W20p825_L5",
-      "gds_archive": "nfets.zip",
+      "gds_archive": "source/archives/nfets.zip",
       "gds_member": "nfet_W20p825_L5.gds",
       "bbox_dbu": [
         70,
@@ -45,7 +45,7 @@
     },
     {
       "name": "nfet_W24u_L5",
-      "gds_archive": "nfets.zip",
+      "gds_archive": "source/archives/nfets.zip",
       "gds_member": "nfet_W24u_L5.gds",
       "bbox_dbu": [
         455,
@@ -86,7 +86,7 @@
     },
     {
       "name": "nfet_W6u_L5",
-      "gds_archive": "nfets.zip",
+      "gds_archive": "source/archives/nfets.zip",
       "gds_member": "nfet_W6u_L5.gds",
       "bbox_dbu": [
         560,
@@ -127,7 +127,7 @@
     },
     {
       "name": "INV_X4PC_T5_nmos",
-      "gds_archive": "INV_X4PC_T5.zip",
+      "gds_archive": "source/archives/INV_X4PC_T5.zip",
       "gds_member": "INV_X4PC_T5_nmos.gds",
       "bbox_dbu": [
         -177990,
@@ -168,7 +168,7 @@
     },
     {
       "name": "wl_inv",
-      "gds_archive": "WL_Driver-Circuits.zip",
+      "gds_archive": "source/archives/WL_Driver-Circuits.zip",
       "gds_member": "wl_inv.gds",
       "bbox_dbu": [
         -15700,
@@ -209,7 +209,7 @@
     },
     {
       "name": "wl_prebuffer",
-      "gds_archive": "WL_Driver-Circuits.zip",
+      "gds_archive": "source/archives/WL_Driver-Circuits.zip",
       "gds_member": "wl_prebuffer.gds",
       "bbox_dbu": [
         -2561195,
@@ -250,7 +250,7 @@
     },
     {
       "name": "wl_sel",
-      "gds_archive": "WL_Driver-Circuits.zip",
+      "gds_archive": "source/archives/WL_Driver-Circuits.zip",
       "gds_member": "wl_sel.gds",
       "bbox_dbu": [
         90125,

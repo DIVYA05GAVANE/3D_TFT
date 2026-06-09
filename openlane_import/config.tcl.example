@@ -4,35 +4,26 @@
 if { ![info exist ::env(TFT3D_REPO)] } {
     set ::env(TFT3D_REPO) [file normalize "$::env(DESIGN_DIR)/../.."]
 }
+if { ![info exist ::env(PDK_ROOT)] } {
+    set ::env(PDK_ROOT) "$::env(TFT3D_REPO)/pdk"
+}
+if { ![info exist ::env(PDK)] } {
+    set ::env(PDK) tft3d_platform
+}
+
+set tft3d_macro_lib "$::env(PDK_ROOT)/$::env(PDK)/libs.ref/tft3d_macros"
 
 set ::env(VERILOG_FILES_BLACKBOX) [list \
-    "$::env(TFT3D_REPO)/openlane_import/src/3d_tft_blackboxes.v" \
+    "$tft3d_macro_lib/verilog/3d_tft_blackboxes.v" \
 ]
 
-set ::env(EXTRA_LEFS) [list \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/nfet_W20p825_L5.lef" \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/nfet_W24u_L5.lef" \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/nfet_W6u_L5.lef" \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/INV_X4PC_T5_nmos.lef" \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/wl_inv.lef" \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/wl_prebuffer.lef" \
-    "$::env(TFT3D_REPO)/openlane_import/lef_platform/wl_sel.lef" \
-]
-
-set ::env(EXTRA_GDS_FILES) [list \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/nfet_W20p825_L5.gds" \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/nfet_W24u_L5.gds" \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/nfet_W6u_L5.gds" \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/INV_X4PC_T5_nmos.gds" \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/wl_inv.gds" \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/wl_prebuffer.gds" \
-    "$::env(TFT3D_REPO)/openlane_import/gds_platform/wl_sel.gds" \
-]
+set ::env(EXTRA_LEFS) [glob "$tft3d_macro_lib/lef/*.lef"]
+set ::env(EXTRA_GDS_FILES) [glob "$tft3d_macro_lib/gds/*.gds"]
 
 set ::env(EXTRA_LIBS) [list \
-    "$::env(TFT3D_REPO)/openlane_import/lib/3d_tft_placeholders.lib" \
+    "$tft3d_macro_lib/lib/3d_tft_placeholders.lib" \
 ]
 
 set ::env(EXTRA_SPICE_FILES) [list \
-    "$::env(TFT3D_REPO)/openlane_import/spice/3d_tft_macros.spice" \
+    "$tft3d_macro_lib/spice/3d_tft_macros.spice" \
 ]

@@ -39,5 +39,5 @@ verilog_sims:
     tool: iverilog
     sources:
       - openlane/tft3d_macro_layout/src/tft3d_macro_layout.v
-      - openlane_import/sim/3d_tft_macro_functional.v
+      - pdk/tft3d_platform/libs.ref/tft3d_macros/sim/3d_tft_macro_functional.v
       - openlane/tft3d_macro_layout/sim/tft3d_macro_layout_tb.v

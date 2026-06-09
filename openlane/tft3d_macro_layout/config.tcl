@@ -2,7 +2,7 @@
 # Uses the repo-local tft3d_platform PDK and platform-layer macro views.
 
 set design_dir $::env(DESIGN_DIR)
-set repo_root [file normalize "$design_dir/../.."]
+set macro_lib "$::env(PDK_ROOT)/$::env(PDK)/libs.ref/tft3d_macros"
 
 set ::env(DESIGN_NAME) tft3d_macro_layout
 set ::env(DESIGN_IS_CORE) 0
@@ -11,15 +11,15 @@ set ::env(VERILOG_FILES) [list \
     "$design_dir/src/tft3d_macro_layout.v" \
 ]
 set ::env(VERILOG_FILES_BLACKBOX) [list \
-    "$repo_root/openlane_import/src/3d_tft_blackboxes.v" \
+    "$macro_lib/verilog/3d_tft_blackboxes.v" \
 ]
-set ::env(EXTRA_LEFS) [glob "$repo_root/openlane_import/lef_platform/*.lef"]
-set ::env(EXTRA_GDS_FILES) [glob "$repo_root/openlane_import/gds_platform/*.gds"]
+set ::env(EXTRA_LEFS) [glob "$macro_lib/lef/*.lef"]
+set ::env(EXTRA_GDS_FILES) [glob "$macro_lib/gds/*.gds"]
 set ::env(EXTRA_LIBS) [list \
-    "$repo_root/openlane_import/lib/3d_tft_placeholders.lib" \
+    "$macro_lib/lib/3d_tft_placeholders.lib" \
 ]
 set ::env(EXTRA_SPICE_FILES) [list \
-    "$repo_root/openlane_import/spice/3d_tft_macros.spice" \
+    "$macro_lib/spice/3d_tft_macros.spice" \
 ]
 
 set ::env(CLOCK_PORT) ""

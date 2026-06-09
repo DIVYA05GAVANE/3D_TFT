@@ -31,6 +31,12 @@ set ::env(SPICE_PRIMITIVE_MODELS) [list \
 ]
 set ::env(STD_CELL_SPICE) "$::env(PDK_ROOT)/$::env(PDK)/libs.ref/$::env(STD_CELL_LIBRARY)/spice/tft3d_sc_t5.spice"
 set ::env(SIMULATION_MANIFEST) "$::env(PDK_ROOT)/$::env(PDK)/libs.tech/openflow/simulation.yml"
+set ::env(TFT3D_MACRO_LIBRARY) "$::env(PDK_ROOT)/$::env(PDK)/libs.ref/tft3d_macros"
+set ::env(TFT3D_MACRO_LEFS) [glob "$::env(TFT3D_MACRO_LIBRARY)/lef/*.lef"]
+set ::env(TFT3D_MACRO_GDS_FILES) [glob "$::env(TFT3D_MACRO_LIBRARY)/gds/*.gds"]
+set ::env(TFT3D_MACRO_LIB) "$::env(TFT3D_MACRO_LIBRARY)/lib/3d_tft_placeholders.lib"
+set ::env(TFT3D_MACRO_SPICE) "$::env(TFT3D_MACRO_LIBRARY)/spice/3d_tft_macros.spice"
+set ::env(TFT3D_MACRO_BLACKBOXES) "$::env(TFT3D_MACRO_LIBRARY)/verilog/3d_tft_blackboxes.v"
 
 set ::env(TECH_LEF_OPT) $::env(TECH_LEF)
 set ::env(CELLS_LEF_OPT) $::env(CELLS_LEF)

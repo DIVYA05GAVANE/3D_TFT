@@ -1,6 +1,6 @@
 * Transient switching check for the imported 3D_TFT macro chain.
 .include pdk/tft3d_platform/libs.tech/ngspice/tft3d_platform_primitives.spice
-.include openlane_import/spice/3d_tft_macros.spice
+.include pdk/tft3d_platform/libs.ref/tft3d_macros/spice/3d_tft_macros.spice
 
 VDD vdd 0 1.5
 VA a 0 PULSE(0 1.5 1u 50n 50n 2u 4u)

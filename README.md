@@ -16,12 +16,13 @@ DESIGN=openlane/tft3d_macro_layout
 ## Contents
 
 - `pdk/tft3d_platform/`: local OpenLane-compatible platform PDK shim.
+- `pdk/tft3d_platform/libs.ref/tft3d_macros/`: PDK-facing 3D_TFT hard-macro
+  LEF, GDS, Liberty, SPICE, Verilog, and simulation views used by OpenLane.
 - `openlane/tft3d_macro_layout/`: OpenLane layout target using the available 3D_TFT hard macros.
-- `openlane_import/lef_platform/`: platform-layer LEF abstracts for the 3D_TFT macro blocks.
-- `openlane_import/gds_platform/`: platform-layer GDS macro blocks for final merge.
-- `openlane_import/lib/`: Liberty placeholders for macro loading.
-- `openlane_import/src/`: Verilog black-box modules for macro loading.
-- `openlane_import/spice/`: basic SPICE placeholders for imported hard macros.
+- `openlane_import/source/`: original imported ZIPs, source-layout GDS files,
+  and source LEF files retained for provenance.
+- `openlane_import/metadata/` and `openlane_import/reports/`: import audit
+  metadata and reports for the 3D_TFT macro blocks.
 - `openlane_import/tech/`: layer maps retained for interoperability.
 - `scripts/run_openlane_flow.sh`: the single repo script for launching the OpenLane flow.
 
@@ -59,8 +60,8 @@ automation and standalone circuit bring-up:
   simulator-clean standard-cell subcircuits.
 - `pdk/tft3d_platform/libs.ref/tft3d_sc_t5/verilog/tft3d_sc_t5.v`: Verilog
   functional models for digital simulation.
-- `openlane_import/spice/3d_tft_macros.spice`: basic SPICE placeholders for the
-  imported 3D_TFT hard macros.
+- `pdk/tft3d_platform/libs.ref/tft3d_macros/spice/3d_tft_macros.spice`: basic
+  SPICE placeholders for the imported 3D_TFT hard macros.
 - `pdk/tft3d_platform/libs.tech/openflow/simulation.yml`: neutral simulation
   manifest for flow automation.
 
