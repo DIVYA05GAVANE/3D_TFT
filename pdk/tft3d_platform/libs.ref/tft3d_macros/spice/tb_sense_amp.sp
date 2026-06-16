@@ -1,5 +1,5 @@
 *  Generated for: HSPICE
-*  Generated on: Jun 16 21:51:49 2026
+*  Generated on: Jun 16 22:14:40 2026
 *  Design library name: CAM_Circuits
 *  Design cell name: tb_sense_amp
 *  Design view name: schematic
@@ -55,11 +55,11 @@
 *  Cell name: tb_sense_amp
 *  View name: schematic
 xi0 out sl slb vdd vdd_inv 0 vth opamp_6u
-i7 0 slb PULSE ( 60e-6 40e-6 0 100e-9 100e-9 10e-6 20e-6 )
-i5 0 sl PULSE ( 40e-6 60e-6 0 100e-9 100e-9 10e-6 20e-6 )
-v2 vdd 0 dc=2
-v1 vdd_inv 0 dc=1.7
-v0 vth 0 dc=2.05
+i7 0 slb PULSE ( 70e-6 40e-6 0 100e-9 100e-9 10e-6 20e-6 )
+i5 0 sl PULSE ( 40e-6 70e-6 0 100e-9 100e-9 10e-6 20e-6 )
+v2 vdd 0 dc=2.5
+v1 vdd_inv 0 dc=2
+v0 vth 0 dc=1
 c0 out 0 c=1e-12
 .temp 27.0
 .option GEN_CUR_POL=ON
