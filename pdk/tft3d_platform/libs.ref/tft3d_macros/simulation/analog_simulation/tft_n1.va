@@ -1,0 +1,29 @@
+// VerilogA for igzo, tft_n1, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+
+module tft_n1(d, s, g);
+
+inout d, s, g;
+electrical d, s, g;
+
+real vgs;
+real gch;
+
+analog begin
+
+    if (V(s) < V(d)) begin
+        vgs = V(g, s);
+    end
+    else begin
+        vgs = V(g, d);
+    end
+
+    gch = $table_model(vgs, "g_n1_tbl.tbl", "1LL");
+
+    I(d, s) <+ V(d, s) * gch;
+
+end
+
+endmodule
