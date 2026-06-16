@@ -1,4 +1,4 @@
-// VerilogA for igzo, tft_n1, veriloga
+// VerilogA for igzo, tft_n1 for TFT W=8 and L=3 measured device, veriloga
 
 `include "constants.vams"
 `include "disciplines.vams"
