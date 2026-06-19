@@ -1,0 +1,22 @@
+inv_x4pc_t5_nmos DC transfer
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+VDD vdd 0 2
+Vin in 0 0
+X1 in out vdd 0 inv_x4pc_t5_nmos
+Cout out 0 20f
+Rleak out 0 1e9
+
+.dc Vin -0.5 3.0 0.005
+.print dc v(in) v(out)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/inv_x4pc_transfer.dat v(in) v(out)
+write ../results/inv_x4pc_transfer.raw
+.endc
+.end

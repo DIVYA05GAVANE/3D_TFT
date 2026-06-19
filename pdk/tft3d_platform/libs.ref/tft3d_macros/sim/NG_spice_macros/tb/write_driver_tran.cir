@@ -1,0 +1,36 @@
+write_driver transient
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+X1 bl blb col_sel din dinb nwr0 nwr1 sl slb vdd vdda vphb_bl vphb_sl vph_bl vph_sl 0 0 0 0 0 0 we wl_in wr0 wr1 write_driver
+Vvdd vdd 0 1.5
+Vvdda vdda 0 2
+Vvphbbl vphb_bl 0 3
+Vvphbsl vphb_sl 0 2
+Vvphbl vph_bl 0 3
+Vvphsl vph_sl 0 2
+Vcol col_sel 0 1.2
+Vwe we 0 1.2
+Vwl wl_in 0 PULSE(0 1.2 0 100n 100n 10u 20u)
+Vdin din 0 PULSE(0 1.2 5u 100n 100n 10u 20u)
+Rbl bl 0 20k
+Rblb blb 0 20k
+Rsl sl 0 20k
+Rslb slb 0 20k
+Cbl bl 0 1p
+Cblb blb 0 1p
+Csl sl 0 1p
+Cslb slb 0 1p
+
+.tran 20n 45u
+.print tran v(bl)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/write_driver_tran.dat v(wl_in) v(din) v(dinb) v(wr0) v(wr1) v(bl) v(blb) v(sl) v(slb)
+write ../results/write_driver_tran.raw
+.endc
+.end

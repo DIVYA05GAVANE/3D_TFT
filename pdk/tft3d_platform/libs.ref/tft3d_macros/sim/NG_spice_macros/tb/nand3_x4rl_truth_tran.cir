@@ -1,0 +1,24 @@
+nand3_x4rl_t5 transient truth exercise
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+VDD vdd 0 2
+Va1 a1 0 PULSE(0 2 0 5n 5n 0.25u 0.5u)
+Va2 a2 0 PULSE(0 2 0 5n 5n 0.5u 1u)
+Va3 a3 0 PULSE(0 2 0 5n 5n 1u 2u)
+X1 a1 a2 a3 vdd 0 y nand3_x4rl_t5
+Cout y 0 20f
+Rleak y 0 1e9
+
+.tran 5n 4u
+.print tran v(y)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/nand3_x4rl_truth_tran.dat v(a1) v(a2) v(a3) v(y)
+write ../results/nand3_x4rl_truth_tran.raw
+.endc
+.end

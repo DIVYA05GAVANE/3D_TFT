@@ -1,0 +1,20 @@
+3d wl_inv transfer
+.include ../models/lib_3d_tft_macros_clean.spice
+.option numdgt=6
+.temp 27
+VDD vdd 0 2
+Vin a 0 0
+X1 a y vdd 0 wl_inv
+Cout y 0 20f
+Rleak y 0 1e9
+.dc Vin -0.5 3.0 0.005
+.print dc v(a) v(y)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/3d_wl_inv_transfer.dat v(a) v(y)
+write ../results/3d_wl_inv_transfer.raw
+.endc
+.end

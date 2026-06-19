@@ -1,0 +1,21 @@
+nfet_W20p825_L5 4-pin Id-Vds sweep, Vg=3V
+.include ../models/lib_3d_tft_macros_clean.spice
+.option numdgt=6
+.temp 27
+
+Vd vd 0 0
+Vg vg 0 3
+X1 vd vg 0 0 nfet_W20p825_L5
+
+.dc Vd -3 5 0.01
+.print dc v(vd) i(Vd)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+let id_vd = -i(Vd)
+wrdata ../results/3d_nfet_W20p825_L5_idvds_vg3.dat id_vd
+write ../results/3d_nfet_W20p825_L5_idvds_vg3.raw
+.endc
+.end

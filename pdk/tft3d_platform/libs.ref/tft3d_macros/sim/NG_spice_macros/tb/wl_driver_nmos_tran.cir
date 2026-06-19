@@ -1,0 +1,24 @@
+wl_driver_nmos transient
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+VDD vdd 0 2
+Vvwp vwl_p 0 3
+Vvwn vwl_n 0 0
+Vin wl_in 0 PULSE(0 2 0 5n 5n 0.5u 1u)
+X1 vdd 0 vwl_n vwl_p wl_in wl_out wl_driver_nmos
+Cout wl_out 0 50f
+Rleak wl_out 0 1e9
+
+.tran 5n 3u
+.print tran v(wl_out)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/wl_driver_nmos_tran.dat v(wl_in) v(wl_out)
+write ../results/wl_driver_nmos_tran.raw
+.endc
+.end

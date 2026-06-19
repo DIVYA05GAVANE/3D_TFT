@@ -1,0 +1,34 @@
+analog_mux_bl_sl_nmos transient
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+Vdbl drv_bl 0 3
+Vdblb drv_blb 0 -3
+Vdsl drv_sl 0 1
+Vdslb drv_slb 0 -1
+Vpre pre 0 2
+Vpreb pre_b 0 2
+Vsel sel 0 PULSE(-2 2 0.5u 20n 20n 1.0u 2.0u)
+Vselb selb 0 PULSE(2 -2 0.5u 20n 20n 1.0u 2.0u)
+X1 drv_bl drv_blb drv_sl drv_slb array_bl array_blb array_sl array_slb pre pre_b sel selb analog_mux_bl_sl_nmos
+C0 array_bl 0 1p
+C1 array_blb 0 1p
+C2 array_sl 0 1p
+C3 array_slb 0 1p
+R0 array_bl 0 20k
+R1 array_blb 0 20k
+R2 array_sl 0 20k
+R3 array_slb 0 20k
+
+.tran 10n 5u
+.print tran v(array_bl)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/analog_mux_bl_sl_tran.dat v(sel) v(array_bl) v(array_blb) v(array_sl) v(array_slb)
+write ../results/analog_mux_bl_sl_tran.raw
+.endc
+.end

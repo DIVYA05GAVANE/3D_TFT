@@ -1,0 +1,317 @@
+* Cleaned remote-only library for extracted 3-pin TFT macro netlists.
+* Parameterized native-ngspice TFT model generated remotely.
+* Based on tft_n1.va: I(d,s)=V(d,s)*gch(Vgs_eff).
+* gch table is scaled by (W/L)/(8u/3u) and M.
+.subckt tft3d_nfet d g s params: w=8u l=3u m=1
+Bch d s I={V(d,s)*pwl(((V(s)<V(d)) ? V(g,s) : V(g,d)),
++ -3, 1.84e-13,
++ -2.95, 2.69e-12,
++ -2.9, 6.9e-13,
++ -2.85, 3.48e-12,
++ -2.8, 2.73e-12,
++ -2.75, 2.82e-12,
++ -2.7, 1.69e-12,
++ -2.65, 4.23e-12,
++ -2.6, 1.8e-12,
++ -2.55, 3.01e-12,
++ -2.5, 2.02e-12,
++ -2.45, 2.2e-12,
++ -2.4, 3.82e-12,
++ -2.35, 5.98e-12,
++ -2.3, 3.38e-12,
++ -2.25, 4.28e-12,
++ -2.2, 5.29e-12,
++ -2.15, 6.23e-12,
++ -2.1, 5.21e-12,
++ -2.05, 4.19e-12,
++ -2, 4.52e-12,
++ -1.95, 5.62e-12,
++ -1.9, 5.73e-12,
++ -1.85, 4.21e-12,
++ -1.8, 4.85e-12,
++ -1.75, 5.47e-12,
++ -1.7, 4.55e-12,
++ -1.65, 4.68e-12,
++ -1.6, 6.33e-12,
++ -1.55, 5.23e-12,
++ -1.5, 7.2e-12,
++ -1.45, 8.31e-12,
++ -1.4, 6.14e-12,
++ -1.35, 7.9e-12,
++ -1.3, 6.65e-12,
++ -1.25, 6.03e-12,
++ -1.2, 3.81e-12,
++ -1.15, 2.77e-12,
++ -1.1, 9.44e-12,
++ -1.05, 2.36e-11,
++ -1, 4.84e-11,
++ -0.95, 8.89e-11,
++ -0.9, 1.72e-10,
++ -0.85, 3.13e-10,
++ -0.8, 5.71e-10,
++ -0.75, 1.03e-09,
++ -0.7, 1.85e-09,
++ -0.65, 3.27e-09,
++ -0.6, 5.72e-09,
++ -0.55, 1.05e-08,
++ -0.5, 1.75e-08,
++ -0.45, 2.82e-08,
++ -0.4, 4.44e-08,
++ -0.35, 5.76e-08,
++ -0.3, 9.44e-08,
++ -0.25, 1.44e-07,
++ -0.2, 2.1e-07,
++ -0.15, 2.98e-07,
++ -0.1, 4.12e-07,
++ -0.05, 5.12e-07,
++ 0, 7.01e-07,
++ 0.05, 9.27e-07,
++ 0.1, 1.2e-06,
++ 0.15, 1.52e-06,
++ 0.2, 1.9e-06,
++ 0.25, 2.33e-06,
++ 0.3, 2.83e-06,
++ 0.35, 3.39e-06,
++ 0.4, 4.02e-06,
++ 0.45, 4.72e-06,
++ 0.5, 5.32e-06,
++ 0.55, 6.2e-06,
++ 0.6, 7.14e-06,
++ 0.65, 8.15e-06,
++ 0.7, 9.23e-06,
++ 0.75, 1.04e-05,
++ 0.8, 1.16e-05,
++ 0.85, 1.29e-05,
++ 0.9, 1.43e-05,
++ 0.95, 1.57e-05,
++ 1, 1.72e-05,
++ 1.05, 1.87e-05,
++ 1.1, 2.03e-05,
++ 1.15, 2.2e-05,
++ 1.2, 2.37e-05,
++ 1.25, 2.54e-05,
++ 1.3, 2.72e-05,
++ 1.35, 2.9e-05,
++ 1.4, 3.09e-05,
++ 1.45, 3.28e-05,
++ 1.5, 3.47e-05,
++ 1.55, 3.66e-05,
++ 1.6, 3.86e-05,
++ 1.65, 4.06e-05,
++ 1.7, 4.26e-05,
++ 1.75, 4.46e-05,
++ 1.8, 4.66e-05,
++ 1.85, 4.86e-05,
++ 1.9, 4.99e-05,
++ 1.95, 5.21e-05,
++ 2, 5.42e-05,
++ 2.05, 5.62e-05,
++ 2.1, 5.83e-05,
++ 2.15, 6.03e-05,
++ 2.2, 6.23e-05,
++ 2.25, 6.43e-05,
++ 2.3, 6.63e-05,
++ 2.35, 6.83e-05,
++ 2.4, 7.02e-05,
++ 2.45, 7.21e-05,
++ 2.5, 7.39e-05,
++ 2.55, 7.58e-05,
++ 2.6, 7.76e-05,
++ 2.65, 7.94e-05,
++ 2.7, 8.11e-05,
++ 2.75, 8.29e-05,
++ 2.8, 8.45e-05,
++ 2.85, 8.62e-05,
++ 2.9, 8.78e-05,
++ 2.95, 8.93e-05,
++ 3, 9.08e-05)*((w/l)/(8u/3u))*m}
+.ends tft3d_nfet
+
+.subckt nfet_w6u_l5 d g s params: l=5u w=6u m=1
+Xcore d g s tft3d_nfet w={w} l={l} m={m}
+.ends nfet_w6u_l5
+
+.subckt nfet_w20p825_l5 d g s params: l=5u w=20.825u m=1
+Xcore d g s tft3d_nfet w={w} l={l} m={m}
+.ends nfet_w20p825_l5
+
+.subckt nfet_w24u_l5 d g s params: l=5u w=24u m=1
+Xcore d g s tft3d_nfet w={w} l={l} m={m}
+.ends nfet_w24u_l5
+
+* From peripheral_ic.spice
+.subckt inv_x4pc_t5_nmos in out vdd vss
+    xi10 vdd vdd an nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi6 an in vss nfet_w20p825_l5 l=5e-6 w=20.825e-6 m=4
+    xi8 out in vss nfet_w20p825_l5 l=5e-6 w=20.825e-6 m=8
+    xi7 vdd an out nfet_w20p825_l5 l=5e-6 w=20.825e-6 m=8
+.ends
+
+* From peripheral_ic.spice
+.subckt wl_inv vdd vss wl_en wl_enb
+    xi5 wl_en wl_enb vdd vss inv_x4pc_t5_nmos
+.ends
+
+* From peripheral_ic.spice
+.subckt wl_sel s1 s2 s3 vwl_n vwl_p wl_en wl_enb wl_out
+    xi15 s3 wl_out vwl_p vwl_n inv_x4pc_t5_nmos
+    xi13 s1 s2 vwl_p vwl_n inv_x4pc_t5_nmos
+    xi12 wl_en s1 vwl_p vwl_n inv_x4pc_t5_nmos
+    xi14 s2 s3 vwl_p vwl_n inv_x4pc_t5_nmos
+    xi19 wl_out wl_enb vwl_n nfet_w6u_l5
+.ends
+
+* From peripheral_ic.spice
+.subckt wl_prebuffer vdd vss wl_en wl_in wl_mid
+    xi7 wl_in wl_mid vdd vss inv_x4pc_t5_nmos
+    xi8 wl_mid wl_en vdd vss inv_x4pc_t5_nmos
+.ends
+
+* From peripheral_ic.spice
+.subckt wl_driver_nmos vdd vss vwl_n vwl_p wl_in wl_out
+    xi33 vdd vss net1 net2 wl_inv
+    xi36 net013 net012 net011 vwl_n vwl_p net1 net2 wl_out wl_sel
+    xi35 vdd vss net1 wl_in net014 wl_prebuffer
+.ends
+
+* From peripheral_ic.spice
+.subckt nand3_x4rl_t5 a1 a2 a3 vdd vss y
+    xi33 y a1 net016 nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi42 net011 a3 vss nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi41 net016 a2 net011 nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi40 vdd vdd y nfet_w6u_l5
+.ends
+
+* From peripheral_ic.spice
+.subckt row_decoder_3to8_nmos a1 a2 a3 d0 d1 d2 nand_1 nand_2 q0 q1 q2 q3 q4 q5 q6 q7 vdd vdda vss vssa
+    xi106 net025 q7 vdda vssa inv_x4pc_t5_nmos
+    xi103 net020 q4 vdda vssa inv_x4pc_t5_nmos
+    xi104 net023 q5 vdda vssa inv_x4pc_t5_nmos
+    xi105 net021 q6 vdda vssa inv_x4pc_t5_nmos
+    xi102 net019 q3 vdda vssa inv_x4pc_t5_nmos
+    xi101 net022 q2 vdda vssa inv_x4pc_t5_nmos
+    xi100 nand_2 q1 vdda vssa inv_x4pc_t5_nmos
+    xi99 nand_1 q0 vdda vssa inv_x4pc_t5_nmos
+    xi107 d0 a1 vdd vss inv_x4pc_t5_nmos
+    xi108 d1 a2 vdd vss inv_x4pc_t5_nmos
+    xi109 d2 a3 vdd vss inv_x4pc_t5_nmos
+    xi80 a1 a2 d2 vdd vss nand_2 nand3_x4rl_t5
+    xi84 d0 a2 d2 vdd vss net023 nand3_x4rl_t5
+    xi87 a1 a2 a3 vdd vss nand_1 nand3_x4rl_t5
+    xi83 d0 a2 a3 vdd vss net020 nand3_x4rl_t5
+    xi86 d0 d1 a3 vdd vss net021 nand3_x4rl_t5
+    xi81 a1 d1 a3 vdd vss net022 nand3_x4rl_t5
+    xi82 a1 d1 d2 vdd vss net019 nand3_x4rl_t5
+    xi85 d0 d1 d2 vdd vss net025 nand3_x4rl_t5
+.ends
+
+* From peripheral_ic.spice
+.subckt column_decoder_3to8_nmos a1 a2 a3 c0 c1 c2 col0 col1 col2 col3 col4 col5 col6 col7 nand_1 nand_2 vdd vdda vss vssa
+    xi106 net025 col7 vdda vssa inv_x4pc_t5_nmos
+    xi103 net020 col4 vdda vssa inv_x4pc_t5_nmos
+    xi104 net023 col5 vdda vssa inv_x4pc_t5_nmos
+    xi105 net021 col6 vdda vssa inv_x4pc_t5_nmos
+    xi102 net019 col3 vdda vssa inv_x4pc_t5_nmos
+    xi101 net022 col2 vdda vssa inv_x4pc_t5_nmos
+    xi100 nand_2 col1 vdda vssa inv_x4pc_t5_nmos
+    xi99 nand_1 col0 vdda vssa inv_x4pc_t5_nmos
+    xi107 c0 a1 vdd vss inv_x4pc_t5_nmos
+    xi108 c1 a2 vdd vss inv_x4pc_t5_nmos
+    xi109 c2 a3 vdd vss inv_x4pc_t5_nmos
+    xi80 a1 a2 c2 vdd vss nand_2 nand3_x4rl_t5
+    xi84 c0 a2 c2 vdd vss net023 nand3_x4rl_t5
+    xi87 a1 a2 a3 vdd vss nand_1 nand3_x4rl_t5
+    xi83 c0 a2 a3 vdd vss net020 nand3_x4rl_t5
+    xi86 c0 c1 a3 vdd vss net021 nand3_x4rl_t5
+    xi81 a1 c1 a3 vdd vss net022 nand3_x4rl_t5
+    xi82 a1 c1 c2 vdd vss net019 nand3_x4rl_t5
+    xi85 c0 c1 c2 vdd vss net025 nand3_x4rl_t5
+.ends
+
+* From peripheral_ic.spice
+.subckt write_driver bl blb col_sel din dinb nwr0 nwr1 sl slb vdd vdda vphb_bl vphb_sl vph_bl vph_sl vplb_bl vplb_sl vpl_bl vpl_sl vss vssa we wl_in wr0 wr1
+    xi27 din dinb vdd vss inv_x4pc_t5_nmos
+    xi30 nwr1 wr1 vdda vssa inv_x4pc_t5_nmos
+    xi31 nwr0 wr0 vdda vssa inv_x4pc_t5_nmos
+    xi28 din net014 net024 vdd vss nwr1 nand3_x4rl_t5
+    xi29 dinb net014 net024 vdd vss nwr0 nand3_x4rl_t5
+    xi43 sl wr0 vpl_sl nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi42 vphb_sl wr0 slb nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi41 slb wr1 vplb_sl nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi40 vph_sl wr1 sl nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi32 vph_bl wr1 bl nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi33 bl wr0 vpl_bl nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi34 vphb_bl wr0 blb nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi35 blb wr1 vplb_bl nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi38 vdd vss net024 col_sel net45 wl_prebuffer
+    xi39 vdd vss net014 we net44 wl_prebuffer
+    xi36 vdd vss din wl_in net46 wl_prebuffer
+.ends
+
+* From peripheral_ic.spice
+.subckt precharge_equalizer_nmos_6u bl blb eq pchg vdd vpre
+    xi28 bl eq blb nfet_w6u_l5
+    xi27 bl eq blb nfet_w6u_l5
+    xi26 net10 pchg blb nfet_w6u_l5
+    xi25 net10 pchg blb nfet_w6u_l5
+    xi24 net10 pchg bl nfet_w6u_l5
+    xi23 net10 pchg bl nfet_w6u_l5
+    xi22 vdd vpre net10 nfet_w6u_l5
+    xi21 vdd vpre net10 nfet_w6u_l5
+.ends
+
+* From peripheral_ic.spice
+.subckt analog_mux_2to1_diff_nmos bl0 blb0 gbl gblb pre pre_b sel selb
+    xi11 blb0 sel gblb nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi13 pre_b selb gblb nfet_w6u_l5
+    xi12 pre selb gbl nfet_w6u_l5
+    xi15 bl0 sel gbl nfet_w6u_l5
+.ends
+
+* From peripheral_ic.spice
+.subckt opamp_6u out_inv sl slb vdd vdd_inv vss vth
+    xi25 vdd vth sl nfet_w6u_l5
+    xi29 sl sl vss nfet_w6u_l5
+    xi30 slb sl vss nfet_w6u_l5
+    xi31 slb sl vss nfet_w6u_l5
+    xi24 vdd vth sl nfet_w6u_l5
+    xi28 sl sl vss nfet_w6u_l5
+    xi17 slb out_inv vdd_inv vss inv_x4pc_t5_nmos
+.ends
+
+* From peripheral_ic.spice
+.subckt stack_sram_array_f5 bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<0> wl<1> wl<2> wl<3> wl<4> wl<5> wl<6> wl<7> wl<8> wl<9> wl<10> wl<11> wl<12> wl<13> wl<14> wl<15> wl<16> wl<17> wl<18> wl<19> wl<20> wl<21> wl<22> wl<23> wl<24> wl<25> wl<26> wl<27> wl<28> wl<29> wl<30> wl<31>
+.ends
+
+* From analog_mux_bl_sl_nmos.spice
+.subckt analog_mux_bl_sl_nmos drv_bl drv_blb drv_sl drv_slb array_bl array_blb array_sl array_slb pre pre_b sel selb
+XBL_SEL   drv_bl   sel  array_bl   nfet_w6u_l5
+XBLB_SEL  drv_blb  sel  array_blb  nfet_w24u_l5
+XSL_SEL   drv_sl   sel  array_sl   nfet_w6u_l5
+XSLB_SEL  drv_slb  sel  array_slb  nfet_w24u_l5
+XBL_PRE   pre      selb array_bl   nfet_w6u_l5
+XBLB_PRE  pre_b    selb array_blb  nfet_w6u_l5
+XSL_PRE   pre      selb array_sl   nfet_w6u_l5
+XSLB_PRE  pre_b    selb array_slb  nfet_w6u_l5
+.ends analog_mux_bl_sl_nmos
+
+* From analog_mux_2to1_diff_nmos.spice
+.subckt analog_mux_2to1_diff_nmos_schematic bl0 blb0 gbl gblb pre pre_b sel selb
+    xi11 blb0 sel gblb nfet_w24u_l5 l=5e-6 w=24e-6 m=1
+    xi15 bl0 sel gbl nfet_w6u_l5
+    xi13 pre_b selb gblb nfet_w6u_l5
+    xi12 pre selb gbl nfet_w6u_l5
+.ends
+
+* From open3dstack_frame.spice
+.subckt wl_pad PAD
+.ends wl_pad
+
+* From open3dstack_frame.spice
+.subckt open3dstack_padframe PAD_S00 PAD_S01 PAD_S02 PAD_S03 PAD_S04 PAD_S05 PAD_S06 PAD_S07 PAD_S08 PAD_S09 PAD_S10 PAD_S11 PAD_S12 PAD_S13 PAD_S14 PAD_S15 PAD_S16 PAD_S17 PAD_S18 PAD_S19 PAD_S20 PAD_S21 PAD_S22 PAD_S23 PAD_S24 PAD_S25 PAD_S26 PAD_S27 PAD_S28 PAD_S29 PAD_S30 PAD_S31 PAD_S32 PAD_S33 PAD_S34 PAD_S35 PAD_S36 PAD_S37 PAD_S38 PAD_S39 PAD_S40 PAD_S41 PAD_S42 PAD_S43 PAD_S44 PAD_S45 PAD_S46 PAD_S47 PAD_S48 PAD_E00 PAD_E01 PAD_E02 PAD_E03 PAD_E04 PAD_E05 PAD_E06 PAD_E07 PAD_E08 PAD_E09 PAD_E10 PAD_E11 PAD_E12 PAD_E13 PAD_E14 PAD_E15 PAD_E16 PAD_E17 PAD_E18 PAD_E19 PAD_E20 PAD_E21 PAD_E22 PAD_E23 PAD_E24 PAD_E25 PAD_E26 PAD_E27 PAD_E28 PAD_E29 PAD_E30 PAD_E31 PAD_E32 PAD_E33 PAD_E34 PAD_E35 PAD_E36 PAD_E37 PAD_E38 PAD_E39 PAD_E40 PAD_E41 PAD_E42 PAD_N00 PAD_N01 PAD_N02 PAD_N03 PAD_N04 PAD_N05 PAD_N06 PAD_N07 PAD_N08 PAD_N09 PAD_N10 PAD_N11 PAD_N12 PAD_N13 PAD_N14 PAD_N15 PAD_N16 PAD_N17 PAD_N18 PAD_N19 PAD_N20 PAD_N21 PAD_N22 PAD_N23 PAD_N24 PAD_N25 PAD_N26 PAD_N27 PAD_N28 PAD_N29 PAD_N30 PAD_N31 PAD_N32 PAD_N33 PAD_N34 PAD_N35 PAD_N36 PAD_N37 PAD_N38 PAD_N39 PAD_N40 PAD_N41 PAD_N42 PAD_N43 PAD_N44 PAD_N45 PAD_N46 PAD_N47 PAD_N48 PAD_W00 PAD_W01 PAD_W02 PAD_W03 PAD_W04 PAD_W05 PAD_W06 PAD_W07 PAD_W08 PAD_W09 PAD_W10 PAD_W11 PAD_W12 PAD_W13 PAD_W14 PAD_W15 PAD_W16 PAD_W17 PAD_W18 PAD_W19 PAD_W20 PAD_W21 PAD_W22 PAD_W23 PAD_W24 PAD_W25 PAD_W26 PAD_W27 PAD_W28 PAD_W29 PAD_W30 PAD_W31 PAD_W32 PAD_W33 PAD_W34 PAD_W35 PAD_W36 PAD_W37 PAD_W38 PAD_W39 PAD_W40 PAD_W41 PAD_W42
+.ends open3dstack_padframe
+
+* From open3dstack_frame.spice
+.subckt open3dstack_user_project_wrapper PAD_S00 PAD_S01 PAD_S02 PAD_S03 PAD_S04 PAD_S05 PAD_S06 PAD_S07 PAD_S08 PAD_S09 PAD_S10 PAD_S11 PAD_S12 PAD_S13 PAD_S14 PAD_S15 PAD_S16 PAD_S17 PAD_S18 PAD_S19 PAD_S20 PAD_S21 PAD_S22 PAD_S23 PAD_S24 PAD_S25 PAD_S26 PAD_S27 PAD_S28 PAD_S29 PAD_S30 PAD_S31 PAD_S32 PAD_S33 PAD_S34 PAD_S35 PAD_S36 PAD_S37 PAD_S38 PAD_S39 PAD_S40 PAD_S41 PAD_S42 PAD_S43 PAD_S44 PAD_S45 PAD_S46 PAD_S47 PAD_S48 PAD_E00 PAD_E01 PAD_E02 PAD_E03 PAD_E04 PAD_E05 PAD_E06 PAD_E07 PAD_E08 PAD_E09 PAD_E10 PAD_E11 PAD_E12 PAD_E13 PAD_E14 PAD_E15 PAD_E16 PAD_E17 PAD_E18 PAD_E19 PAD_E20 PAD_E21 PAD_E22 PAD_E23 PAD_E24 PAD_E25 PAD_E26 PAD_E27 PAD_E28 PAD_E29 PAD_E30 PAD_E31 PAD_E32 PAD_E33 PAD_E34 PAD_E35 PAD_E36 PAD_E37 PAD_E38 PAD_E39 PAD_E40 PAD_E41 PAD_E42 PAD_N00 PAD_N01 PAD_N02 PAD_N03 PAD_N04 PAD_N05 PAD_N06 PAD_N07 PAD_N08 PAD_N09 PAD_N10 PAD_N11 PAD_N12 PAD_N13 PAD_N14 PAD_N15 PAD_N16 PAD_N17 PAD_N18 PAD_N19 PAD_N20 PAD_N21 PAD_N22 PAD_N23 PAD_N24 PAD_N25 PAD_N26 PAD_N27 PAD_N28 PAD_N29 PAD_N30 PAD_N31 PAD_N32 PAD_N33 PAD_N34 PAD_N35 PAD_N36 PAD_N37 PAD_N38 PAD_N39 PAD_N40 PAD_N41 PAD_N42 PAD_N43 PAD_N44 PAD_N45 PAD_N46 PAD_N47 PAD_N48 PAD_W00 PAD_W01 PAD_W02 PAD_W03 PAD_W04 PAD_W05 PAD_W06 PAD_W07 PAD_W08 PAD_W09 PAD_W10 PAD_W11 PAD_W12 PAD_W13 PAD_W14 PAD_W15 PAD_W16 PAD_W17 PAD_W18 PAD_W19 PAD_W20 PAD_W21 PAD_W22 PAD_W23 PAD_W24 PAD_W25 PAD_W26 PAD_W27 PAD_W28 PAD_W29 PAD_W30 PAD_W31 PAD_W32 PAD_W33 PAD_W34 PAD_W35 PAD_W36 PAD_W37 PAD_W38 PAD_W39 PAD_W40 PAD_W41 PAD_W42
+.ends open3dstack_user_project_wrapper
+

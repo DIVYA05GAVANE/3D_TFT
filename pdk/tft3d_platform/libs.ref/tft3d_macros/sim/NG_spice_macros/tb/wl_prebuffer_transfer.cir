@@ -1,0 +1,22 @@
+wl_prebuffer transfer
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+VDD vdd 0 2
+Vin wl_in 0 0
+X1 vdd 0 wl_en wl_in wl_mid wl_prebuffer
+Cout wl_en 0 20f
+Rleak wl_en 0 1e9
+
+.dc Vin -0.5 3.0 0.005
+.print dc v(wl_in) v(wl_en)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+wrdata ../results/wl_prebuffer_transfer.dat v(wl_in) v(wl_mid) v(wl_en)
+write ../results/wl_prebuffer_transfer.raw
+.endc
+.end

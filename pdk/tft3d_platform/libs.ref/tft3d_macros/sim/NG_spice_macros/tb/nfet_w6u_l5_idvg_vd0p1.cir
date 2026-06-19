@@ -1,0 +1,21 @@
+nfet_w6u_l5 Id-Vg sweep, Vd=0.1V
+.include ../models/lib_main_clean.spice
+.option numdgt=6
+.temp 27
+
+Vd vd 0 0.1
+Vg vg 0 0
+X1 vd vg 0 nfet_w6u_l5
+
+.dc Vg -3 3 0.01
+.print dc v(vg) i(Vd)
+.control
+run
+set filetype=ascii
+set wr_singlescale
+set wr_vecnames
+let id_vd = -i(Vd)
+wrdata ../results/nfet_w6u_l5_idvg_vd0p1.dat id_vd
+write ../results/nfet_w6u_l5_idvg_vd0p1.raw
+.endc
+.end
