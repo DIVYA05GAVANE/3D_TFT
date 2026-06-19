@@ -10,6 +10,14 @@ Run all decks:
 ./run_all.sh
 ```
 
+Run a Monte Carlo sweep over the same ngspice decks:
+
+```sh
+python3 scripts/run_montecarlo.py --samples 64 --jobs 4
+```
+
+The Monte Carlo runner reuses the checked-in `models/` and `tb/` files and writes generated sample decks under `montecarlo/`. Its TFT variation model is intended as a stress model for this measured-table behavioral abstraction: it scales the base conductance table by `W/L` and `M`, applies global conductance/Vgs/W/L/internal-R/internal-C process terms, and applies local area-aware TFT mismatch terms per device instance. It is not a silicon-qualified statistical process model.
+
 Outputs are regenerated in:
 
 - `results/*.dat`: ASCII tables for plotting/checking
@@ -17,6 +25,12 @@ Outputs are regenerated in:
 - `results/*.log`: ngspice logs
 - `plots/*.svg`: generated plots
 - `results/summary.csv`, `results/summary.json`, `results/REPORT.md`: pass/fail summary
+
+Monte Carlo outputs are regenerated in:
+
+- `montecarlo/results/summary.csv`, `aggregate.csv`, `variation_manifest.csv`, `failures.csv`, `REPORT.md`
+- `montecarlo/plots/*_metric_hist.svg`
+- `montecarlo/samples/s*/`: generated model/deck/result copies for each sample
 
 Covered decks:
 
