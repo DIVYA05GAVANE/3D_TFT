@@ -1,21 +1,33 @@
-# Stock ngspice TFT simulation
+# NG_spice_TFT
 
-The original `id_vds_tft_n1.sp` deck is HSPICE/Verilog-A oriented and expects:
+## Run with ngspice
 
-- `/apps/PDK/NCSU/FreePDK/FreePDK45/1.4/ncsu_basekit/models/hspice/hspice_nom.include`
-- `.hdl "tft_n1.va"`
-
-Stock ngspice on the remote Ubuntu PC does not load that Verilog-A `.hdl` model directly, so the compatible deck is:
-
-```sh
+```bash
 ./run_ngspice_tft.sh
 ```
 
-It runs `id_vds_tft_n1_ngspice.sp`, which includes `tft_n1_ngspice.inc`. The include implements the same simple model from `tft_n1.va` with a native ngspice behavioral current source and the `g_n1_tbl.tbl` conductance values embedded as a PWL table.
+Direct command:
 
-Outputs:
+```bash
+ngspice -b -o id_vds_tft_n1_ngspice.log id_vds_tft_n1_ngspice.sp
+```
 
-- `id_vds_tft_n1_ngspice.dat`: whitespace table with `v(vd)` and `id_tft`
-- `id_vds_tft_n1_ngspice.raw`: ASCII ngspice raw data
-- `id_vds_tft_n1_ngspice.log`: ngspice run log
-- `id_vds_tft_n1_ngspice.png`: plotted Id-Vds curve
+## Simulation results
+
+Sweep: `Vd = -3 V` to `5 V`, step `0.01 V`, with `Vg = 3 V`.
+
+Output files:
+
+- `id_vds_tft_n1_ngspice.dat`
+- `id_vds_tft_n1_ngspice.raw`
+- `id_vds_tft_n1_ngspice.log`
+- `id_vds_tft_n1_ngspice.png`
+
+Selected data points from `id_vds_tft_n1_ngspice.dat`:
+
+| Vd (V) | Id (A) |
+|---:|---:|
+| -3.0 | -5.424e-04 |
+| 0.0 | -1.7865e-18 |
+| 2.0 | 1.816e-04 |
+| 5.0 | 4.540e-04 |
