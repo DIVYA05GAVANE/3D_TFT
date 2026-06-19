@@ -6,12 +6,15 @@ TFT n1 W=8 L=3 Id-Vds sweep - stock ngspice deck
 .include "tft_n1_ngspice.inc"
 
 .param Vg=3
+.param Wtft=8e-6
+.param Ltft=3e-6
+.param Mtft=1
 .temp 27.0
 
 Vss vs 0 dc=0
 Vdsrc vd 0 dc=0
 Vgsrc vg 0 dc={Vg}
-Xn1 vd vs vg tft_n1_ngspice
+Xn1 vd vs vg tft_n1_ngspice w={Wtft} l={Ltft} m={Mtft}
 
 .dc Vdsrc -3.0 5.0 10e-3
 .print dc v(vd) i(Vdsrc)

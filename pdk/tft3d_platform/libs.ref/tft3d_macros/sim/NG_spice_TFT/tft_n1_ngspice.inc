@@ -1,9 +1,23 @@
 * tft_n1 native ngspice model for stock ngspice builds.
-* Generated from tft_n1.va and g_n1_tbl.tbl.
-* Implements: I(d,s) = V(d,s) * gch(Vgs_eff), with gch from the measured PWL table.
-* Vgs_eff follows the original Verilog-A source/drain orientation rule.
-.subckt tft_n1_ngspice d s g
-Bch d s I={V(d,s)*pwl(((V(s)<V(d)) ? V(g,s) : V(g,d)),
+*
+* Base model:
+* - Derived from ../TFT HSPICE/tft_n1.va and ../TFT HSPICE/g_n1_tbl.tbl.
+* - The Verilog-A comment identifies the measured base device as TFT W=8, L=3.
+* - The table is channel conductance gch versus the effective Vgs chosen by
+*   the original source/drain orientation rule.
+*
+* Parameterization assumptions:
+* - w and l are electrical scale factors around the measured W=8um, L=3um
+*   base device; defaults preserve the original measured curve.
+* - Current is scaled linearly by m*(w/l)/(8um/3um). This is a first-order
+*   sheet-conductance assumption and does not model geometry-dependent
+*   threshold, contacts, access resistance, fringing, traps, or short-channel
+*   effects.
+* - Extrapolation outside the measured Vgs table range is ngspice PWL
+*   extrapolation, not additional measurement data.
+* - Pin order is d s g to match the original Verilog-A module and Id-Vds deck.
+.subckt tft_n1_ngspice d s g w=8e-6 l=3e-6 m=1
+Bch d s I={m*(w/8e-6)*(3e-6/l)*V(d,s)*pwl(((V(s)<V(d)) ? V(g,s) : V(g,d)),
 + -3, 1.84e-13,
 + -2.95, 2.69e-12,
 + -2.9, 6.9e-13,
@@ -126,3 +140,19 @@ Bch d s I={V(d,s)*pwl(((V(s)<V(d)) ? V(g,s) : V(g,d)),
 + 2.95, 8.93e-05,
 + 3, 9.08e-05)}
 .ends tft_n1_ngspice
+
+* Three-terminal macro wrappers for extracted TFT macro netlists.
+* These use the macro pin order d g s, then call the measured model's d s g
+* order internally. The body terminal used by older NMOS placeholders is not
+* part of the measured table model.
+.subckt nfet_w6u_l5 d g s l=5e-6 w=6e-6 m=1
+X0 d s g tft_n1_ngspice w={w} l={l} m={m}
+.ends nfet_w6u_l5
+
+.subckt nfet_w20p825_l5 d g s l=5e-6 w=20.825e-6 m=1
+X0 d s g tft_n1_ngspice w={w} l={l} m={m}
+.ends nfet_w20p825_l5
+
+.subckt nfet_w24u_l5 d g s l=5e-6 w=24e-6 m=1
+X0 d s g tft_n1_ngspice w={w} l={l} m={m}
+.ends nfet_w24u_l5
