@@ -1,6 +1,6 @@
 # 3D TFT Macro PDK Files
 
-This repository is mainly a small PDK-facing package for the 3D TFT macro views in:
+This repository is PDK package for the 3D TFT/FEFET
 
 ```text
 pdk/tft3d_platform/libs.ref/tft3d_macros
