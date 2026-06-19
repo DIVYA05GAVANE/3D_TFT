@@ -5,11 +5,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.048,
+    "seconds": 0.062,
     "data_rows": 701,
     "dat": "results/3d_inv_x4pc_transfer.dat",
-    "raw": "results/3d_inv_x4pc_transfer.raw",
-    "log": "results/3d_inv_x4pc_transfer.log",
     "notes": ""
   },
   {
@@ -18,11 +16,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.084,
+    "seconds": 0.047,
     "data_rows": 701,
     "dat": "results/3d_nand3_x4rl_transfer_a1.dat",
-    "raw": "results/3d_nand3_x4rl_transfer_a1.raw",
-    "log": "results/3d_nand3_x4rl_transfer_a1.log",
     "notes": ""
   },
   {
@@ -31,11 +27,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.046,
+    "seconds": 0.028,
     "data_rows": 801,
     "dat": "results/3d_nfet_W20p825_L5_idvds_vg3.dat",
-    "raw": "results/3d_nfet_W20p825_L5_idvds_vg3.raw",
-    "log": "results/3d_nfet_W20p825_L5_idvds_vg3.log",
     "notes": ""
   },
   {
@@ -44,11 +38,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.083,
+    "seconds": 0.028,
     "data_rows": 801,
     "dat": "results/3d_nfet_W24u_L5_idvds_vg3.dat",
-    "raw": "results/3d_nfet_W24u_L5_idvds_vg3.raw",
-    "log": "results/3d_nfet_W24u_L5_idvds_vg3.log",
     "notes": ""
   },
   {
@@ -57,11 +49,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.046,
+    "seconds": 0.028,
     "data_rows": 801,
     "dat": "results/3d_nfet_W6u_L5_idvds_vg3.dat",
-    "raw": "results/3d_nfet_W6u_L5_idvds_vg3.raw",
-    "log": "results/3d_nfet_W6u_L5_idvds_vg3.log",
     "notes": ""
   },
   {
@@ -70,11 +60,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.046,
+    "seconds": 0.028,
     "data_rows": 701,
     "dat": "results/3d_wl_inv_transfer.dat",
-    "raw": "results/3d_wl_inv_transfer.raw",
-    "log": "results/3d_wl_inv_transfer.log",
     "notes": ""
   },
   {
@@ -83,11 +71,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.046,
+    "seconds": 0.047,
     "data_rows": 701,
     "dat": "results/3d_wl_prebuffer_transfer.dat",
-    "raw": "results/3d_wl_prebuffer_transfer.raw",
-    "log": "results/3d_wl_prebuffer_transfer.log",
     "notes": ""
   },
   {
@@ -96,11 +82,9 @@
     "source_file": "3d_tft_macros.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.074,
+    "seconds": 0.047,
     "data_rows": 701,
     "dat": "results/3d_wl_sel_transfer.dat",
-    "raw": "results/3d_wl_sel_transfer.raw",
-    "log": "results/3d_wl_sel_transfer.log",
     "notes": ""
   },
   {
@@ -109,12 +93,10 @@
     "source_file": "analog_mux_2to1_diff_nmos.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.075,
-    "data_rows": 548,
+    "seconds": 0.046,
+    "data_rows": 543,
     "dat": "results/analog_mux_2to1_diff_schematic_tran.dat",
-    "raw": "results/analog_mux_2to1_diff_schematic_tran.raw",
-    "log": "results/analog_mux_2to1_diff_schematic_tran.log",
-    "notes": "Warning: vselb: no DC value, transient time 0 value used | Warning: vsel: no DC value, transient time 0 value used | Warning: vselb: no DC value, transient time 0 value used | Warning: vsel: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "analog_mux_2to1_diff_tran",
@@ -122,12 +104,10 @@
     "source_file": "analog_mux_2to1_diff_nmos.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.085,
-    "data_rows": 548,
+    "seconds": 0.047,
+    "data_rows": 543,
     "dat": "results/analog_mux_2to1_diff_tran.dat",
-    "raw": "results/analog_mux_2to1_diff_tran.raw",
-    "log": "results/analog_mux_2to1_diff_tran.log",
-    "notes": "Warning: vselb: no DC value, transient time 0 value used | Warning: vsel: no DC value, transient time 0 value used | Warning: vselb: no DC value, transient time 0 value used | Warning: vsel: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "analog_mux_bl_sl_tran",
@@ -135,12 +115,10 @@
     "source_file": "analog_mux_bl_sl_nmos.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.082,
+    "seconds": 0.047,
     "data_rows": 546,
     "dat": "results/analog_mux_bl_sl_tran.dat",
-    "raw": "results/analog_mux_bl_sl_tran.raw",
-    "log": "results/analog_mux_bl_sl_tran.log",
-    "notes": "Warning: vselb: no DC value, transient time 0 value used | Warning: vsel: no DC value, transient time 0 value used | Warning: vselb: no DC value, transient time 0 value used | Warning: vsel: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "column_decoder_3to8_tran",
@@ -148,12 +126,10 @@
     "source_file": "column_decoder_3to8_nmos.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.819,
-    "data_rows": 970,
+    "seconds": 0.411,
+    "data_rows": 967,
     "dat": "results/column_decoder_3to8_tran.dat",
-    "raw": "results/column_decoder_3to8_tran.raw",
-    "log": "results/column_decoder_3to8_tran.log",
-    "notes": "Warning: vc0: no DC value, transient time 0 value used | Warning: vc2: no DC value, transient time 0 value used | Warning: vc1: no DC value, transient time 0 value used | Warning: vc0: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "inv_x4pc_transfer",
@@ -161,11 +137,9 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.084,
+    "seconds": 0.047,
     "data_rows": 701,
     "dat": "results/inv_x4pc_transfer.dat",
-    "raw": "results/inv_x4pc_transfer.raw",
-    "log": "results/inv_x4pc_transfer.log",
     "notes": ""
   },
   {
@@ -174,11 +148,9 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.088,
+    "seconds": 0.048,
     "data_rows": 701,
     "dat": "results/nand3_x4rl_transfer_a1.dat",
-    "raw": "results/nand3_x4rl_transfer_a1.raw",
-    "log": "results/nand3_x4rl_transfer_a1.log",
     "notes": ""
   },
   {
@@ -187,12 +159,10 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.077,
-    "data_rows": 939,
+    "seconds": 0.048,
+    "data_rows": 935,
     "dat": "results/nand3_x4rl_truth_tran.dat",
-    "raw": "results/nand3_x4rl_truth_tran.raw",
-    "log": "results/nand3_x4rl_truth_tran.log",
-    "notes": "Warning: va1: no DC value, transient time 0 value used | Warning: va3: no DC value, transient time 0 value used | Warning: va2: no DC value, transient time 0 value used | Warning: va1: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "nfet_w20p825_l5_idvds_vg3",
@@ -200,11 +170,9 @@
     "source_file": "generated/native_tft",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.046,
+    "seconds": 0.028,
     "data_rows": 801,
     "dat": "results/nfet_w20p825_l5_idvds_vg3.dat",
-    "raw": "results/nfet_w20p825_l5_idvds_vg3.raw",
-    "log": "results/nfet_w20p825_l5_idvds_vg3.log",
     "notes": ""
   },
   {
@@ -213,11 +181,9 @@
     "source_file": "generated/native_tft",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.045,
+    "seconds": 0.029,
     "data_rows": 801,
     "dat": "results/nfet_w24u_l5_idvds_vg3.dat",
-    "raw": "results/nfet_w24u_l5_idvds_vg3.raw",
-    "log": "results/nfet_w24u_l5_idvds_vg3.log",
     "notes": ""
   },
   {
@@ -226,11 +192,9 @@
     "source_file": "generated/native_tft",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.046,
+    "seconds": 0.027,
     "data_rows": 801,
     "dat": "results/nfet_w6u_l5_idvds_vg3.dat",
-    "raw": "results/nfet_w6u_l5_idvds_vg3.raw",
-    "log": "results/nfet_w6u_l5_idvds_vg3.log",
     "notes": ""
   },
   {
@@ -239,11 +203,9 @@
     "source_file": "generated/native_tft",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.047,
+    "seconds": 0.027,
     "data_rows": 601,
     "dat": "results/nfet_w6u_l5_idvg_vd0p1.dat",
-    "raw": "results/nfet_w6u_l5_idvg_vd0p1.raw",
-    "log": "results/nfet_w6u_l5_idvg_vd0p1.log",
     "notes": ""
   },
   {
@@ -252,11 +214,9 @@
     "source_file": "generated/native_tft",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.05,
+    "seconds": 0.027,
     "data_rows": 601,
     "dat": "results/nfet_w6u_l5_idvg_vd2p0.dat",
-    "raw": "results/nfet_w6u_l5_idvg_vd2p0.raw",
-    "log": "results/nfet_w6u_l5_idvg_vd2p0.log",
     "notes": ""
   },
   {
@@ -265,25 +225,10 @@
     "source_file": "tb_sense_amp.sp",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.232,
+    "seconds": 0.133,
     "data_rows": 2029,
     "dat": "results/opamp_6u_sense_tran.dat",
-    "raw": "results/opamp_6u_sense_tran.raw",
-    "log": "results/opamp_6u_sense_tran.log",
-    "notes": "Warning: isl: no DC value, transient time 0 value used | Warning: islb: no DC value, transient time 0 value used | Warning: isl: no DC value, transient time 0 value used | Warning: islb: no DC value, transient time 0 value used"
-  },
-  {
-    "name": "peripheral_ic_top_smoke_tran",
-    "category": "top_smoke",
-    "source_file": "peripheral_ic.spice",
-    "status": "pass",
-    "rc": 0,
-    "seconds": 0.124,
-    "data_rows": 364,
-    "dat": "results/peripheral_ic_top_smoke_tran.dat",
-    "raw": "results/peripheral_ic_top_smoke_tran.raw",
-    "log": "results/peripheral_ic_top_smoke_tran.log",
-    "notes": "dat extracted from ASCII raw because ngspice-36 wrdata rejected this vector expression | Warning: vselbmux: no DC value, transient time 0 value used | Warning: vselmux: no DC value, transient time 0 value used | Warning: vpchg: no DC value, transient time 0 value used | Warning: veq: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "precharge_equalizer_tran",
@@ -291,12 +236,10 @@
     "source_file": "tb_precharge.sp",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.292,
+    "seconds": 0.137,
     "data_rows": 2538,
     "dat": "results/precharge_equalizer_tran.dat",
-    "raw": "results/precharge_equalizer_tran.raw",
-    "log": "results/precharge_equalizer_tran.log",
-    "notes": "dat extracted from ASCII raw because ngspice-36 wrdata rejected this vector expression | Error: RHS \"v(eq)\" invalid | Error: no such vector veq_out | Warning: veq: no DC value, transient time 0 value used | Warning: vpchg: no DC value, transient time 0 value used"
+    "notes": "dat extracted from ASCII raw because ngspice-36 wrdata rejected this vector expression | PPerror: syntax error in line segment | Error: RHS \"v(eq)\" invalid | Error: no such vector veq_out"
   },
   {
     "name": "row_decoder_3to8_tran",
@@ -304,12 +247,10 @@
     "source_file": "row_decoder_3to8_nmos.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.485,
-    "data_rows": 970,
+    "seconds": 0.415,
+    "data_rows": 967,
     "dat": "results/row_decoder_3to8_tran.dat",
-    "raw": "results/row_decoder_3to8_tran.raw",
-    "log": "results/row_decoder_3to8_tran.log",
-    "notes": "Warning: vd0: no DC value, transient time 0 value used | Warning: vd2: no DC value, transient time 0 value used | Warning: vd1: no DC value, transient time 0 value used | Warning: vd0: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "wl_driver_nmos_tran",
@@ -317,12 +258,10 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.246,
+    "seconds": 0.14,
     "data_rows": 648,
     "dat": "results/wl_driver_nmos_tran.dat",
-    "raw": "results/wl_driver_nmos_tran.raw",
-    "log": "results/wl_driver_nmos_tran.log",
-    "notes": "Warning: vin: no DC value, transient time 0 value used | Warning: vin: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "wl_inv_transfer",
@@ -330,11 +269,9 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.089,
+    "seconds": 0.046,
     "data_rows": 701,
     "dat": "results/wl_inv_transfer.dat",
-    "raw": "results/wl_inv_transfer.raw",
-    "log": "results/wl_inv_transfer.log",
     "notes": ""
   },
   {
@@ -343,11 +280,9 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.086,
+    "seconds": 0.048,
     "data_rows": 701,
     "dat": "results/wl_prebuffer_transfer.dat",
-    "raw": "results/wl_prebuffer_transfer.raw",
-    "log": "results/wl_prebuffer_transfer.log",
     "notes": ""
   },
   {
@@ -356,12 +291,10 @@
     "source_file": "peripheral_ic.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 0.181,
+    "seconds": 0.084,
     "data_rows": 655,
     "dat": "results/wl_sel_tran.dat",
-    "raw": "results/wl_sel_tran.raw",
-    "log": "results/wl_sel_tran.log",
-    "notes": "Warning: venb: no DC value, transient time 0 value used | Warning: ven: no DC value, transient time 0 value used | Warning: venb: no DC value, transient time 0 value used | Warning: ven: no DC value, transient time 0 value used"
+    "notes": ""
   },
   {
     "name": "write_driver_tran",
@@ -369,56 +302,9 @@
     "source_file": "column_driver.spice",
     "status": "pass",
     "rc": 0,
-    "seconds": 1.263,
+    "seconds": 0.624,
     "data_rows": 2309,
     "dat": "results/write_driver_tran.dat",
-    "raw": "results/write_driver_tran.raw",
-    "log": "results/write_driver_tran.log",
-    "notes": "Warning: vdin: no DC value, transient time 0 value used | Warning: vwl: no DC value, transient time 0 value used | Warning: vdin: no DC value, transient time 0 value used | Warning: vwl: no DC value, transient time 0 value used"
-  },
-  {
-    "name": "stack_sram_array_f0",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "stack_sram_array_f1",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "stack_sram_array_f2",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "stack_sram_array_f3",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "stack_sram_array_f4",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "stack_sram_array_f5",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "wl_pad",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "open3dstack_padframe",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
-  },
-  {
-    "name": "open3dstack_user_project_wrapper",
-    "status": "skipped_no_devices_or_physical_only",
-    "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot."
+    "notes": ""
   }
 ]

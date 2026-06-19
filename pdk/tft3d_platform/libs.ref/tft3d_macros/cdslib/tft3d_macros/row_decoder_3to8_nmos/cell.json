@@ -1,0 +1,32 @@
+{
+  "library": "tft3d_macros",
+  "cell": "row_decoder_3to8_nmos",
+  "subckt": "row_decoder_3to8_nmos",
+  "primary_deck": "row_decoder_3to8_tran",
+  "layout": "gds/row_decoder_3to8_nmos.gds",
+  "schematic": "sim/NG_spice_macros/tb/row_decoder_3to8_tran.cir",
+  "simulation": "sim/NG_spice_macros/results/row_decoder_3to8_tran.dat",
+  "plot": "sim/NG_spice_macros/plots/row_decoder_3to8_tran.svg",
+  "pins": [
+    "a1",
+    "a2",
+    "a3",
+    "d0",
+    "d1",
+    "d2",
+    "nand_1",
+    "nand_2",
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6",
+    "q7",
+    "vdd",
+    "vdda",
+    "vss",
+    "vssa"
+  ]
+}

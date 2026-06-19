@@ -1,0 +1,16 @@
+{
+  "library": "tft3d_macros",
+  "cell": "wl_prebuffer",
+  "subckt": "wl_prebuffer",
+  "primary_deck": "3d_wl_prebuffer_transfer",
+  "layout": "gds/wl_prebuffer.gds",
+  "schematic": "sim/NG_spice_macros/tb/3d_wl_prebuffer_transfer.cir",
+  "simulation": "sim/NG_spice_macros/results/3d_wl_prebuffer_transfer.dat",
+  "plot": "sim/NG_spice_macros/plots/3d_wl_prebuffer_transfer.svg",
+  "pins": [
+    "A",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}

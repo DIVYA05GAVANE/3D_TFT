@@ -1,0 +1,18 @@
+{
+  "library": "tft3d_macros",
+  "cell": "precharge_equalizer_nmos_6u_pitch260",
+  "subckt": "precharge_equalizer_nmos_6u",
+  "primary_deck": "precharge_equalizer_tran",
+  "layout": "gds/precharge_equalizer_nmos_6u_pitch260.gds",
+  "schematic": "sim/NG_spice_macros/tb/precharge_equalizer_tran.cir",
+  "simulation": "sim/NG_spice_macros/results/precharge_equalizer_tran.dat",
+  "plot": "sim/NG_spice_macros/plots/precharge_equalizer_tran.svg",
+  "pins": [
+    "bl",
+    "blb",
+    "eq",
+    "pchg",
+    "vdd",
+    "vpre"
+  ]
+}

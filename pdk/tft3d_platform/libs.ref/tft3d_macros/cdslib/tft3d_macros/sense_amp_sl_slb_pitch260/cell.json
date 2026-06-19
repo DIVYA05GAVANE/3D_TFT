@@ -1,0 +1,19 @@
+{
+  "library": "tft3d_macros",
+  "cell": "sense_amp_sl_slb_pitch260",
+  "subckt": "opamp_6u",
+  "primary_deck": "opamp_6u_sense_tran",
+  "layout": "gds/sense_amp_sl_slb_pitch260.gds",
+  "schematic": "sim/NG_spice_macros/tb/opamp_6u_sense_tran.cir",
+  "simulation": "sim/NG_spice_macros/results/opamp_6u_sense_tran.dat",
+  "plot": "sim/NG_spice_macros/plots/opamp_6u_sense_tran.svg",
+  "pins": [
+    "out_inv",
+    "sl",
+    "slb",
+    "vdd",
+    "vdd_inv",
+    "vss",
+    "vth"
+  ]
+}

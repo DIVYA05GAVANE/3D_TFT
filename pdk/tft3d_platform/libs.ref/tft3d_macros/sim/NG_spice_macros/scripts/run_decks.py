@@ -17,26 +17,7 @@ PLOTS_DIR = ROOT / "plots"
 
 FALLBACK_VECTORS = {
     "precharge_equalizer_tran": ["time", "v(eq)", "v(pchg)", "v(bl)", "v(blb)"],
-    "peripheral_ic_top_smoke_tran": [
-        "time",
-        "v(wl_out<0>)",
-        "v(col<0>)",
-        "v(bl<0>)",
-        "v(sense_out<0>)",
-    ],
 }
-
-SKIPPED = [
-    "stack_sram_array_f0",
-    "stack_sram_array_f1",
-    "stack_sram_array_f2",
-    "stack_sram_array_f3",
-    "stack_sram_array_f4",
-    "stack_sram_array_f5",
-    "wl_pad",
-    "open3dstack_padframe",
-    "open3dstack_user_project_wrapper",
-]
 
 SOURCE_BY_NAME = {
     "analog_mux_bl_sl": "analog_mux_bl_sl_nmos.spice",
@@ -93,8 +74,6 @@ def category_for(name: str) -> str:
         return "sense_tran"
     if name.startswith("wl_"):
         return "wl"
-    if "top_smoke" in name:
-        return "top_smoke"
     return "logic"
 
 
@@ -254,10 +233,9 @@ def write_idvds_overlay(records: list[dict[str, object]]) -> None:
 def write_report(records: list[dict[str, object]]) -> None:
     passes = [r for r in records if r.get("status") == "pass"]
     fails = [r for r in records if r.get("status") == "fail"]
-    skipped = [r for r in records if str(r.get("status", "")).startswith("skipped")]
 
     with (RESULTS_DIR / "summary.csv").open("w", newline="") as f:
-        cols = ["name", "category", "source_file", "status", "rc", "seconds", "data_rows", "dat", "raw", "log", "notes"]
+        cols = ["name", "category", "source_file", "status", "rc", "seconds", "data_rows", "dat", "notes"]
         writer = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(records)
@@ -271,7 +249,6 @@ def write_report(records: list[dict[str, object]]) -> None:
         "",
         f"Pass: {len(passes)}",
         f"Fail: {len(fails)}",
-        f"Skipped physical/empty: {len(skipped)}",
         "",
         "## Passed Decks",
     ]
@@ -283,9 +260,6 @@ def write_report(records: list[dict[str, object]]) -> None:
             lines.append(f"- `{r['name']}` rc={r.get('rc')} notes={r.get('notes', '')}")
     else:
         lines.append("- none")
-    lines.extend(["", "## Skipped"])
-    for r in skipped:
-        lines.append(f"- `{r['name']}`: {r.get('notes', '')}")
     lines.extend(["", "## Plot Files"])
     for plot in sorted(PLOTS_DIR.glob("*.svg")):
         lines.append(f"- `{plot.relative_to(ROOT)}`")
@@ -356,28 +330,19 @@ def main() -> int:
                 "seconds": seconds,
                 "data_rows": data_rows,
                 "dat": str(dat.relative_to(ROOT)) if dat.exists() else "",
-                "raw": str(raw.relative_to(ROOT)) if raw.exists() else "",
-                "log": str(log.relative_to(ROOT)) if log.exists() else "",
                 "notes": " | ".join(notes)[:1000],
             }
         )
 
-    for name in SKIPPED:
-        records.append(
-            {
-                "name": name,
-                "status": "skipped_no_devices_or_physical_only",
-                "notes": "Subckt is empty/physical-only in source netlist; no meaningful electrical output to plot.",
-            }
-        )
+        raw.unlink(missing_ok=True)
+        log.unlink(missing_ok=True)
 
     write_idvds_overlay(records)
     write_report(records)
 
     passes = sum(1 for r in records if r.get("status") == "pass")
     fails = sum(1 for r in records if r.get("status") == "fail")
-    skipped = sum(1 for r in records if str(r.get("status", "")).startswith("skipped"))
-    print(f"pass={passes} fail={fails} skipped={skipped} plots={len(list(PLOTS_DIR.glob('*.svg')))}")
+    print(f"pass={passes} fail={fails} plots={len(list(PLOTS_DIR.glob('*.svg')))}")
     return 0 if fails == 0 else 1
 
 

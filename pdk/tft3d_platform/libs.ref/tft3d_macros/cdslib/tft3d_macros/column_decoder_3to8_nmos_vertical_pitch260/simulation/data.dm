@@ -1,0 +1,1 @@
+# Generated simulation view for column_decoder_3to8_nmos_vertical_pitch260

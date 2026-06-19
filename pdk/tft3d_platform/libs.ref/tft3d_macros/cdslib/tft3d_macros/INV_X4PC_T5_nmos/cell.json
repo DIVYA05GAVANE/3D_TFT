@@ -1,0 +1,16 @@
+{
+  "library": "tft3d_macros",
+  "cell": "INV_X4PC_T5_nmos",
+  "subckt": "INV_X4PC_T5_nmos",
+  "primary_deck": "3d_inv_x4pc_transfer",
+  "layout": "gds/INV_X4PC_T5_nmos.gds",
+  "schematic": "sim/NG_spice_macros/tb/3d_inv_x4pc_transfer.cir",
+  "simulation": "sim/NG_spice_macros/results/3d_inv_x4pc_transfer.dat",
+  "plot": "sim/NG_spice_macros/plots/3d_inv_x4pc_transfer.svg",
+  "pins": [
+    "A",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}

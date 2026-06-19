@@ -1,0 +1,19 @@
+{
+  "library": "tft3d_macros",
+  "cell": "nfet_W6u_L5",
+  "subckt": "nfet_W6u_L5",
+  "primary_deck": "3d_nfet_W6u_L5_idvds_vg3",
+  "layout": "gds/nfet_W6u_L5.gds",
+  "schematic": "sim/NG_spice_macros/tb/3d_nfet_W6u_L5_idvds_vg3.cir",
+  "simulation": "sim/NG_spice_macros/results/3d_nfet_W6u_L5_idvds_vg3.dat",
+  "plot": "sim/NG_spice_macros/plots/3d_nfet_W6u_L5_idvds_vg3.svg",
+  "pins": [
+    "D",
+    "G",
+    "S",
+    "VSS",
+    "L=5u",
+    "W=6u",
+    "M=1"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "cell": "sense_amp_sl_slb_pitch260",
+  "pins": [
+    "out_inv",
+    "sl",
+    "slb",
+    "vdd",
+    "vdd_inv",
+    "vss",
+    "vth"
+  ]
+}

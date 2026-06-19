@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="450" viewBox="0 0 520 450">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="150" y="40" width="220" height="370" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+<text x="260" y="70" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">row_decoder_3to8_nmos</text>
+<line x1="90" y1="73.6" x2="150" y2="73.6" stroke="#111827"/>
+<text x="84" y="77.6" text-anchor="end" font-family="Arial" font-size="12">a1</text>
+<line x1="90" y1="107.3" x2="150" y2="107.3" stroke="#111827"/>
+<text x="84" y="111.3" text-anchor="end" font-family="Arial" font-size="12">a2</text>
+<line x1="90" y1="140.9" x2="150" y2="140.9" stroke="#111827"/>
+<text x="84" y="144.9" text-anchor="end" font-family="Arial" font-size="12">a3</text>
+<line x1="90" y1="174.5" x2="150" y2="174.5" stroke="#111827"/>
+<text x="84" y="178.5" text-anchor="end" font-family="Arial" font-size="12">d0</text>
+<line x1="90" y1="208.2" x2="150" y2="208.2" stroke="#111827"/>
+<text x="84" y="212.2" text-anchor="end" font-family="Arial" font-size="12">d1</text>
+<line x1="90" y1="241.8" x2="150" y2="241.8" stroke="#111827"/>
+<text x="84" y="245.8" text-anchor="end" font-family="Arial" font-size="12">d2</text>
+<line x1="90" y1="275.5" x2="150" y2="275.5" stroke="#111827"/>
+<text x="84" y="279.5" text-anchor="end" font-family="Arial" font-size="12">nand_1</text>
+<line x1="90" y1="309.1" x2="150" y2="309.1" stroke="#111827"/>
+<text x="84" y="313.1" text-anchor="end" font-family="Arial" font-size="12">nand_2</text>
+<line x1="90" y1="342.7" x2="150" y2="342.7" stroke="#111827"/>
+<text x="84" y="346.7" text-anchor="end" font-family="Arial" font-size="12">q0</text>
+<line x1="90" y1="376.4" x2="150" y2="376.4" stroke="#111827"/>
+<text x="84" y="380.4" text-anchor="end" font-family="Arial" font-size="12">q1</text>
+<line x1="370" y1="73.6" x2="430" y2="73.6" stroke="#111827"/>
+<text x="436" y="77.6" font-family="Arial" font-size="12">q2</text>
+<line x1="370" y1="107.3" x2="430" y2="107.3" stroke="#111827"/>
+<text x="436" y="111.3" font-family="Arial" font-size="12">q3</text>
+<line x1="370" y1="140.9" x2="430" y2="140.9" stroke="#111827"/>
+<text x="436" y="144.9" font-family="Arial" font-size="12">q4</text>
+<line x1="370" y1="174.5" x2="430" y2="174.5" stroke="#111827"/>
+<text x="436" y="178.5" font-family="Arial" font-size="12">q5</text>
+<line x1="370" y1="208.2" x2="430" y2="208.2" stroke="#111827"/>
+<text x="436" y="212.2" font-family="Arial" font-size="12">q6</text>
+<line x1="370" y1="241.8" x2="430" y2="241.8" stroke="#111827"/>
+<text x="436" y="245.8" font-family="Arial" font-size="12">q7</text>
+<line x1="370" y1="275.5" x2="430" y2="275.5" stroke="#111827"/>
+<text x="436" y="279.5" font-family="Arial" font-size="12">vdd</text>
+<line x1="370" y1="309.1" x2="430" y2="309.1" stroke="#111827"/>
+<text x="436" y="313.1" font-family="Arial" font-size="12">vdda</text>
+<line x1="370" y1="342.7" x2="430" y2="342.7" stroke="#111827"/>
+<text x="436" y="346.7" font-family="Arial" font-size="12">vss</text>
+<line x1="370" y1="376.4" x2="430" y2="376.4" stroke="#111827"/>
+<text x="436" y="380.4" font-family="Arial" font-size="12">vssa</text>
+</svg>

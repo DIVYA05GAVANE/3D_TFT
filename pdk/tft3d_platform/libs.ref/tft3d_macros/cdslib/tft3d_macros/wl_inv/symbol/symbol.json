@@ -1,0 +1,9 @@
+{
+  "cell": "wl_inv",
+  "pins": [
+    "A",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}
