@@ -6,6 +6,10 @@ This repository is mainly a small PDK-facing package for the 3D TFT macro views 
 pdk/tft3d_platform/libs.ref/tft3d_macros
 ```
 
+## Community
+
+Discuss this PDK in the BM Labs Matrix room: https://matrix.to/#/#BM_LABS:fossi-chat.org
+
 ## What This Folder Contains
 
 `tft3d_macros` collects the files a layout or simulation flow needs for the 3D TFT macros:
