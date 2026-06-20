@@ -1,0 +1,30 @@
+{
+  "docker_image": "eperera/elmerfem",
+  "elmer_version": "8.4",
+  "cases": [
+    {
+      "case_dir": "mechanical/fefet_on_tft/pairs_0001",
+      "solver_done": true,
+      "stress_result_vtu": [],
+      "reduced_order_vtu": "mechanical/fefet_on_tft/pairs_0001/stress_warpage_reduced_order.vtu",
+      "gmsh_msh": "mechanical/fefet_on_tft/pairs_0001/stack_cross_section.msh",
+      "sif": "mechanical/fefet_on_tft/pairs_0001/case.sif"
+    },
+    {
+      "case_dir": "mechanical/fefet_on_tft/pairs_0256",
+      "solver_done": true,
+      "stress_result_vtu": [],
+      "reduced_order_vtu": "mechanical/fefet_on_tft/pairs_0256/stress_warpage_reduced_order.vtu",
+      "gmsh_msh": "mechanical/fefet_on_tft/pairs_0256/stack_cross_section.msh",
+      "sif": "mechanical/fefet_on_tft/pairs_0256/case.sif"
+    },
+    {
+      "case_dir": "mechanical/tft_on_fefet/pairs_0256",
+      "solver_done": true,
+      "stress_result_vtu": [],
+      "reduced_order_vtu": "mechanical/tft_on_fefet/pairs_0256/stress_warpage_reduced_order.vtu",
+      "gmsh_msh": "mechanical/tft_on_fefet/pairs_0256/stack_cross_section.msh",
+      "sif": "mechanical/tft_on_fefet/pairs_0256/case.sif"
+    }
+  ]
+}

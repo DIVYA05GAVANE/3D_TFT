@@ -1,0 +1,415 @@
+TFT_TIER_wl_sel_001 :
+  position 4246.560000, 5577.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_001 :
+  position 5623.150000, 2970.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_001 :
+  position 3054.749000, 2970.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_002 :
+  position 16356.535000, 1150.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_002 :
+  position 15058.122000, 1150.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_002 :
+  position 12776.163000, 3477.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_003 :
+  position 4246.560000, 5277.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_003 :
+  position 5623.150000, 2710.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_003 :
+  position 3054.749000, 2710.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_004 :
+  position 16356.535000, 1410.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_004 :
+  position 15058.122000, 1410.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_004 :
+  position 12776.163000, 3777.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_005 :
+  position 4246.560000, 4977.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_005 :
+  position 5623.150000, 2450.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_005 :
+  position 3054.749000, 2450.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_006 :
+  position 16356.535000, 1670.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_006 :
+  position 15058.122000, 1670.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_006 :
+  position 12776.163000, 4077.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_007 :
+  position 4246.560000, 4677.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_007 :
+  position 5623.150000, 2190.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_007 :
+  position 3054.749000, 2190.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_008 :
+  position 16356.535000, 1930.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_008 :
+  position 15058.122000, 1930.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_008 :
+  position 12776.163000, 4377.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_009 :
+  position 4246.560000, 4377.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_009 :
+  position 5623.150000, 1930.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_009 :
+  position 3054.749000, 1930.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_010 :
+  position 16356.535000, 2190.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_010 :
+  position 15058.122000, 2190.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_010 :
+  position 12776.163000, 4677.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_011 :
+  position 4246.560000, 4077.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_011 :
+  position 5623.150000, 1670.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_011 :
+  position 3054.749000, 1670.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_012 :
+  position 16356.535000, 2450.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_012 :
+  position 15058.122000, 2450.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_012 :
+  position 12776.163000, 4977.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_013 :
+  position 4246.560000, 3777.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_013 :
+  position 5623.150000, 1410.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_013 :
+  position 3054.749000, 1410.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_014 :
+  position 16356.535000, 2710.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_014 :
+  position 15058.122000, 2710.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_014 :
+  position 12776.163000, 5277.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_sel_015 :
+  position 4246.560000, 3477.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_wl_inv_015 :
+  position 5623.150000, 1150.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_prebuffer_015 :
+  position 3054.749000, 1150.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_prebuffer_016 :
+  position 16356.535000, 2970.000000 ;
+  dimension 2528.716000, 207.402000 ;
+  power values 3.890820830877e-04 ;
+
+TFT_TIER_wl_inv_016 :
+  position 15058.122000, 2970.000000 ;
+  dimension 1249.728000, 188.782000 ;
+  power values 2.463667962179e-04 ;
+
+TFT_TIER_wl_sel_016 :
+  position 12776.163000, 5577.163000 ;
+  dimension 5057.277000, 205.240000 ;
+  power values 3.021265084129e-03 ;
+
+TFT_TIER_row_decoder_3to8_nmos_spice_compact_L_001 :
+  position 3200.000000, 6400.000000 ;
+  dimension 5900.000000, 980.000000 ;
+  power values 9.772321213870e-03 ;
+
+TFT_TIER_row_decoder_3to8_nmos_spice_compact_R_001 :
+  position 12800.000000, 6400.000000 ;
+  dimension 5900.000000, 980.000000 ;
+  power values 9.772321213870e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_001 :
+  position 5035.510000, 8940.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_002 :
+  position 5035.510000, 9240.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_003 :
+  position 5035.510000, 9540.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_004 :
+  position 5035.510000, 9840.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_005 :
+  position 5035.510000, 10400.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_006 :
+  position 5035.510000, 10700.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_007 :
+  position 5035.510000, 11000.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_drv_column_driver_vertical_pitch260_top_008 :
+  position 5035.510000, 11300.000000 ;
+  dimension 12023.328000, 260.000000 ;
+  power values 1.316029407634e-03 ;
+
+TFT_TIER_col_dec_column_decoder_3to8_nmos_vertical_pitch260_001 :
+  position 9527.174000, 11800.000000 ;
+  dimension 3040.000000, 2260.000000 ;
+  power values 9.772321213870e-03 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_001 :
+  position 9913.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_002 :
+  position 10213.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_003 :
+  position 10513.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_004 :
+  position 10813.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_005 :
+  position 11113.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_006 :
+  position 11413.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_007 :
+  position 11713.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_analog_mux_bl_sl_pitch260_008 :
+  position 12013.477000, 6240.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 5.595964229470e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_001 :
+  position 9913.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_002 :
+  position 10213.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_003 :
+  position 10513.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_004 :
+  position 10813.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_005 :
+  position 11113.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_006 :
+  position 11413.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_007 :
+  position 11713.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_sense_amp_sl_slb_pitch260_008 :
+  position 12013.477000, 1650.000000 ;
+  dimension 260.000000, 1730.000000 ;
+  power values 3.228490185642e-04 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_001 :
+  position 9913.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_002 :
+  position 10213.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_003 :
+  position 10513.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_004 :
+  position 10813.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_005 :
+  position 11113.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_006 :
+  position 11413.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_007 :
+  position 11713.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+
+TFT_TIER_precharge_equalizer_nmos_6u_pitch260_008 :
+  position 12013.477000, 1010.000000 ;
+  dimension 260.000000, 620.000000 ;
+  power values 3.899930292214e-05 ;
+

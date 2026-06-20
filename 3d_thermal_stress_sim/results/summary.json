@@ -1,0 +1,84 @@
+{
+  "workdir": ".",
+  "input_floorplans": {
+    "fefet": "inputs/fefet_tier.flp",
+    "tft": "inputs/tft_tier.flp"
+  },
+  "pair_counts": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512,
+    1024
+  ],
+  "orders": [
+    "fefet_on_tft",
+    "tft_on_fefet"
+  ],
+  "thermal_cell_um": 4000.0,
+  "criteria": {
+    "temperature_limit_C": 85.0,
+    "warpage_limit_um": 50.0,
+    "stress_failure_ratio_limit": 1.0
+  },
+  "limits": {
+    "fefet_on_tft": {
+      "largest_simulated_safe_pairs": 512,
+      "first_failed_pairs": 1024,
+      "first_failure_reasons": "thermal peak 106.40 C >= 85.0 C; stress ratio 1.501 >= 1.0"
+    },
+    "tft_on_fefet": {
+      "largest_simulated_safe_pairs": 512,
+      "first_failed_pairs": 1024,
+      "first_failure_reasons": "thermal peak 106.33 C >= 85.0 C; stress ratio 1.500 >= 1.0"
+    }
+  },
+  "elmer": {
+    "native_ElmerSolver_in_PATH": false,
+    "docker_image": "eperera/elmerfem",
+    "run_elmer_requested": false
+  },
+  "assumptions": [
+    "Thermal power per tier reuses package floorplans copied from the previous ngspice -> 3D-ICE convergence run.",
+    "FeFET/array regions remain workload placeholders because no FeFET compact model was found in the current SPICE bundle.",
+    "Mechanical stress uses classical laminate theory for the full chip cross-section with assumed residual stresses and allowables; Elmer/Gmsh artifacts are generated for FEM handoff.",
+    "Mechanical and thermal stacks include a 500 um silicon handle substrate.",
+    "3D-ICE sweep uses a coarse thermal cell for repeated-stack exploration; refine near any candidate limit."
+  ],
+  "elmer_validation": {
+    "docker_image": "eperera/elmerfem",
+    "elmer_version": "8.4",
+    "cases": [
+      {
+        "case_dir": "mechanical/fefet_on_tft/pairs_0001",
+        "solver_done": true,
+        "stress_result_vtu": [],
+        "reduced_order_vtu": "mechanical/fefet_on_tft/pairs_0001/stress_warpage_reduced_order.vtu",
+        "gmsh_msh": "mechanical/fefet_on_tft/pairs_0001/stack_cross_section.msh",
+        "sif": "mechanical/fefet_on_tft/pairs_0001/case.sif"
+      },
+      {
+        "case_dir": "mechanical/fefet_on_tft/pairs_0256",
+        "solver_done": true,
+        "stress_result_vtu": [],
+        "reduced_order_vtu": "mechanical/fefet_on_tft/pairs_0256/stress_warpage_reduced_order.vtu",
+        "gmsh_msh": "mechanical/fefet_on_tft/pairs_0256/stack_cross_section.msh",
+        "sif": "mechanical/fefet_on_tft/pairs_0256/case.sif"
+      },
+      {
+        "case_dir": "mechanical/tft_on_fefet/pairs_0256",
+        "solver_done": true,
+        "stress_result_vtu": [],
+        "reduced_order_vtu": "mechanical/tft_on_fefet/pairs_0256/stress_warpage_reduced_order.vtu",
+        "gmsh_msh": "mechanical/tft_on_fefet/pairs_0256/stack_cross_section.msh",
+        "sif": "mechanical/tft_on_fefet/pairs_0256/case.sif"
+      }
+    ]
+  }
+}

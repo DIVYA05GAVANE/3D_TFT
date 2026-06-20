@@ -1,0 +1,10 @@
+FEFET_TIER_stack_sram_array_f5_001 :
+  position 9694.347000, 3380.000000 ;
+  dimension 2705.653000, 2840.545000 ;
+  power values 1.000000000000e-03 ;
+
+FEFET_TIER_stack_sram_marked_right_array_001 :
+  position 1100.000000, 13120.000000 ;
+  dimension 5900.000000, 5800.000000 ;
+  power values 1.000000000000e-03 ;
+
