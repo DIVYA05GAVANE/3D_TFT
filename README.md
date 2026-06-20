@@ -16,6 +16,12 @@ Schedule target: design submission deadline is November 2026, with first deliver
 
 This process direction is useful because it targets an 8-inch, open-PDK-friendly 3D transistor platform rather than a closed custom flow. TFT access devices and ferroelectric FET/TFT storage devices can be stacked monolithically, so memory, search, and in-memory-compute primitives can be built above or alongside CMOS-style routing without consuming the same 2D footprint. Keeping the layouts, SPICE decks, GDS/LEF views, and ngspice testbenches in an open library format makes the process easier to reproduce, simulate, and extend with open-source tools.
 
+## 3D Thermal and Stress Scaling
+
+![Scaling in stacked FeFET/TFT architecture](docs/assets/scaling_3D.png)
+
+The repeated-stack screening flow models FeFET/TFT pair scaling with ngspice power inputs, 3D-ICE thermal analysis, and Gmsh/Elmer stress handoff. The current screening result shows both stack orders safe through 512 repeated pairs, with first failure at 1024 pairs from peak temperature and stress ratio limits. See [`3d_thermal_stress_sim`](3d_thermal_stress_sim/) for the replication script, input floorplans, archived sweep results, and accuracy limitations.
+
 <img src="docs/assets/e6_nanofab_nus.png" alt="E6 NanoFab at the National University of Singapore" width="360">
 
 The work is associated with E6NanoFab at the National University of Singapore, a micro-nanofabrication research facility at Block E6 of the NUS Engineering campus. E6NanoFab supports academic and industrial work in nanotechnology and microelectronics, with cleanroom and dry/wet lab infrastructure for frontend, backend-of-line, and packaging-oriented process development. See the official [E6NanoFab overview](https://cde.nus.edu.sg/e6nanofab/) and [facility introduction](https://cde.nus.edu.sg/e6nanofab/about/).
