@@ -43,6 +43,9 @@ Discuss this PDK in the BM Labs Matrix room: https://matrix.to/#/#BM_LABS:fossi-
 - `TFT HSPICE/`: the original single-TFT HSPICE/Verilog-A files.
 - `NG_spice_TFT/`: a stock-ngspice version of the single-TFT Id-Vds simulation.
 
+For updating embedded lower-hierarchy cells inside a standalone final GDS, see
+[`scripts/README_gds_hierarchy_refresh.md`](scripts/README_gds_hierarchy_refresh.md).
+
 ## Run The TFT ngspice Simulation
 
 Install `ngspice`, then run:
