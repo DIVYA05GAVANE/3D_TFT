@@ -1,0 +1,756 @@
+{
+  "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_restore_mux_hierarchy_20260622_175142.bak",
+  "mux_hierarchy_restore": {
+    "after": {
+      "bbox": [
+        [
+          128.0,
+          0.0
+        ],
+        [
+          260.0,
+          620.0
+        ]
+      ],
+      "labels": 12,
+      "polygons": 17,
+      "references": 4,
+      "refs": [
+        "amux__nfet_W24u_L5",
+        "amux__nfet_W6u_L5",
+        "amux__nfet_W6u_L5",
+        "amux__nfet_W6u_L5"
+      ]
+    },
+    "before": {
+      "bbox": [
+        [
+          128.0,
+          0.0
+        ],
+        [
+          260.0,
+          620.0
+        ]
+      ],
+      "labels": 12,
+      "polygons": 10104,
+      "references": 0,
+      "refs": []
+    },
+    "cell": "analog_mux_2to1_diff_nmos",
+    "clip_window": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "labels_preserved": [
+      "bl0",
+      "blb0",
+      "gbl",
+      "gblb",
+      "pre",
+      "pre_b",
+      "sel",
+      "selb"
+    ],
+    "parent_polygon_bbox": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "parent_polygon_count": 17,
+    "reference_count": 4,
+    "references": [
+      "amux__nfet_W24u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__nfet_W6u_L5"
+    ],
+    "status": "pass"
+  },
+  "primitive_style_cells_present": [
+    "amux__nfet_W24u_L5",
+    "amux__nfet_W6u_L5",
+    "col_dec__INV_X4PC_T5_nmos",
+    "col_dec__NAND3_X4RL_T5",
+    "col_dec__nfet_W20p825_L5",
+    "col_dec__nfet_W24u_L5",
+    "col_dec__nfet_W6u_L5",
+    "col_drv__INV_X4PC_T5_nmos",
+    "col_drv__NAND3_X4RL_T5",
+    "col_drv__nfet_W20p825_L5",
+    "col_drv__nfet_W24u_L5",
+    "decmap__INV_X4PC_T5_nmos",
+    "decmap__NAND3_X4RL_T5",
+    "decmap__nfet_W20p825_L5",
+    "decmap__nfet_W24u_L5",
+    "decmap__nfet_W6u_L5",
+    "inv__INV_X4PC_T5_nmos",
+    "inv__nfet_W20p825_L5",
+    "inv__nfet_W24u_L5",
+    "pch__nfet_W6u_L5",
+    "pre__INV_X4PC_T5_nmos",
+    "pre__nfet_W20p825_L5",
+    "pre__nfet_W24u_L5",
+    "sa_inv__INV_X4PC_T5_nmos",
+    "sa_inv__nfet_W20p825_L5",
+    "sa_inv__nfet_W24u_L5",
+    "sa_w6__nfet_W6u_L5",
+    "sel__INV_X4PC_T5_nmos",
+    "sel__nfet_W20p825_L5",
+    "sel__nfet_W24u_L5",
+    "sel__nfet_W6u_L5"
+  ],
+  "readback": {
+    "amux__nfet_W24u_L5": {
+      "bbox": [
+        [
+          0.335,
+          0.535
+        ],
+        [
+          31.61,
+          72.577
+        ]
+      ],
+      "labels": 4,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "amux__sel__pcont_CDNS_781016356330",
+        "amux__sel__M2_M1_CDNS_781016356330",
+        "amux__sel__M2_M1_CDNS_781016356330"
+      ],
+      "top_ancestor": true
+    },
+    "amux__nfet_W6u_L5": {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 4,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "amux__pcont_CDNS_782127390580",
+        "amux__M2_M1_CDNS_782127390580",
+        "amux__M2_M1_CDNS_782127390580"
+      ],
+      "top_ancestor": true
+    },
+    "analog_mux_2to1_diff_nmos": {
+      "bbox": [
+        [
+          128.0,
+          0.0
+        ],
+        [
+          260.0,
+          620.0
+        ]
+      ],
+      "labels": 12,
+      "polygons": 17,
+      "references": 4,
+      "refs": [
+        "amux__nfet_W24u_L5",
+        "amux__nfet_W6u_L5",
+        "amux__nfet_W6u_L5",
+        "amux__nfet_W6u_L5"
+      ],
+      "top_ancestor": true
+    },
+    "col_dec__INV_X4PC_T5_nmos": {
+      "bbox": [
+        [
+          -88.995,
+          -26.192
+        ],
+        [
+          1145.088,
+          145.882
+        ]
+      ],
+      "labels": 9,
+      "polygons": 154,
+      "references": 67,
+      "refs": [
+        "col_dec__nfet_W24u_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__nfet_W20p825_L5",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_via",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850"
+      ],
+      "top_ancestor": true
+    },
+    "col_dec__NAND3_X4RL_T5": {
+      "bbox": [
+        [
+          -0.07200000000000001,
+          1.06
+        ],
+        [
+          406.77500000000003,
+          59.322
+        ]
+      ],
+      "labels": 6,
+      "polygons": 41,
+      "references": 6,
+      "refs": [
+        "col_dec__nfet_W24u_L5",
+        "col_dec__nfet_W24u_L5",
+        "col_dec__nfet_W24u_L5",
+        "col_dec__nfet_W6u_L5",
+        "col_dec__M2_M1_CDNS_781250019470",
+        "col_dec__M2_M1_CDNS_781250019470"
+      ],
+      "top_ancestor": true
+    },
+    "col_dec__nfet_W20p825_L5": {
+      "bbox": [
+        [
+          0.035,
+          0.002
+        ],
+        [
+          38.52,
+          75.82000000000001
+        ]
+      ],
+      "labels": 5,
+      "polygons": 11,
+      "references": 3,
+      "refs": [
+        "col_dec__pcont_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500851",
+        "col_dec__M2_M1_CDNS_780999500851"
+      ],
+      "top_ancestor": true
+    },
+    "col_dec__nfet_W24u_L5": {
+      "bbox": [
+        [
+          0.227,
+          0.535
+        ],
+        [
+          31.61,
+          72.577
+        ]
+      ],
+      "labels": 5,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "col_dec__pcont_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850",
+        "col_dec__M2_M1_CDNS_780999500850"
+      ],
+      "top_ancestor": true
+    },
+    "col_dec__nfet_W6u_L5": {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 4,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "col_dec__pcont_CDNS_782127390580",
+        "col_dec__M2_M1_CDNS_782127390580",
+        "col_dec__M2_M1_CDNS_782127390580"
+      ],
+      "top_ancestor": true
+    },
+    "decmap__INV_X4PC_T5_nmos": {
+      "bbox": [
+        [
+          -88.995,
+          -26.192
+        ],
+        [
+          1145.088,
+          145.882
+        ]
+      ],
+      "labels": 9,
+      "polygons": 154,
+      "references": 67,
+      "refs": [
+        "decmap__nfet_W24u_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__nfet_W20p825_L5",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_via",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850",
+        "decmap__M2_M1_CDNS_780999500850"
+      ],
+      "top_ancestor": true
+    },
+    "decmap__NAND3_X4RL_T5": {
+      "bbox": [
+        [
+          -11.0,
+          -7.0
+        ],
+        [
+          631.0,
+          227.0
+        ]
+      ],
+      "labels": 6,
+      "polygons": 62,
+      "references": 4,
+      "refs": [
+        "decmap__nfet_W24u_L5_BLACKBOX_PINS",
+        "decmap__nfet_W24u_L5_BLACKBOX_PINS",
+        "decmap__nfet_W24u_L5_BLACKBOX_PINS",
+        "decmap__nfet_W6u_L5_BLACKBOX_PINS"
+      ],
+      "top_ancestor": true
+    },
+    "pch__nfet_W6u_L5": {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 4,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "pch__pcont_CDNS_782127390580",
+        "pch__M2_M1_CDNS_782127390580",
+        "pch__M2_M1_CDNS_782127390580"
+      ],
+      "top_ancestor": true
+    },
+    "sa_w6__nfet_W6u_L5": {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 4,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "sa_w6__pcont_CDNS_782127390580",
+        "sa_w6__M2_M1_CDNS_782127390580",
+        "sa_w6__M2_M1_CDNS_782127390580"
+      ],
+      "top_ancestor": true
+    },
+    "sel__nfet_W6u_L5": {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 4,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "sel__pcont_CDNS_782127390580",
+        "sel__M2_M1_CDNS_782127390580",
+        "sel__M2_M1_CDNS_782127390580"
+      ],
+      "top_ancestor": true
+    }
+  },
+  "removed_unreachable_cells": [],
+  "source_leaf_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/nfet_W6u_L5.gds",
+  "source_leaf_sha256": "efc0cbea4937c7af4757ff88d47e9ddd7195102bc830cf1944790c75c89013a3",
+  "source_mux_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/analog_mux_bl_sl_pitch260.gds",
+  "status": "pass",
+  "target_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
+  "target_sha256_after": "16c8733c702fa5a12129e4cc88029642f8d66cd1eb42651270eb2d5f84f8aba6",
+  "target_sha256_before": "f94eb88aed0080ef83a3bb4bef9d0bde5b2f9d2412d0e9a6469df38c005c99e8",
+  "top_level_after": [
+    "open3dstack_f5_decoder_compact_spice_dual_sided_top"
+  ],
+  "w6_updates": [
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "col_dec__pcont_CDNS_782127390580",
+          "col_dec__M2_M1_CDNS_782127390580",
+          "col_dec__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "col_dec__pcont_CDNS_782127390580",
+          "col_dec__M2_M1_CDNS_782127390580",
+          "col_dec__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "prefix": "col_dec__",
+      "target_cell": "col_dec__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "decmap__pcont_CDNS_782127390580",
+          "decmap__M2_M1_CDNS_782127390580",
+          "decmap__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "decmap__pcont_CDNS_782127390580",
+          "decmap__M2_M1_CDNS_782127390580",
+          "decmap__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "prefix": "decmap__",
+      "target_cell": "decmap__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "pch__pcont_CDNS_782127390580",
+          "pch__M2_M1_CDNS_782127390580",
+          "pch__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "pch__pcont_CDNS_782127390580",
+          "pch__M2_M1_CDNS_782127390580",
+          "pch__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "prefix": "pch__",
+      "target_cell": "pch__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "sa_w6__pcont_CDNS_782127390580",
+          "sa_w6__M2_M1_CDNS_782127390580",
+          "sa_w6__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "sa_w6__pcont_CDNS_782127390580",
+          "sa_w6__M2_M1_CDNS_782127390580",
+          "sa_w6__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "prefix": "sa_w6__",
+      "target_cell": "sa_w6__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "sel__pcont_CDNS_782127390580",
+          "sel__M2_M1_CDNS_782127390580",
+          "sel__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 4,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "sel__pcont_CDNS_782127390580",
+          "sel__M2_M1_CDNS_782127390580",
+          "sel__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "prefix": "sel__",
+      "target_cell": "sel__nfet_W6u_L5"
+    }
+  ]
+}
