@@ -1,0 +1,18 @@
+{
+  "library": "tft3d_macros",
+  "cell": "NAND3_X4RL_T5",
+  "subckt": "NAND3_X4RL_T5",
+  "primary_deck": "3d_nand3_x4rl_transfer_a1",
+  "layout": "gds/NAND3_X4RL_T5.gds",
+  "schematic": "sim/NG_spice_macros/tb/3d_nand3_x4rl_transfer_a1.cir",
+  "simulation": "sim/NG_spice_macros/results/3d_nand3_x4rl_transfer_a1.dat",
+  "plot": "sim/NG_spice_macros/plots/3d_nand3_x4rl_transfer_a1.svg",
+  "pins": [
+    "A1",
+    "A2",
+    "A3",
+    "VDD",
+    "VSS",
+    "Y"
+  ]
+}

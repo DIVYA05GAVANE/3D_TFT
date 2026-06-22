@@ -1,87 +1,82 @@
-# 3D_TFT OpenLane Package
+# 3D TFT Macro PDK Files
 
-This repository packages the 3D_TFT layout blocks, a neutral local OpenLane PDK
-shim, and one OpenLane layout flow entrypoint.
-
-The repo uses neutral local naming for the PDK, library, and flow assets.
-The default flow uses:
+This repository is PDK package for the 3D TFT/FEFET
 
 ```text
-PDK_ROOT=$PWD/pdk
-PDK=tft3d_platform
-STD_CELL_LIBRARY=tft3d_sc_t5
-DESIGN=openlane/tft3d_macro_layout
+pdk/tft3d_platform/libs.ref/tft3d_macros
 ```
 
-## Contents
+## First Tapeout Results
 
-- `pdk/tft3d_platform/`: local OpenLane-compatible platform PDK shim.
-- `pdk/tft3d_platform/libs.ref/tft3d_macros/`: PDK-facing 3D_TFT hard-macro
-  LEF, GDS, Liberty, SPICE, Verilog, and simulation views used by OpenLane,
-  including the extracted Stack SRAM array flavour macros.
-- `openlane/tft3d_macro_layout/`: OpenLane layout target using the available 3D_TFT hard macros.
-- `openlane_import/source/`: original imported ZIPs, source-layout GDS files,
-  CIF files, source LEF files, and source layer maps retained for provenance.
-- `openlane_import/metadata/` and `openlane_import/reports/`: import audit
-  metadata and reports for the 3D_TFT macro blocks.
-- `openlane_import/tech/`: layer maps retained for interoperability.
-- `scripts/run_openlane_flow.sh`: the single repo script for launching the OpenLane flow.
+[VLSI 2026 paper draft: 3D-Stacked Cross-Coupled ZnO/Fe-ZnO TFT Differential Bit-Cell Enabling High-Density Memory and BCAM Hamming-Distance Comparison](docs/papers/VLSI2026_01_20_v5.pdf)
 
-## Run OpenLane
+This first tapeout demonstrates a 3D-stacked differential TFT bit-cell that combines ZnO access TFTs with Fe-ZnO storage TFTs for compact memory operation and BCAM-style Hamming-distance comparison.
 
-From the repo root on the Ubuntu OpenLane machine:
+Schedule target: design submission deadline is November 2026, with first delivery targeted for June 2027.
+
+This process direction is useful because it targets an 8-inch, open-PDK-friendly 3D transistor platform rather than a closed custom flow. TFT access devices and ferroelectric FET/TFT storage devices can be stacked monolithically, so memory, search, and in-memory-compute primitives can be built above or alongside CMOS-style routing without consuming the same 2D footprint. Keeping the layouts, SPICE decks, GDS/LEF views, and ngspice testbenches in an open library format makes the process easier to reproduce, simulate, and extend with open-source tools.
+
+## 3D Thermal and Stress Scaling
+
+![Scaling in stacked FeFET/TFT architecture](docs/assets/scaling_3D.png)
+
+The repeated-stack screening flow models FeFET/TFT pair scaling with ngspice power inputs, 3D-ICE thermal analysis, and Gmsh/Elmer stress handoff. The current screening result shows both stack orders safe through 512 repeated pairs, with first failure at 1024 pairs from peak temperature and stress ratio limits. See [`3d_thermal_stress_sim`](3d_thermal_stress_sim/) for the replication script, input floorplans, archived sweep results, and accuracy limitations.
+
+<img src="docs/assets/e6_nanofab_nus.png" alt="E6 NanoFab at the National University of Singapore" width="360">
+
+The work is associated with E6NanoFab at the National University of Singapore, a micro-nanofabrication research facility at Block E6 of the NUS Engineering campus. E6NanoFab supports academic and industrial work in nanotechnology and microelectronics, with cleanroom and dry/wet lab infrastructure for frontend, backend-of-line, and packaging-oriented process development. See the official [E6NanoFab overview](https://cde.nus.edu.sg/e6nanofab/) and [facility introduction](https://cde.nus.edu.sg/e6nanofab/about/).
+
+## Community
+
+Discuss this PDK in the BM Labs Matrix room: https://matrix.to/#/#BM_LABS:fossi-chat.org
+
+## What This Folder Contains
+
+`tft3d_macros` collects the files a layout or simulation flow needs for the 3D TFT macros:
+
+- `gds/`: full layout GDS files for the imported hard macros and generated Open3DStack layouts.
+- `lef/`: abstract layout views used by place-and-route tools.
+- `lib/`: timing/library placeholder views.
+- `spice/`: SPICE macro netlists and placeholder circuit views.
+- `verilog/`: black-box Verilog views for digital integration.
+- `sim/`: functional simulation views.
+- `TFT HSPICE/`: the original single-TFT HSPICE/Verilog-A files.
+- `NG_spice_TFT/`: a stock-ngspice version of the single-TFT Id-Vds simulation.
+
+For updating embedded lower-hierarchy cells inside a standalone final GDS, see
+[`scripts/README_gds_hierarchy_refresh.md`](scripts/README_gds_hierarchy_refresh.md).
+
+## Run The TFT ngspice Simulation
+
+Install `ngspice`, then run:
 
 ```sh
-./scripts/run_openlane_flow.sh
+cd pdk/tft3d_platform/libs.ref/tft3d_macros/NG_spice_TFT
+./run_ngspice_tft.sh
 ```
 
-Optional overrides:
+The script runs:
 
-```sh
-OPENLANE_ROOT=$HOME/OpenLane \
-OPENLANE_DESIGN_DIR=openlane/tft3d_macro_layout \
-OPENLANE_TAG=layout \
-./scripts/run_openlane_flow.sh
+```text
+id_vds_tft_n1_ngspice.sp
 ```
 
-The runner validates the required PDK, LEF, GDS, Liberty, and black-box Verilog
-inputs before invoking OpenLane. It works inside an OpenLane container or through
-the local `$OPENLANE_ROOT` Docker wrapper path.
+That deck includes:
 
-## Basic Simulation Models
+```text
+tft_n1_ngspice.inc
+```
 
-The local PDK includes simulator-facing model files for OpenFlow/OpenLane-style
-automation and standalone circuit bring-up:
+The ngspice include implements the same simple TFT behavior as `TFT HSPICE/tft_n1.va` and uses the same conductance data from `TFT HSPICE/g_n1_tbl.tbl`, converted into a native ngspice PWL expression.
 
-- `pdk/tft3d_platform/libs.tech/ngspice/tft3d_platform.spice`: self-contained
-  primitive plus standard-cell SPICE model file.
-- `pdk/tft3d_platform/libs.tech/ngspice/tft3d_platform_primitives.spice`: basic
-  `nch` and `resmod` primitive models.
-- `pdk/tft3d_platform/libs.ref/tft3d_sc_t5/spice/tft3d_sc_t5.spice`:
-  simulator-clean standard-cell subcircuits.
-- `pdk/tft3d_platform/libs.ref/tft3d_sc_t5/verilog/tft3d_sc_t5.v`: Verilog
-  functional models for digital simulation.
-- `pdk/tft3d_platform/libs.ref/tft3d_macros/spice/3d_tft_macros.spice`: basic
-  SPICE placeholders for the imported 3D_TFT hard macros.
-- `pdk/tft3d_platform/libs.tech/openflow/simulation.yml`: neutral simulation
-  manifest for flow automation.
+## Simulation Outputs
 
-Tool mapping:
+After running the script, check the generated files:
 
-- `ngspice`: DC transfer, DC output, transient switching, AC/noise,
-  corner-style, temperature-style, and Monte Carlo-style SPICE decks.
-- `iverilog`: digital functional simulation of the OpenLane macro layout
-  wrapper using functional macro models.
-- `verilator`: available on the remote for Verilog lint/compile workflows.
+- `id_vds_tft_n1_ngspice.dat`: Id-Vds data table.
+- `id_vds_tft_n1_ngspice.raw`: ASCII ngspice raw output.
+- `id_vds_tft_n1_ngspice.log`: ngspice run log.
 
-The SPICE example decks live in
-`pdk/tft3d_platform/libs.tech/ngspice/examples/` and are intended to be run from
-the repository root so relative includes resolve correctly.
+A reference plot is also included as `id_vds_tft_n1_ngspice.png`.
 
-## Signoff Boundary
-
-The available macro GDS files do not contain named pin labels. The current LEF,
-Liberty, Verilog, and SPICE macro views are integration placeholders so OpenLane
-can place, route, stream a merged layout, and support basic circuit bring-up.
-Before signoff, replace those views with pin-accurate and process-validated
-macro views plus validated DRC/LVS/PEX decks.
+The original HSPICE/Verilog-A files are kept in `TFT HSPICE/` for reference, but `NG_spice_TFT/` is the easiest place to start with standard ngspice.

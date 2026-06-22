@@ -1,0 +1,17 @@
+{
+  "cell": "analog_mux_bl_sl_pitch260",
+  "pins": [
+    "drv_bl",
+    "drv_blb",
+    "drv_sl",
+    "drv_slb",
+    "array_bl",
+    "array_blb",
+    "array_sl",
+    "array_slb",
+    "pre",
+    "pre_b",
+    "sel",
+    "selb"
+  ]
+}

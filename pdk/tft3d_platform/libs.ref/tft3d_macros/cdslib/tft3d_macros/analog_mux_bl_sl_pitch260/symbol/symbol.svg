@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="306" viewBox="0 0 520 306">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="150" y="40" width="220" height="226" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+<text x="260" y="70" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">analog_mux_bl_sl_pitch260</text>
+<line x1="90" y1="72.3" x2="150" y2="72.3" stroke="#111827"/>
+<text x="84" y="76.3" text-anchor="end" font-family="Arial" font-size="12">drv_bl</text>
+<line x1="90" y1="104.6" x2="150" y2="104.6" stroke="#111827"/>
+<text x="84" y="108.6" text-anchor="end" font-family="Arial" font-size="12">drv_blb</text>
+<line x1="90" y1="136.9" x2="150" y2="136.9" stroke="#111827"/>
+<text x="84" y="140.9" text-anchor="end" font-family="Arial" font-size="12">drv_sl</text>
+<line x1="90" y1="169.1" x2="150" y2="169.1" stroke="#111827"/>
+<text x="84" y="173.1" text-anchor="end" font-family="Arial" font-size="12">drv_slb</text>
+<line x1="90" y1="201.4" x2="150" y2="201.4" stroke="#111827"/>
+<text x="84" y="205.4" text-anchor="end" font-family="Arial" font-size="12">array_bl</text>
+<line x1="90" y1="233.7" x2="150" y2="233.7" stroke="#111827"/>
+<text x="84" y="237.7" text-anchor="end" font-family="Arial" font-size="12">array_blb</text>
+<line x1="370" y1="72.3" x2="430" y2="72.3" stroke="#111827"/>
+<text x="436" y="76.3" font-family="Arial" font-size="12">array_sl</text>
+<line x1="370" y1="104.6" x2="430" y2="104.6" stroke="#111827"/>
+<text x="436" y="108.6" font-family="Arial" font-size="12">array_slb</text>
+<line x1="370" y1="136.9" x2="430" y2="136.9" stroke="#111827"/>
+<text x="436" y="140.9" font-family="Arial" font-size="12">pre</text>
+<line x1="370" y1="169.1" x2="430" y2="169.1" stroke="#111827"/>
+<text x="436" y="173.1" font-family="Arial" font-size="12">pre_b</text>
+<line x1="370" y1="201.4" x2="430" y2="201.4" stroke="#111827"/>
+<text x="436" y="205.4" font-family="Arial" font-size="12">sel</text>
+<line x1="370" y1="233.7" x2="430" y2="233.7" stroke="#111827"/>
+<text x="436" y="237.7" font-family="Arial" font-size="12">selb</text>
+</svg>

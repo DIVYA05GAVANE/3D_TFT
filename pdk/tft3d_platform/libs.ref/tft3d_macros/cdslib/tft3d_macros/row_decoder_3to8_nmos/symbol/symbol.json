@@ -1,0 +1,25 @@
+{
+  "cell": "row_decoder_3to8_nmos",
+  "pins": [
+    "a1",
+    "a2",
+    "a3",
+    "d0",
+    "d1",
+    "d2",
+    "nand_1",
+    "nand_2",
+    "q0",
+    "q1",
+    "q2",
+    "q3",
+    "q4",
+    "q5",
+    "q6",
+    "q7",
+    "vdd",
+    "vdda",
+    "vss",
+    "vssa"
+  ]
+}

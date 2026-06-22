@@ -1,0 +1,17 @@
+{
+  "library": "tft3d_macros",
+  "cell": "wl_sel",
+  "subckt": "wl_sel",
+  "primary_deck": "3d_wl_sel_transfer",
+  "layout": "gds/wl_sel.gds",
+  "schematic": "sim/NG_spice_macros/tb/3d_wl_sel_transfer.cir",
+  "simulation": "sim/NG_spice_macros/results/3d_wl_sel_transfer.dat",
+  "plot": "sim/NG_spice_macros/plots/3d_wl_sel_transfer.svg",
+  "pins": [
+    "A",
+    "SEL",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}

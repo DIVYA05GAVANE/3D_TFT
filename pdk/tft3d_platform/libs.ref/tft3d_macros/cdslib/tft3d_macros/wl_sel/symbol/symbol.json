@@ -1,0 +1,10 @@
+{
+  "cell": "wl_sel",
+  "pins": [
+    "A",
+    "SEL",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}

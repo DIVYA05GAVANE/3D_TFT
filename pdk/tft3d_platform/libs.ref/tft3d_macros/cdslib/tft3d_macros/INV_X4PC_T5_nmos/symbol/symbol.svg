@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="180" viewBox="0 0 520 180">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="150" y="40" width="220" height="100" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+<text x="260" y="70" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">INV_X4PC_T5_nmos</text>
+<line x1="90" y1="73.3" x2="150" y2="73.3" stroke="#111827"/>
+<text x="84" y="77.3" text-anchor="end" font-family="Arial" font-size="12">A</text>
+<line x1="90" y1="106.7" x2="150" y2="106.7" stroke="#111827"/>
+<text x="84" y="110.7" text-anchor="end" font-family="Arial" font-size="12">Y</text>
+<line x1="370" y1="73.3" x2="430" y2="73.3" stroke="#111827"/>
+<text x="436" y="77.3" font-family="Arial" font-size="12">VDD</text>
+<line x1="370" y1="106.7" x2="430" y2="106.7" stroke="#111827"/>
+<text x="436" y="110.7" font-family="Arial" font-size="12">VSS</text>
+</svg>

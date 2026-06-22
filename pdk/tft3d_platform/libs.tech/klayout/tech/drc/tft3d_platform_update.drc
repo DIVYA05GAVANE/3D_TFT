@@ -1,0 +1,158 @@
+# KLayout DRC runset for the TFT3D platform update rules.
+#
+# Source of rule values:
+# - /Users/samarthjain/Downloads/DRC Rules Update.pdf, exported chat update.
+# - FlexIC Platform Gen 3 documentation was used only to confirm layer names,
+#   GDS layer/datatype values, and KLayout/Calibre-style layer grouping.
+#
+# Layer map used by this runset:
+#   SEMI        3/0    channel
+#   SD         10/0    source/drain metal
+#   GATE       11/0    gate metal
+#   MT1        20/0    routing metal
+#   MT2        21/0    routing metal
+#   RDL        54/0    redistribution metal
+#   BOUND     150/5    local PR/boundary fallback, when present
+#   CHIPOUTLINE 153/5  chip boundary fallback
+#
+# Notes:
+# - Annotation and fill datatypes are merged with drawing datatypes for mask
+#   layers, matching the FlexIC reference deck style. Pin/blockage datatypes are
+#   intentionally excluded from physical mask checks.
+# - The update PDF says "Minimum trace width outside PR boundary >= 10um" but no
+#   explicit PR boundary layer exists in this repo or the FlexIC layer map. This
+#   runset uses BOUND if present, otherwise CHIPOUTLINE. If neither exists, the
+#   trace width check is applied to all trace metals and the category name says
+#   so.
+# - Source and drain labels are not encoded in GDS. Checks that mention source
+#   or drain are applied symmetrically to SD features related to the device.
+#
+# Batch example:
+#   klayout -b -r tft3d_platform_update.drc \
+#     -rd input=/path/to/layout.gds \
+#     -rd report=/path/to/tft3d_platform_update.lyrdb
+
+# Keep the same grid convention used by the local technology wrapper.
+dbu(0.001.um)
+
+source($input) if defined?($input) && $input
+
+if defined?($report) && $report
+  report("TFT3D platform updated DRC rules", $report)
+else
+  report("TFT3D platform updated DRC rules")
+end
+
+def physical_mask_layer(layer, annotation, fill)
+  layer + annotation + fill
+end
+
+def emit(errors, rule_id, description)
+  errors.output(rule_id, "#{rule_id}: #{description}")
+end
+
+# Drawing/annotation/fill mask layers. Pin and blockage datatypes are not merged.
+semi = physical_mask_layer(input(3, 0),  input(3, 1),  input(3, 2))
+sd   = physical_mask_layer(input(10, 0), input(10, 1), input(10, 2))
+gate = physical_mask_layer(input(11, 0), input(11, 1), input(11, 2))
+mt1  = physical_mask_layer(input(20, 0), input(20, 1), input(20, 2))
+mt2  = physical_mask_layer(input(21, 0), input(21, 1), input(21, 2))
+rdl  = physical_mask_layer(input(54, 0), input(54, 1), input(54, 2))
+
+bound = input(150, 5)
+chipoutline = input(153, 5)
+
+# Device helper layers for the supplied SEMI/SD/GATE drawing.
+active_channel = semi & gate
+sd_on_channel = sd & semi
+sd_diffusion = sd.interacting(semi)
+gate_extensions = gate - semi
+device_region = (semi + sd_diffusion + gate).merged
+trace_metals = sd + gate + mt1 + mt2 + rdl
+
+# Updated rules from the PDF/chat table.
+emit(sd_diffusion.drc(bbox_height < 8.0.um),
+     "A_SOURCE_DIFFUSION_HEIGHT",
+     "Source diffusion height must be >= 8um on SD over SEMI")
+
+emit(semi.enclosing(sd_on_channel, 5.0.um),
+     "B_CHANNEL_OVERLAP_VERTICAL",
+     "SEMI/channel overlap around SD must be >= 5um")
+
+emit(sd_diffusion.separation(gate, 2.0.um),
+     "C_SOURCE_TO_GATE_HORIZONTAL",
+     "Source-to-gate horizontal spacing must be >= 2um")
+
+emit(gate_extensions.drc(bbox_height < 2.0.um),
+     "D_GATE_EXTENSION_ABOVE_CHANNEL",
+     "GATE extension beyond active channel must be >= 2um")
+
+emit(gate.drc(bbox_width < 4.0.um),
+     "E_GATE_WIDTH",
+     "GATE width must be >= 4um")
+
+emit(sd_diffusion.separation(gate, 5.0.um),
+     "F_DRAIN_TO_GATE_HORIZONTAL",
+     "Drain-to-gate horizontal spacing must be >= 5um")
+
+emit(sd.enclosing(sd_on_channel, 5.0.um),
+     "G_DRAIN_EXTENSION_RIGHT",
+     "SD extension beyond SEMI/channel edge must be >= 5um")
+
+emit(sd_diffusion.space(3.0.um),
+     "H_SOURCE_TO_DRAIN_SPACING",
+     "Source-to-drain SD spacing must be >= 3um")
+
+emit(device_region.space(10.0.um),
+     "J_VERTICAL_SPACING_TOP_TO_BOTTOM",
+     "Vertical spacing between top/bottom SEMI channel features must be >= 10um")
+
+emit(device_region.space(15.0.um),
+     "K_HORIZONTAL_SPACING_CENTER",
+     "Center horizontal spacing must be >= 15um; updated from 150um in the original image")
+
+emit(active_channel.drc(bbox_min < 0.1.um),
+     "L_MINIMUM_CHANNEL_WIDTH",
+     "Minimum active channel width must be >= 0.1um")
+
+emit(device_region.space(500.0.um),
+     "M_HORIZONTAL_SPACING_BOTTOM",
+     "Bottom horizontal spacing must be >= 500um")
+
+emit(semi.drc(bbox_width < 12.0.um),
+     "N_TOTAL_CHANNEL_WIDTH_BOTTOM",
+     "Total bottom channel width must be >= 12um")
+
+emit(sd_diffusion.drc(bbox_height < 12.0.um),
+     "P_DRAIN_DIFFUSION_HEIGHT",
+     "Drain diffusion height must be >= 12um on SD over SEMI")
+
+emit(sd_diffusion.drc(bbox_width < 20.0.um),
+     "Q_SOURCE_DIFFUSION_WIDTH_RIGHT",
+     "Right-side source diffusion width must be >= 20um on SD over SEMI")
+
+emit(active_channel.drc(bbox_width < 3.0.um),
+     "X_GATE_TO_CHANNEL_OVERLAP_HORIZONTAL",
+     "Gate-to-channel overlap must be >= 3um")
+
+# Additional PDF/chat rule.
+if !bound.is_empty?
+  pr_boundary = bound
+  boundary_name = "BOUND"
+elsif !chipoutline.is_empty?
+  pr_boundary = chipoutline
+  boundary_name = "CHIPOUTLINE"
+else
+  pr_boundary = nil
+  boundary_name = nil
+end
+
+if pr_boundary
+  emit((trace_metals - pr_boundary).width(10.0.um),
+       "TRACE_WIDTH_OUTSIDE_PR_BOUNDARY",
+       "Trace width outside #{boundary_name} must be >= 10um")
+else
+  emit(trace_metals.width(10.0.um),
+       "TRACE_WIDTH_NO_PR_BOUNDARY_FOUND",
+       "No BOUND or CHIPOUTLINE found; checking all trace metal widths against >= 10um")
+end

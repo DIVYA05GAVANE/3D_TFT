@@ -1,0 +1,2 @@
+-v ../../open3dstack/verilog/open3dstack_user_defines.v
+-v ../../openlane/open3dstack_user_project_wrapper/src/open3dstack_user_project_wrapper.v

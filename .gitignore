@@ -14,3 +14,4 @@ __pycache__/
 *.dat
 *.raw
 *.log
+pdk/tft3d_platform/libs.ref/tft3d_macros/sim/NG_spice_macros/montecarlo/

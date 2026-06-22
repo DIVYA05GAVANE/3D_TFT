@@ -1,0 +1,9 @@
+{
+  "cell": "INV_X4PC_T5_nmos",
+  "pins": [
+    "A",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}

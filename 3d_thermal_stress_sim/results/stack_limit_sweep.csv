@@ -1,0 +1,221 @@
+avg_die_temp_C,curvature_1_per_m,eps0,failed,failure_reasons,geo,gmsh_rc,log_tail,max_failure_ratio,max_von_mises_MPa,mechanical_dir,msh,order,pairs,peak_temp_C,rc,sif,thermal_case_dir,tiers,total_thickness_um,vtu,warpage_um,worst_layer_material,worst_layer_name
+27.00200000000001,-0.003144113312665855,-2.5225672476075834e-07,False,,./mechanical/fefet_on_tft/pairs_0001/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00020 sec
+
+Factorization took 0.00386 sec
+Solve took 0.00011 sec
+
+Emulation took 0.007 sec
+Peak memory usage: 61.73 MB",0.6008941700769755,150.2235425192439,./mechanical/fefet_on_tft/pairs_0001,./mechanical/fefet_on_tft/pairs_0001/stack_cross_section.msh,fefet_on_tft,1,27.00400000000002,0,./mechanical/fefet_on_tft/pairs_0001/case.sif,./thermal_runs/fefet_on_tft/pairs_0001,2,500.5179999999998,./mechanical/fefet_on_tft/pairs_0001/stress_warpage_reduced_order.vtu,0.15720566563329277,ZnO,TFT_ZnO
+27.00400000000002,-0.006923873131400526,-5.590227271463307e-07,False,,./mechanical/fefet_on_tft/pairs_0002/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00036 sec
+
+Factorization took 0.00355 sec
+Solve took 0.00013 sec
+
+Emulation took 0.008 sec
+Peak memory usage: 63.10 MB",0.6019711640943436,150.4927910235859,./mechanical/fefet_on_tft/pairs_0002,./mechanical/fefet_on_tft/pairs_0002/stack_cross_section.msh,fefet_on_tft,2,27.008000000000038,0,./mechanical/fefet_on_tft/pairs_0002/case.sif,./thermal_runs/fefet_on_tft/pairs_0002,4,501.13599999999957,./mechanical/fefet_on_tft/pairs_0002/stress_warpage_reduced_order.vtu,0.3461936565700263,ZnO,TFT_ZnO
+27.00837500000003,-0.014397033060627052,-1.1699809415261112e-06,False,,./mechanical/fefet_on_tft/pairs_0004/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00057 sec
+
+Factorization took 0.01202 sec
+Solve took 0.00051 sec
+
+Emulation took 0.017 sec
+Peak memory usage: 64.10 MB",0.6041105378560357,151.02763446400894,./mechanical/fefet_on_tft/pairs_0004,./mechanical/fefet_on_tft/pairs_0004/stack_cross_section.msh,fefet_on_tft,4,27.01600000000002,0,./mechanical/fefet_on_tft/pairs_0004/case.sif,./thermal_runs/fefet_on_tft/pairs_0004,8,502.3719999999991,./mechanical/fefet_on_tft/pairs_0004/stress_warpage_reduced_order.vtu,0.7198516530313526,ZnO,TFT_ZnO
+27.01768750000002,-0.02900300958971117,-2.3738141206987425e-06,False,,./mechanical/fefet_on_tft/pairs_0008/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00220 sec
+
+Factorization took 0.01654 sec
+Solve took 0.00064 sec
+
+Emulation took 0.024 sec
+Peak memory usage: 65.85 MB",0.608334857664867,152.08371441621674,./mechanical/fefet_on_tft/pairs_0008,./mechanical/fefet_on_tft/pairs_0008/stack_cross_section.msh,fefet_on_tft,8,27.035000000000025,0,./mechanical/fefet_on_tft/pairs_0008/case.sif,./thermal_runs/fefet_on_tft/pairs_0008,16,504.8439999999981,./mechanical/fefet_on_tft/pairs_0008/stress_warpage_reduced_order.vtu,1.4501504794855584,ZnO,TFT_ZnO
+27.038375000000016,-0.056898371107811214,-4.725281869513603e-06,False,,./mechanical/fefet_on_tft/pairs_0016/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00190 sec
+
+Factorization took 0.03574 sec
+Solve took 0.00056 sec
+
+Emulation took 0.051 sec
+Peak memory usage: 69.23 MB",0.6165637855306512,154.1409463826628,./mechanical/fefet_on_tft/pairs_0016,./mechanical/fefet_on_tft/pairs_0016/stack_cross_section.msh,fefet_on_tft,16,27.079000000000008,0,./mechanical/fefet_on_tft/pairs_0016/case.sif,./thermal_runs/fefet_on_tft/pairs_0016,32,509.78799999999615,./mechanical/fefet_on_tft/pairs_0016/stress_warpage_reduced_order.vtu,2.844918555390561,ZnO,TFT_ZnO
+27.089937500000005,-0.10775084880102384,-9.196285179890344e-06,False,,./mechanical/fefet_on_tft/pairs_0032/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00348 sec
+
+Factorization took 0.04090 sec
+Solve took 0.00257 sec
+
+Emulation took 0.072 sec
+Peak memory usage: 76.32 MB",0.6321838819837433,158.04597049593582,./mechanical/fefet_on_tft/pairs_0032,./mechanical/fefet_on_tft/pairs_0032/stack_cross_section.msh,fefet_on_tft,32,27.19500000000005,0,./mechanical/fefet_on_tft/pairs_0032/case.sif,./thermal_runs/fefet_on_tft/pairs_0032,64,519.6759999999922,./mechanical/fefet_on_tft/pairs_0032/stress_warpage_reduced_order.vtu,5.387542440051192,ZnO,TFT_ZnO
+27.233632812500026,-0.19204091320683858,-1.7229018762935108e-05,False,,./mechanical/fefet_on_tft/pairs_0064/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00688 sec
+
+Factorization took 0.09066 sec
+Solve took 0.00294 sec
+
+Emulation took 0.147 sec
+Peak memory usage: 89.78 MB",0.6603397673231693,165.08494183079233,./mechanical/fefet_on_tft/pairs_0064,./mechanical/fefet_on_tft/pairs_0064/stack_cross_section.msh,fefet_on_tft,64,27.540999999999997,0,./mechanical/fefet_on_tft/pairs_0064/case.sif,./thermal_runs/fefet_on_tft/pairs_0064,128,539.4519999999844,./mechanical/fefet_on_tft/pairs_0064/stress_warpage_reduced_order.vtu,9.602045660341929,ZnO,TFT_ZnO
+27.690089843750016,-0.3058862076604624,-2.97518604705455e-05,False,,./mechanical/fefet_on_tft/pairs_0128/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.03231 sec
+
+Factorization took 0.19162 sec
+Solve took 0.00455 sec
+
+Emulation took 0.283 sec
+Peak memory usage: 117.98 MB",0.7060812478478665,176.52031196196663,./mechanical/fefet_on_tft/pairs_0128,./mechanical/fefet_on_tft/pairs_0128/stack_cross_section.msh,fefet_on_tft,128,28.710000000000036,0,./mechanical/fefet_on_tft/pairs_0128/case.sif,./thermal_runs/fefet_on_tft/pairs_0128,256,579.0039999999689,./mechanical/fefet_on_tft/pairs_0128/stress_warpage_reduced_order.vtu,15.294310383023118,ZnO,TFT_ZnO
+29.306767578125047,-0.3942975699537484,-4.1447210976303415e-05,False,,./mechanical/fefet_on_tft/pairs_0256/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.03456 sec
+
+Factorization took 0.37906 sec
+Solve took 0.01137 sec
+
+Emulation took 0.611 sec
+Peak memory usage: 172.10 MB",0.7710551449878809,192.76378624697023,./mechanical/fefet_on_tft/pairs_0256,./mechanical/fefet_on_tft/pairs_0256/stack_cross_section.msh,fefet_on_tft,256,32.96800000000002,0,./mechanical/fefet_on_tft/pairs_0256/case.sif,./thermal_runs/fefet_on_tft/pairs_0256,512,658.1079999999375,./mechanical/fefet_on_tft/pairs_0256/stress_warpage_reduced_order.vtu,19.714878497687423,Ni,TFT_Ni
+35.43781933593748,-0.3297339365464066,-1.6604888299358e-05,False,,./mechanical/fefet_on_tft/pairs_0512/stack_cross_section.geo,-1,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.06980 sec
+
+Factorization took 0.69296 sec
+Solve took 0.01831 sec
+
+Emulation took 1.253 sec
+Peak memory usage: 279.16 MB",0.9942756395465873,248.56890988664682,./mechanical/fefet_on_tft/pairs_0512,./mechanical/fefet_on_tft/pairs_0512/stack_cross_section.msh,fefet_on_tft,512,48.827,0,./mechanical/fefet_on_tft/pairs_0512/case.sif,./thermal_runs/fefet_on_tft/pairs_0512,1024,816.3159999998751,./mechanical/fefet_on_tft/pairs_0512/stress_warpage_reduced_order.vtu,16.48669682732033,Ni,TFT_Ni
+59.5005073242188,-0.023238136958056203,0.00019641478759700037,True,thermal peak 106.40 C >= 85.0 C; stress ratio 1.501 >= 1.0,./mechanical/fefet_on_tft/pairs_1024/stack_cross_section.geo,-1,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.12222 sec
+
+Factorization took 1.38167 sec
+Solve took 0.03447 sec
+
+Emulation took 2.419 sec
+Peak memory usage: 495.77 MB",1.5010846695034625,375.2711673758656,./mechanical/fefet_on_tft/pairs_1024,./mechanical/fefet_on_tft/pairs_1024/stack_cross_section.msh,fefet_on_tft,1024,106.399,0,./mechanical/fefet_on_tft/pairs_1024/case.sif,./thermal_runs/fefet_on_tft/pairs_1024,2048,1132.7319999998597,./mechanical/fefet_on_tft/pairs_1024/stress_warpage_reduced_order.vtu,1.1619068479028103,Ni,TFT_Ni
+27.00200000000001,-0.0031443678784820917,-2.5225680427155e-07,False,,./mechanical/tft_on_fefet/pairs_0001/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00018 sec
+
+Factorization took 0.00241 sec
+Solve took 0.00034 sec
+
+Emulation took 0.004 sec
+Peak memory usage: 925.54 MB",0.6008950138256582,150.22375345641456,./mechanical/tft_on_fefet/pairs_0001,./mechanical/tft_on_fefet/pairs_0001/stack_cross_section.msh,tft_on_fefet,1,27.00400000000002,0,./mechanical/tft_on_fefet/pairs_0001/case.sif,./thermal_runs/tft_on_fefet/pairs_0001,2,500.5179999999998,./mechanical/tft_on_fefet/pairs_0001/stress_warpage_reduced_order.vtu,0.15721839392410458,ZnO,TFT_ZnO
+27.00400000000002,-0.006924386045163629,-5.590230935352196e-07,False,,./mechanical/tft_on_fefet/pairs_0002/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00031 sec
+
+Factorization took 0.01183 sec
+Solve took 0.00015 sec
+
+Emulation took 0.014 sec
+Peak memory usage: 925.54 MB",0.6019730123484861,150.49325308712153,./mechanical/tft_on_fefet/pairs_0002,./mechanical/tft_on_fefet/pairs_0002/stack_cross_section.msh,tft_on_fefet,2,27.008000000000038,0,./mechanical/tft_on_fefet/pairs_0002/case.sif,./thermal_runs/tft_on_fefet/pairs_0002,4,501.13599999999957,./mechanical/tft_on_fefet/pairs_0002/stress_warpage_reduced_order.vtu,0.3462193022581815,ZnO,TFT_ZnO
+27.00837500000003,-0.014398073577495724,-1.1699824908820692e-06,False,,./mechanical/tft_on_fefet/pairs_0004/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00067 sec
+
+Factorization took 0.00773 sec
+Solve took 0.00018 sec
+
+Emulation took 0.012 sec
+Peak memory usage: 925.54 MB",0.604114376678706,151.02859416967652,./mechanical/tft_on_fefet/pairs_0004,./mechanical/tft_on_fefet/pairs_0004/stack_cross_section.msh,tft_on_fefet,4,27.01600000000002,0,./mechanical/tft_on_fefet/pairs_0004/case.sif,./thermal_runs/tft_on_fefet/pairs_0004,8,502.3719999999991,./mechanical/tft_on_fefet/pairs_0004/stress_warpage_reduced_order.vtu,0.7199036788747862,ZnO,TFT_ZnO
+27.01731250000002,-0.029005495159886232,-2.376450077109357e-06,False,,./mechanical/tft_on_fefet/pairs_0008/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00100 sec
+
+Factorization took 0.01505 sec
+Solve took 0.00032 sec
+
+Emulation took 0.022 sec
+Peak memory usage: 925.54 MB",0.6083415165761532,152.0853791440383,./mechanical/tft_on_fefet/pairs_0008,./mechanical/tft_on_fefet/pairs_0008/stack_cross_section.msh,tft_on_fefet,8,27.03400000000005,0,./mechanical/tft_on_fefet/pairs_0008/case.sif,./thermal_runs/tft_on_fefet/pairs_0008,16,504.8439999999981,./mechanical/tft_on_fefet/pairs_0008/stress_warpage_reduced_order.vtu,1.4502747579943116,ZnO,TFT_ZnO
+27.03790625000002,-0.05690351142513293,-4.727964869612017e-06,False,,./mechanical/tft_on_fefet/pairs_0016/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00246 sec
+
+Factorization took 0.02839 sec
+Solve took 0.00058 sec
+
+Emulation took 0.044 sec
+Peak memory usage: 925.54 MB",0.6165780694523202,154.14451736308004,./mechanical/tft_on_fefet/pairs_0016,./mechanical/tft_on_fefet/pairs_0016/stack_cross_section.msh,tft_on_fefet,16,27.07800000000003,0,./mechanical/tft_on_fefet/pairs_0016/case.sif,./thermal_runs/tft_on_fefet/pairs_0016,32,509.78799999999615,./mechanical/tft_on_fefet/pairs_0016/stress_warpage_reduced_order.vtu,2.845175571256647,ZnO,TFT_ZnO
+27.088875000000012,-0.10776416948098724,-9.204519784386802e-06,False,,./mechanical/tft_on_fefet/pairs_0032/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00345 sec
+
+Factorization took 0.06665 sec
+Solve took 0.00123 sec
+
+Emulation took 0.088 sec
+Peak memory usage: 925.54 MB",0.6322106845135905,158.05267112839763,./mechanical/tft_on_fefet/pairs_0032,./mechanical/tft_on_fefet/pairs_0032/stack_cross_section.msh,tft_on_fefet,32,27.192000000000007,0,./mechanical/tft_on_fefet/pairs_0032/case.sif,./thermal_runs/tft_on_fefet/pairs_0032,64,519.6759999999922,./mechanical/tft_on_fefet/pairs_0032/stress_warpage_reduced_order.vtu,5.388208474049362,ZnO,TFT_ZnO
+27.23157812500002,-0.19207005167185645,-1.7240610610811003e-05,False,,./mechanical/tft_on_fefet/pairs_0064/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.00675 sec
+
+Factorization took 0.11312 sec
+Solve took 0.00140 sec
+
+Emulation took 0.152 sec
+Peak memory usage: 925.54 MB",0.6603909244635071,165.09773111587677,./mechanical/tft_on_fefet/pairs_0064,./mechanical/tft_on_fefet/pairs_0064/stack_cross_section.msh,tft_on_fefet,64,27.537000000000035,0,./mechanical/tft_on_fefet/pairs_0064/case.sif,./thermal_runs/tft_on_fefet/pairs_0064,128,539.4519999999844,./mechanical/tft_on_fefet/pairs_0064/stress_warpage_reduced_order.vtu,9.603502583592823,ZnO,TFT_ZnO
+27.68580859375001,-0.3059574175652028,-2.9779861316398806e-05,False,,./mechanical/tft_on_fefet/pairs_0128/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.01172 sec
+
+Factorization took 0.16415 sec
+Solve took 0.00918 sec
+
+Emulation took 0.269 sec
+Peak memory usage: 925.54 MB",0.7061687700806621,176.54219252016554,./mechanical/tft_on_fefet/pairs_0128,./mechanical/tft_on_fefet/pairs_0128/stack_cross_section.msh,tft_on_fefet,128,28.701000000000022,0,./mechanical/tft_on_fefet/pairs_0128/case.sif,./thermal_runs/tft_on_fefet/pairs_0128,256,579.0039999999689,./mechanical/tft_on_fefet/pairs_0128/stress_warpage_reduced_order.vtu,15.297870878260142,ZnO,TFT_ZnO
+29.297964843750037,-0.39444370514997407,-4.151232044156108e-05,False,,./mechanical/tft_on_fefet/pairs_0256/stack_cross_section.geo,0,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.04102 sec
+
+Factorization took 0.38326 sec
+Solve took 0.01203 sec
+
+Emulation took 0.653 sec
+Peak memory usage: 925.54 MB",0.7710265114026829,192.75662785067072,./mechanical/tft_on_fefet/pairs_0256,./mechanical/tft_on_fefet/pairs_0256/stack_cross_section.msh,tft_on_fefet,256,32.94900000000001,0,./mechanical/tft_on_fefet/pairs_0256/case.sif,./thermal_runs/tft_on_fefet/pairs_0256,512,658.1079999999375,./mechanical/tft_on_fefet/pairs_0256/stress_warpage_reduced_order.vtu,19.7221852574987,Ni,TFT_Ni
+35.42022265625001,-0.3299480294513602,-1.675412785648225e-05,False,,./mechanical/tft_on_fefet/pairs_0512/stack_cross_section.geo,-1,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.08827 sec
+
+Factorization took 0.65820 sec
+Solve took 0.01988 sec
+
+Emulation took 1.154 sec
+Peak memory usage: 925.54 MB",0.9940572257627671,248.51430644069177,./mechanical/tft_on_fefet/pairs_0512,./mechanical/tft_on_fefet/pairs_0512/stack_cross_section.msh,tft_on_fefet,512,48.78800000000001,0,./mechanical/tft_on_fefet/pairs_0512/case.sif,./thermal_runs/tft_on_fefet/pairs_0512,1024,816.3159999998751,./mechanical/tft_on_fefet/pairs_0512/stress_warpage_reduced_order.vtu,16.49740147256801,Ni,TFT_Ni
+59.46700634765627,-0.023395789967740194,0.00019610314850374648,True,thermal peak 106.33 C >= 85.0 C; stress ratio 1.500 >= 1.0,./mechanical/tft_on_fefet/pairs_1024/stack_cross_section.geo,-1,"
+Preparing thermal data ... 
+Used threads (1) / maximum available for OpenMP (8)
+Preparing thermal data took 0.14150 sec
+
+Factorization took 1.49655 sec
+Solve took 0.04671 sec
+
+Emulation took 3.056 sec
+Peak memory usage: 925.54 MB",1.500423338670635,375.1058346676587,./mechanical/tft_on_fefet/pairs_1024,./mechanical/tft_on_fefet/pairs_1024/stack_cross_section.msh,tft_on_fefet,1024,106.32600000000002,0,./mechanical/tft_on_fefet/pairs_1024/case.sif,./thermal_runs/tft_on_fefet/pairs_1024,2048,1132.7319999998597,./mechanical/tft_on_fefet/pairs_1024/stress_warpage_reduced_order.vtu,1.1697894983870099,Ni,TFT_Ni

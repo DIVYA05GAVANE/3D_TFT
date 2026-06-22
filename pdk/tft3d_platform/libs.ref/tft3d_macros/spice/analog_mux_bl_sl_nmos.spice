@@ -1,0 +1,12 @@
+* Analog mux for BL/BLB and SL/SLB, corrected from analog_mux_2to1_diff_nmos.spice.
+* Pin order preserves D G S for nfet_* instances.
+.subckt analog_mux_bl_sl_nmos drv_bl drv_blb drv_sl drv_slb array_bl array_blb array_sl array_slb pre pre_b sel selb
+XBL_SEL   drv_bl   sel  array_bl   nfet_w6u_l5
+XBLB_SEL  drv_blb  sel  array_blb  nfet_w24u_l5
+XSL_SEL   drv_sl   sel  array_sl   nfet_w6u_l5
+XSLB_SEL  drv_slb  sel  array_slb  nfet_w24u_l5
+XBL_PRE   pre      selb array_bl   nfet_w6u_l5
+XBLB_PRE  pre_b    selb array_blb  nfet_w6u_l5
+XSL_PRE   pre      selb array_sl   nfet_w6u_l5
+XSLB_PRE  pre_b    selb array_slb  nfet_w6u_l5
+.ends analog_mux_bl_sl_nmos

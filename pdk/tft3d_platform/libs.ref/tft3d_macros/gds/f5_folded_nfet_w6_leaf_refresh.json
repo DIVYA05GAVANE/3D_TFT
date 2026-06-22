@@ -1,0 +1,275 @@
+{
+  "backup_gds": "tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_leaf_refresh_20260622_154656.bak",
+  "status": "pass",
+  "target_gds": "tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
+  "target_sha256_after": "5927b4ff6da71a8c1b5b3679d1e44cb9636a9a62623eb4003f9aee974f1c95ee",
+  "target_sha256_before": "e48d0deea034323f3f6c831400884dd2b54c7e746f241e94ffaa255c1d0154bd",
+  "updates": [
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "col_dec__nfet_W6u_L5"
+      },
+      "ancestor_cells": [
+        "col_dec__NAND3_X4RL_T5",
+        "column_decoder_3to8_nmos",
+        "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+        "open3dstack_user_project_wrapper"
+      ],
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "col_dec__nfet_W6u_L5"
+      },
+      "direct_parents": [
+        {
+          "cell": "col_dec__NAND3_X4RL_T5",
+          "references": 1
+        }
+      ],
+      "source_cell": "nfet_W6u_L5",
+      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
+      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
+      "target_cell": "col_dec__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "decmap__nfet_W6u_L5"
+      },
+      "ancestor_cells": [
+        "decmap__NAND3_X4RL_T5",
+        "decmap__nfet_W6u_L5_BLACKBOX_PINS",
+        "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+        "open3dstack_user_project_wrapper",
+        "row_decoder_3to8_nmos_L",
+        "row_decoder_3to8_nmos_R"
+      ],
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "decmap__nfet_W6u_L5"
+      },
+      "direct_parents": [
+        {
+          "cell": "decmap__nfet_W6u_L5_BLACKBOX_PINS",
+          "references": 1
+        }
+      ],
+      "source_cell": "nfet_W6u_L5",
+      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
+      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
+      "target_cell": "decmap__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "pch__nfet_W6u_L5"
+      },
+      "ancestor_cells": [
+        "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+        "open3dstack_user_project_wrapper",
+        "pch_pr_nfet_W6u_L5_L",
+        "pch_pr_nfet_W6u_L5_R",
+        "precharge_equalizer_nmos_6u",
+        "precharge_equalizer_nmos_6u_core"
+      ],
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "pch__nfet_W6u_L5"
+      },
+      "direct_parents": [
+        {
+          "cell": "pch_pr_nfet_W6u_L5_L",
+          "references": 1
+        },
+        {
+          "cell": "pch_pr_nfet_W6u_L5_R",
+          "references": 1
+        }
+      ],
+      "source_cell": "nfet_W6u_L5",
+      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
+      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
+      "target_cell": "pch__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "sa_w6__nfet_W6u_L5"
+      },
+      "ancestor_cells": [
+        "opamp_6u",
+        "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+        "open3dstack_user_project_wrapper"
+      ],
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "sa_w6__nfet_W6u_L5"
+      },
+      "direct_parents": [
+        {
+          "cell": "opamp_6u",
+          "references": 6
+        }
+      ],
+      "source_cell": "nfet_W6u_L5",
+      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
+      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
+      "target_cell": "sa_w6__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 5,
+        "paths": 0,
+        "polygons": 15,
+        "references": 1,
+        "target_cell": "sel__nfet_W6u_L5"
+      },
+      "ancestor_cells": [
+        "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+        "open3dstack_user_project_wrapper",
+        "wl_sel"
+      ],
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
+        "labels": 4,
+        "paths": 0,
+        "polygons": 12,
+        "references": 1,
+        "target_cell": "sel__nfet_W6u_L5"
+      },
+      "direct_parents": [
+        {
+          "cell": "wl_sel",
+          "references": 1
+        }
+      ],
+      "source_cell": "nfet_W6u_L5",
+      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
+      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
+      "target_cell": "sel__nfet_W6u_L5"
+    }
+  ]
+}

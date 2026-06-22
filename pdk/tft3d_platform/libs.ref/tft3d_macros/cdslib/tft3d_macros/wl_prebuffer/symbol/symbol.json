@@ -1,0 +1,9 @@
+{
+  "cell": "wl_prebuffer",
+  "pins": [
+    "A",
+    "Y",
+    "VDD",
+    "VSS"
+  ]
+}

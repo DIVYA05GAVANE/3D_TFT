@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="198" viewBox="0 0 520 198">
+<rect width="100%" height="100%" fill="white"/>
+<rect x="150" y="40" width="220" height="118" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+<text x="260" y="70" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700">precharge_equalizer_nmos_6u_pitch260</text>
+<line x1="90" y1="69.5" x2="150" y2="69.5" stroke="#111827"/>
+<text x="84" y="73.5" text-anchor="end" font-family="Arial" font-size="12">bl</text>
+<line x1="90" y1="99.0" x2="150" y2="99.0" stroke="#111827"/>
+<text x="84" y="103.0" text-anchor="end" font-family="Arial" font-size="12">blb</text>
+<line x1="90" y1="128.5" x2="150" y2="128.5" stroke="#111827"/>
+<text x="84" y="132.5" text-anchor="end" font-family="Arial" font-size="12">eq</text>
+<line x1="370" y1="69.5" x2="430" y2="69.5" stroke="#111827"/>
+<text x="436" y="73.5" font-family="Arial" font-size="12">pchg</text>
+<line x1="370" y1="99.0" x2="430" y2="99.0" stroke="#111827"/>
+<text x="436" y="103.0" font-family="Arial" font-size="12">vdd</text>
+<line x1="370" y1="128.5" x2="430" y2="128.5" stroke="#111827"/>
+<text x="436" y="132.5" font-family="Arial" font-size="12">vpre</text>
+</svg>

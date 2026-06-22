@@ -1,0 +1,30 @@
+{
+  "cell": "column_driver_vertical_pitch260",
+  "pins": [
+    "bl",
+    "blb",
+    "col_sel",
+    "din",
+    "dinb",
+    "nwr0",
+    "nwr1",
+    "sl",
+    "slb",
+    "vdd",
+    "vdda",
+    "vphb_bl",
+    "vphb_sl",
+    "vph_bl",
+    "vph_sl",
+    "vplb_bl",
+    "vplb_sl",
+    "vpl_bl",
+    "vpl_sl",
+    "vss",
+    "vssa",
+    "we",
+    "wl_in",
+    "wr0",
+    "wr1"
+  ]
+}

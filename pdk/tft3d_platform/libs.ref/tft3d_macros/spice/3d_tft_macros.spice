@@ -45,8 +45,8 @@ COUT Y VSS 10f
 .ends wl_sel
 
 * Physical-only SRAM array flavour placeholders extracted from
-* Stack_SRAM_260605_F.gds. The source GDS has WL-number geometry on layer 40,
-* but no named electrical pin labels.
+* Stack_SRAM_260605_F.gds.  F5 carries the explicit peripheral_ic array
+* interface: top BL/BLB pairs, bottom SL/SLB pairs, and left/right WL pins.
 .subckt stack_sram_array_f0
 .ends stack_sram_array_f0
 
@@ -62,5 +62,5 @@ COUT Y VSS 10f
 .subckt stack_sram_array_f4
 .ends stack_sram_array_f4
 
-.subckt stack_sram_array_f5
+.subckt stack_sram_array_f5 bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<0> wl<1> wl<2> wl<3> wl<4> wl<5> wl<6> wl<7> wl<8> wl<9> wl<10> wl<11> wl<12> wl<13> wl<14> wl<15> wl<16> wl<17> wl<18> wl<19> wl<20> wl<21> wl<22> wl<23> wl<24> wl<25> wl<26> wl<27> wl<28> wl<29> wl<30> wl<31>
 .ends stack_sram_array_f5
