@@ -306,9 +306,80 @@
   "source_sha256": "efc0cbea4937c7af4757ff88d47e9ddd7195102bc830cf1944790c75c89013a3",
   "status": "pass",
   "target_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
-  "target_sha256_after": "b6ccd23ea761434df696a20097d5e9a2516d6e0da99d2ac2e0a5fba569e2795d",
+  "target_sha256_after": "f94eb88aed0080ef83a3bb4bef9d0bde5b2f9d2412d0e9a6469df38c005c99e8",
   "target_sha256_after_hierarchy_only": "4747a995fce08659f16393434ef188b471ba5aac9ed00c43820cb4b7cd11baba",
+  "target_sha256_after_prune": "f94eb88aed0080ef83a3bb4bef9d0bde5b2f9d2412d0e9a6469df38c005c99e8",
   "target_sha256_before": "6d852755e1ebe5f0fb82f255962da1dff36319b423beef07301225071f4b7600",
+  "unreachable_cell_prune": {
+    "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_prune_unreachable_20260622_174227.bak",
+    "reachable_cell_count": 97,
+    "removed_unreachable_cell_count": 22,
+    "removed_unreachable_cells": [
+      "amux__M2_M1_CDNS_781016356330",
+      "amux__M2_M1_CDNS_782117841190",
+      "amux__M2_M1_CDNS_782127390580",
+      "amux__nfet_W24u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__pcont_CDNS_781016356330",
+      "amux__pcont_CDNS_782117841190",
+      "amux__pcont_CDNS_782127390580",
+      "col_dec__M2_M1_CDNS_782117841190",
+      "col_dec__pcont_CDNS_781250019470",
+      "col_dec__pcont_CDNS_782117841190",
+      "decmap__M2_M1_CDNS_782117841190",
+      "decmap__pcont_CDNS_780998839040",
+      "decmap__pcont_CDNS_782117841190",
+      "pch__M2_M1_CDNS_782117841190",
+      "pch__pcont_CDNS_780998839040",
+      "pch__pcont_CDNS_782117841190",
+      "sa_w6__M2_M1_CDNS_782117841190",
+      "sa_w6__pcont_CDNS_780998839040",
+      "sa_w6__pcont_CDNS_782117841190",
+      "sel__M2_M1_CDNS_782117841190",
+      "sel__pcont_CDNS_782117841190"
+    ],
+    "sha256_after_prune": "f94eb88aed0080ef83a3bb4bef9d0bde5b2f9d2412d0e9a6469df38c005c99e8",
+    "sha256_before_prune": "b6ccd23ea761434df696a20097d5e9a2516d6e0da99d2ac2e0a5fba569e2795d",
+    "status": "pass",
+    "target_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
+    "top_kept": "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+    "top_level_after_prune": [
+      "open3dstack_f5_decoder_compact_spice_dual_sided_top"
+    ],
+    "top_level_before_prune": [
+      "amux__M2_M1_CDNS_782117841190",
+      "amux__nfet_W24u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__pcont_CDNS_782117841190",
+      "col_dec__M2_M1_CDNS_782117841190",
+      "col_dec__pcont_CDNS_781250019470",
+      "col_dec__pcont_CDNS_782117841190",
+      "decmap__M2_M1_CDNS_782117841190",
+      "decmap__pcont_CDNS_780998839040",
+      "decmap__pcont_CDNS_782117841190",
+      "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+      "pch__M2_M1_CDNS_782117841190",
+      "pch__pcont_CDNS_780998839040",
+      "pch__pcont_CDNS_782117841190",
+      "sa_w6__M2_M1_CDNS_782117841190",
+      "sa_w6__pcont_CDNS_780998839040",
+      "sa_w6__pcont_CDNS_782117841190",
+      "sel__M2_M1_CDNS_782117841190",
+      "sel__pcont_CDNS_782117841190"
+    ],
+    "user_wrapper_bbox": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        18000.0,
+        18000.0
+      ]
+    ],
+    "user_wrapper_present": true,
+    "user_wrapper_ref_count": 98
+  },
   "updates": [
     {
       "after": {
