@@ -1,9 +1,308 @@
 {
-  "backup_gds": "tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_leaf_refresh_20260622_154656.bak",
+  "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_leaf_refresh_20260622_164146.bak",
+  "dependency_cells_copied_or_refreshed": [
+    "col_dec__M2_M1_CDNS_782117841190",
+    "col_dec__pcont_CDNS_782117841190",
+    "decmap__M2_M1_CDNS_782117841190",
+    "decmap__pcont_CDNS_782117841190",
+    "pch__M2_M1_CDNS_782117841190",
+    "pch__pcont_CDNS_782117841190",
+    "sa_w6__M2_M1_CDNS_782117841190",
+    "sa_w6__pcont_CDNS_782117841190",
+    "sel__M2_M1_CDNS_782117841190",
+    "sel__pcont_CDNS_782117841190"
+  ],
+  "flattened_cells_not_hierarchically_refreshed": [],
+  "flattened_mux_refresh": {
+    "after": {
+      "bbox": [
+        [
+          128.0,
+          0.0
+        ],
+        [
+          260.0,
+          620.0
+        ]
+      ],
+      "labels": 12,
+      "layers": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          150,
+          5
+        ],
+        [
+          152,
+          5
+        ]
+      ],
+      "paths": 0,
+      "polygons": 10111,
+      "references": 0
+    },
+    "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_mux_flat_refresh_20260622_164409.bak",
+    "before": {
+      "bbox": [
+        [
+          128.0,
+          0.0
+        ],
+        [
+          260.0,
+          620.0
+        ]
+      ],
+      "labels": 12,
+      "layers": [
+        [
+          3,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          150,
+          5
+        ],
+        [
+          152,
+          5
+        ]
+      ],
+      "paths": 0,
+      "polygons": 10098,
+      "references": 0
+    },
+    "cell": "analog_mux_2to1_diff_nmos",
+    "clip_window": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "labels_preserved": [
+      "bl0",
+      "blb0",
+      "gbl",
+      "gblb",
+      "pre",
+      "pre_b",
+      "sel",
+      "selb"
+    ],
+    "readback": {
+      "bbox": [
+        [
+          128.0,
+          0.0
+        ],
+        [
+          260.0,
+          620.0
+        ]
+      ],
+      "labels": 12,
+      "layers": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          150,
+          5
+        ],
+        [
+          152,
+          5
+        ]
+      ],
+      "paths": 0,
+      "polygons": 10111,
+      "references": 0
+    },
+    "source_leaf_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/nfet_W6u_L5.gds",
+    "source_mux_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/analog_mux_bl_sl_pitch260.gds",
+    "status": "pass",
+    "target_sha256_after": "61d08d10497aec2c462babe442e4dbf248ab6a4dfb3c6431986fa9b985522ef9",
+    "target_sha256_before": "dddcc926776f89624212815fb48c365addac93b31092e063cd5a9153b1a71465"
+  },
+  "readback_checks": [
+    {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 5,
+      "paths": 0,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "col_dec__pcont_CDNS_782117841190",
+        "col_dec__M2_M1_CDNS_782117841190",
+        "col_dec__M2_M1_CDNS_782117841190"
+      ],
+      "target_cell": "col_dec__nfet_W6u_L5"
+    },
+    {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 5,
+      "paths": 0,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "decmap__pcont_CDNS_782117841190",
+        "decmap__M2_M1_CDNS_782117841190",
+        "decmap__M2_M1_CDNS_782117841190"
+      ],
+      "target_cell": "decmap__nfet_W6u_L5"
+    },
+    {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 5,
+      "paths": 0,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "pch__pcont_CDNS_782117841190",
+        "pch__M2_M1_CDNS_782117841190",
+        "pch__M2_M1_CDNS_782117841190"
+      ],
+      "target_cell": "pch__nfet_W6u_L5"
+    },
+    {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 5,
+      "paths": 0,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "sa_w6__pcont_CDNS_782117841190",
+        "sa_w6__M2_M1_CDNS_782117841190",
+        "sa_w6__M2_M1_CDNS_782117841190"
+      ],
+      "target_cell": "sa_w6__nfet_W6u_L5"
+    },
+    {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 5,
+      "paths": 0,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "sel__pcont_CDNS_782117841190",
+        "sel__M2_M1_CDNS_782117841190",
+        "sel__M2_M1_CDNS_782117841190"
+      ],
+      "target_cell": "sel__nfet_W6u_L5"
+    }
+  ],
+  "source_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/nfet_W6u_L5.gds",
+  "source_sha256": "b021940aa9856705f8367e40a7c9d71e8fb0dd78fe8de7022966581b725ba864",
   "status": "pass",
-  "target_gds": "tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
-  "target_sha256_after": "5927b4ff6da71a8c1b5b3679d1e44cb9636a9a62623eb4003f9aee974f1c95ee",
-  "target_sha256_before": "e48d0deea034323f3f6c831400884dd2b54c7e746f241e94ffaa255c1d0154bd",
+  "target_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
+  "target_sha256_after": "61d08d10497aec2c462babe442e4dbf248ab6a4dfb3c6431986fa9b985522ef9",
+  "target_sha256_after_hierarchy_only": "dddcc926776f89624212815fb48c365addac93b31092e063cd5a9153b1a71465",
+  "target_sha256_before": "5927b4ff6da71a8c1b5b3679d1e44cb9636a9a62623eb4003f9aee974f1c95ee",
   "updates": [
     {
       "after": {
@@ -20,8 +319,12 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
-        "target_cell": "col_dec__nfet_W6u_L5"
+        "references": 3,
+        "refs": [
+          "col_dec__pcont_CDNS_782117841190",
+          "col_dec__M2_M1_CDNS_782117841190",
+          "col_dec__M2_M1_CDNS_782117841190"
+        ]
       },
       "ancestor_cells": [
         "col_dec__NAND3_X4RL_T5",
@@ -44,7 +347,9 @@
         "paths": 0,
         "polygons": 15,
         "references": 1,
-        "target_cell": "col_dec__nfet_W6u_L5"
+        "refs": [
+          "col_dec__pcont_CDNS_781250019470"
+        ]
       },
       "direct_parents": [
         {
@@ -52,9 +357,8 @@
           "references": 1
         }
       ],
+      "prefix": "col_dec__",
       "source_cell": "nfet_W6u_L5",
-      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
-      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
       "target_cell": "col_dec__nfet_W6u_L5"
     },
     {
@@ -72,8 +376,12 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
-        "target_cell": "decmap__nfet_W6u_L5"
+        "references": 3,
+        "refs": [
+          "decmap__pcont_CDNS_782117841190",
+          "decmap__M2_M1_CDNS_782117841190",
+          "decmap__M2_M1_CDNS_782117841190"
+        ]
       },
       "ancestor_cells": [
         "decmap__NAND3_X4RL_T5",
@@ -98,7 +406,9 @@
         "paths": 0,
         "polygons": 15,
         "references": 1,
-        "target_cell": "decmap__nfet_W6u_L5"
+        "refs": [
+          "decmap__pcont_CDNS_780998839040"
+        ]
       },
       "direct_parents": [
         {
@@ -106,9 +416,8 @@
           "references": 1
         }
       ],
+      "prefix": "decmap__",
       "source_cell": "nfet_W6u_L5",
-      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
-      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
       "target_cell": "decmap__nfet_W6u_L5"
     },
     {
@@ -126,8 +435,12 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
-        "target_cell": "pch__nfet_W6u_L5"
+        "references": 3,
+        "refs": [
+          "pch__pcont_CDNS_782117841190",
+          "pch__M2_M1_CDNS_782117841190",
+          "pch__M2_M1_CDNS_782117841190"
+        ]
       },
       "ancestor_cells": [
         "open3dstack_f5_decoder_compact_spice_dual_sided_top",
@@ -152,7 +465,9 @@
         "paths": 0,
         "polygons": 15,
         "references": 1,
-        "target_cell": "pch__nfet_W6u_L5"
+        "refs": [
+          "pch__pcont_CDNS_780998839040"
+        ]
       },
       "direct_parents": [
         {
@@ -164,9 +479,8 @@
           "references": 1
         }
       ],
+      "prefix": "pch__",
       "source_cell": "nfet_W6u_L5",
-      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
-      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
       "target_cell": "pch__nfet_W6u_L5"
     },
     {
@@ -184,8 +498,12 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
-        "target_cell": "sa_w6__nfet_W6u_L5"
+        "references": 3,
+        "refs": [
+          "sa_w6__pcont_CDNS_782117841190",
+          "sa_w6__M2_M1_CDNS_782117841190",
+          "sa_w6__M2_M1_CDNS_782117841190"
+        ]
       },
       "ancestor_cells": [
         "opamp_6u",
@@ -207,7 +525,9 @@
         "paths": 0,
         "polygons": 15,
         "references": 1,
-        "target_cell": "sa_w6__nfet_W6u_L5"
+        "refs": [
+          "sa_w6__pcont_CDNS_780998839040"
+        ]
       },
       "direct_parents": [
         {
@@ -215,9 +535,8 @@
           "references": 6
         }
       ],
+      "prefix": "sa_w6__",
       "source_cell": "nfet_W6u_L5",
-      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
-      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
       "target_cell": "sa_w6__nfet_W6u_L5"
     },
     {
@@ -235,8 +554,12 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
-        "target_cell": "sel__nfet_W6u_L5"
+        "references": 3,
+        "refs": [
+          "sel__pcont_CDNS_782117841190",
+          "sel__M2_M1_CDNS_782117841190",
+          "sel__M2_M1_CDNS_782117841190"
+        ]
       },
       "ancestor_cells": [
         "open3dstack_f5_decoder_compact_spice_dual_sided_top",
@@ -254,11 +577,13 @@
             59.157000000000004
           ]
         ],
-        "labels": 4,
+        "labels": 5,
         "paths": 0,
-        "polygons": 12,
+        "polygons": 15,
         "references": 1,
-        "target_cell": "sel__nfet_W6u_L5"
+        "refs": [
+          "sel__pcont_CDNS_781016356330"
+        ]
       },
       "direct_parents": [
         {
@@ -266,9 +591,8 @@
           "references": 1
         }
       ],
+      "prefix": "sel__",
       "source_cell": "nfet_W6u_L5",
-      "source_gds": "tft3d_macros/gds/nfet_W6u_L5.gds",
-      "source_sha256": "4d74ed903a8e7ea6e42c8ef0ef4895495188778d3d9b2ced0016b45b6e1ff350",
       "target_cell": "sel__nfet_W6u_L5"
     }
   ]
