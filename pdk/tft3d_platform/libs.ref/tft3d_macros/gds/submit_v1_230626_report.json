@@ -1,0 +1,207 @@
+{
+  "source_gds": "C:\\Users\\samar\\OneDrive\\Documents\\GitHub\\3D_TFT\\pdk\\tft3d_platform\\libs.ref\\tft3d_macros\\gds\\open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
+  "output_gds": "C:\\Users\\samar\\OneDrive\\Documents\\GitHub\\3D_TFT\\pdk\\tft3d_platform\\libs.ref\\tft3d_macros\\gds\\submit_v1_230626.gds",
+  "output_bytes": 15083020,
+  "cells_after": 194,
+  "top_cells_after": [
+    "open3dstack_f5_decoder_compact_spice_dual_sided_top"
+  ],
+  "padframe": {
+    "polygons_before": 559,
+    "polygons_after": 308,
+    "labels_before": 184,
+    "labels_after": 100
+  },
+  "wrapper": {
+    "polygons_before": 100,
+    "polygons_after": 101,
+    "test_ref_count": 12,
+    "test_block_old_y_min": 15500.0,
+    "test_block_new_y_min": 14550.0,
+    "test_block_shift_y": -950.0,
+    "moved_refs": {
+      "test_fixture_INV_X4PC_T5_nmos": [
+        15500.0,
+        14550.0
+      ],
+      "test_fixture_nfet_W20p825_L5": [
+        17350.0,
+        16400.0
+      ],
+      "test_fixture_wl_sel": [
+        18167.403,
+        17217.403
+      ],
+      "test_fixture_nfet_W24u_L5": [
+        17350.0,
+        16400.0
+      ],
+      "test_fixture_wl_inv": [
+        17350.0,
+        16400.0
+      ],
+      "test_fixture_wl_prebuffer": [
+        17350.0,
+        16400.0
+      ],
+      "test_fixture_master_slave_DFF": [
+        15500.0,
+        14550.0
+      ],
+      "test_fixture_sense_amp_sl_slb_pitch260": [
+        18167.403,
+        17217.403
+      ],
+      "test_fixture_NAND3_X4RL_T5": [
+        17350.0,
+        16400.0
+      ],
+      "test_fixture_nfet_W6u_L5": [
+        17350.0,
+        16400.0
+      ],
+      "stack_sram_marked_right_array": [
+        15500.0,
+        14550.0
+      ],
+      "test_fixture_analog_mux_bl_sl_pitch260": [
+        15500.0,
+        14550.0
+      ]
+    }
+  },
+  "vwl_p_wl_driver_reroute": {
+    "removed_polygons": 153,
+    "removed_labels": 17,
+    "removed_bbox_um": [
+      [
+        62.0,
+        1401.762
+      ],
+      [
+        13538.89,
+        14373.0
+      ]
+    ],
+    "removed_layer_counts": {
+      "8/0": 51,
+      "9/0": 34,
+      "10/0": 68
+    },
+    "added_polygons": 98,
+    "added_labels": 17,
+    "added_bbox_um": [
+      [
+        62.0,
+        1401.762
+      ],
+      [
+        17453.0,
+        5582.021
+      ]
+    ],
+    "added_layer_counts": {
+      "8/0": 23,
+      "9/0": 20,
+      "10/0": 55
+    },
+    "bus_y_um": 3350.0,
+    "left_trunk_x_um": 2050.0,
+    "right_trunk_x_um": 17450.0,
+    "pin_y_um": [
+      3479.021,
+      3779.021,
+      4079.021,
+      4379.021,
+      4679.021,
+      4979.021,
+      5279.021,
+      5579.021
+    ],
+    "polygons_before": 3527,
+    "polygons_after": 3472,
+    "labels_before": 450,
+    "labels_after": 450
+  },
+  "pad_labels_after": {
+    "S": 49,
+    "E": 20,
+    "N": 0,
+    "W": 31
+  },
+  "top_bbox_um": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      20000.0,
+      21850.0
+    ]
+  ],
+  "padframe_bbox_um": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      20000.0,
+      21850.0
+    ]
+  ],
+  "wrapper_bbox_um": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      18000.0,
+      20550.0
+    ]
+  ],
+  "padframe_routes_bbox_um": [
+    [
+      62.0,
+      65.0
+    ],
+    [
+      19938.0,
+      15423.0
+    ]
+  ],
+  "test_block_wrapper_bbox_um": [
+    [
+      500.0,
+      14550.0
+    ],
+    [
+      17274.083,
+      20350.0
+    ]
+  ],
+  "test_block_top_bbox_um": [
+    [
+      1057.5,
+      15550.0
+    ],
+    [
+      17831.583,
+      21350.0
+    ]
+  ],
+  "route_to_test_vertical_gap_um": 127.0,
+  "kept_test_refs": [
+    "stack_sram_marked_right_array",
+    "test_fixture_INV_X4PC_T5_nmos",
+    "test_fixture_NAND3_X4RL_T5",
+    "test_fixture_analog_mux_bl_sl_pitch260",
+    "test_fixture_master_slave_DFF",
+    "test_fixture_nfet_W20p825_L5",
+    "test_fixture_nfet_W24u_L5",
+    "test_fixture_nfet_W6u_L5",
+    "test_fixture_sense_amp_sl_slb_pitch260",
+    "test_fixture_wl_inv",
+    "test_fixture_wl_prebuffer",
+    "test_fixture_wl_sel"
+  ]
+}
