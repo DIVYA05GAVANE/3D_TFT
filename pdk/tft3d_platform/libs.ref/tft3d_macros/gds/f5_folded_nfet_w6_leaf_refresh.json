@@ -1,18 +1,19 @@
 {
-  "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_leaf_refresh_20260622_164146.bak",
+  "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_w6_hierarchy_resync_20260622_172826.bak",
   "dependency_cells_copied_or_refreshed": [
-    "col_dec__M2_M1_CDNS_782117841190",
-    "col_dec__pcont_CDNS_782117841190",
-    "decmap__M2_M1_CDNS_782117841190",
-    "decmap__pcont_CDNS_782117841190",
-    "pch__M2_M1_CDNS_782117841190",
-    "pch__pcont_CDNS_782117841190",
-    "sa_w6__M2_M1_CDNS_782117841190",
-    "sa_w6__pcont_CDNS_782117841190",
-    "sel__M2_M1_CDNS_782117841190",
-    "sel__pcont_CDNS_782117841190"
+    "amux__M2_M1_CDNS_782127390580",
+    "amux__pcont_CDNS_782127390580",
+    "col_dec__M2_M1_CDNS_782127390580",
+    "col_dec__pcont_CDNS_782127390580",
+    "decmap__M2_M1_CDNS_782127390580",
+    "decmap__pcont_CDNS_782127390580",
+    "pch__M2_M1_CDNS_782127390580",
+    "pch__pcont_CDNS_782127390580",
+    "sa_w6__M2_M1_CDNS_782127390580",
+    "sa_w6__pcont_CDNS_782127390580",
+    "sel__M2_M1_CDNS_782127390580",
+    "sel__pcont_CDNS_782127390580"
   ],
-  "flattened_cells_not_hierarchically_refreshed": [],
   "flattened_mux_refresh": {
     "after": {
       "bbox": [
@@ -32,14 +33,6 @@
           0
         ],
         [
-          4,
-          0
-        ],
-        [
-          7,
-          0
-        ],
-        [
           8,
           0
         ],
@@ -61,10 +54,9 @@
         ]
       ],
       "paths": 0,
-      "polygons": 10111,
+      "polygons": 10104,
       "references": 0
     },
-    "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_mux_flat_refresh_20260622_164409.bak",
     "before": {
       "bbox": [
         [
@@ -79,10 +71,6 @@
       "labels": 12,
       "layers": [
         [
-          3,
-          0
-        ],
-        [
           8,
           0
         ],
@@ -104,8 +92,8 @@
         ]
       ],
       "paths": 0,
-      "polygons": 10098,
-      "references": 0
+      "polygons": 17,
+      "references": 4
     },
     "cell": "analog_mux_2to1_diff_nmos",
     "clip_window": [
@@ -146,14 +134,6 @@
           0
         ],
         [
-          4,
-          0
-        ],
-        [
-          7,
-          0
-        ],
-        [
           8,
           0
         ],
@@ -175,14 +155,12 @@
         ]
       ],
       "paths": 0,
-      "polygons": 10111,
+      "polygons": 10104,
       "references": 0
     },
     "source_leaf_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/nfet_W6u_L5.gds",
     "source_mux_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/analog_mux_bl_sl_pitch260.gds",
-    "status": "pass",
-    "target_sha256_after": "61d08d10497aec2c462babe442e4dbf248ab6a4dfb3c6431986fa9b985522ef9",
-    "target_sha256_before": "dddcc926776f89624212815fb48c365addac93b31092e063cd5a9153b1a71465"
+    "status": "pass"
   },
   "readback_checks": [
     {
@@ -196,16 +174,17 @@
           59.157000000000004
         ]
       ],
-      "labels": 5,
+      "labels": 4,
       "paths": 0,
-      "polygons": 15,
+      "polygons": 12,
       "references": 3,
       "refs": [
-        "col_dec__pcont_CDNS_782117841190",
-        "col_dec__M2_M1_CDNS_782117841190",
-        "col_dec__M2_M1_CDNS_782117841190"
+        "amux__pcont_CDNS_782127390580",
+        "amux__M2_M1_CDNS_782127390580",
+        "amux__M2_M1_CDNS_782127390580"
       ],
-      "target_cell": "col_dec__nfet_W6u_L5"
+      "target_cell": "amux__nfet_W6u_L5",
+      "top_ancestor": false
     },
     {
       "bbox": [
@@ -218,16 +197,17 @@
           59.157000000000004
         ]
       ],
-      "labels": 5,
+      "labels": 4,
       "paths": 0,
-      "polygons": 15,
+      "polygons": 12,
       "references": 3,
       "refs": [
-        "decmap__pcont_CDNS_782117841190",
-        "decmap__M2_M1_CDNS_782117841190",
-        "decmap__M2_M1_CDNS_782117841190"
+        "col_dec__pcont_CDNS_782127390580",
+        "col_dec__M2_M1_CDNS_782127390580",
+        "col_dec__M2_M1_CDNS_782127390580"
       ],
-      "target_cell": "decmap__nfet_W6u_L5"
+      "target_cell": "col_dec__nfet_W6u_L5",
+      "top_ancestor": true
     },
     {
       "bbox": [
@@ -240,16 +220,17 @@
           59.157000000000004
         ]
       ],
-      "labels": 5,
+      "labels": 4,
       "paths": 0,
-      "polygons": 15,
+      "polygons": 12,
       "references": 3,
       "refs": [
-        "pch__pcont_CDNS_782117841190",
-        "pch__M2_M1_CDNS_782117841190",
-        "pch__M2_M1_CDNS_782117841190"
+        "decmap__pcont_CDNS_782127390580",
+        "decmap__M2_M1_CDNS_782127390580",
+        "decmap__M2_M1_CDNS_782127390580"
       ],
-      "target_cell": "pch__nfet_W6u_L5"
+      "target_cell": "decmap__nfet_W6u_L5",
+      "top_ancestor": true
     },
     {
       "bbox": [
@@ -262,16 +243,17 @@
           59.157000000000004
         ]
       ],
-      "labels": 5,
+      "labels": 4,
       "paths": 0,
-      "polygons": 15,
+      "polygons": 12,
       "references": 3,
       "refs": [
-        "sa_w6__pcont_CDNS_782117841190",
-        "sa_w6__M2_M1_CDNS_782117841190",
-        "sa_w6__M2_M1_CDNS_782117841190"
+        "pch__pcont_CDNS_782127390580",
+        "pch__M2_M1_CDNS_782127390580",
+        "pch__M2_M1_CDNS_782127390580"
       ],
-      "target_cell": "sa_w6__nfet_W6u_L5"
+      "target_cell": "pch__nfet_W6u_L5",
+      "top_ancestor": true
     },
     {
       "bbox": [
@@ -284,25 +266,49 @@
           59.157000000000004
         ]
       ],
-      "labels": 5,
+      "labels": 4,
       "paths": 0,
-      "polygons": 15,
+      "polygons": 12,
       "references": 3,
       "refs": [
-        "sel__pcont_CDNS_782117841190",
-        "sel__M2_M1_CDNS_782117841190",
-        "sel__M2_M1_CDNS_782117841190"
+        "sa_w6__pcont_CDNS_782127390580",
+        "sa_w6__M2_M1_CDNS_782127390580",
+        "sa_w6__M2_M1_CDNS_782127390580"
       ],
-      "target_cell": "sel__nfet_W6u_L5"
+      "target_cell": "sa_w6__nfet_W6u_L5",
+      "top_ancestor": true
+    },
+    {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 4,
+      "paths": 0,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "sel__pcont_CDNS_782127390580",
+        "sel__M2_M1_CDNS_782127390580",
+        "sel__M2_M1_CDNS_782127390580"
+      ],
+      "target_cell": "sel__nfet_W6u_L5",
+      "top_ancestor": true
     }
   ],
   "source_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/nfet_W6u_L5.gds",
-  "source_sha256": "b021940aa9856705f8367e40a7c9d71e8fb0dd78fe8de7022966581b725ba864",
+  "source_sha256": "efc0cbea4937c7af4757ff88d47e9ddd7195102bc830cf1944790c75c89013a3",
   "status": "pass",
   "target_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
-  "target_sha256_after": "61d08d10497aec2c462babe442e4dbf248ab6a4dfb3c6431986fa9b985522ef9",
-  "target_sha256_after_hierarchy_only": "dddcc926776f89624212815fb48c365addac93b31092e063cd5a9153b1a71465",
-  "target_sha256_before": "5927b4ff6da71a8c1b5b3679d1e44cb9636a9a62623eb4003f9aee974f1c95ee",
+  "target_sha256_after": "b6ccd23ea761434df696a20097d5e9a2516d6e0da99d2ac2e0a5fba569e2795d",
+  "target_sha256_after_hierarchy_only": "4747a995fce08659f16393434ef188b471ba5aac9ed00c43820cb4b7cd11baba",
+  "target_sha256_before": "6d852755e1ebe5f0fb82f255962da1dff36319b423beef07301225071f4b7600",
   "updates": [
     {
       "after": {
@@ -316,14 +322,72 @@
             59.1575
           ]
         ],
+        "labels": 4,
+        "paths": 0,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "amux__pcont_CDNS_782127390580",
+          "amux__M2_M1_CDNS_782127390580",
+          "amux__M2_M1_CDNS_782127390580"
+        ]
+      },
+      "ancestor_cells": [
+        "analog_mux_2to1_diff_nmos",
+        "open3dstack_f5_decoder_compact_spice_dual_sided_top",
+        "open3dstack_user_project_wrapper"
+      ],
+      "before": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.897000000000002,
+            59.157000000000004
+          ]
+        ],
         "labels": 5,
         "paths": 0,
         "polygons": 15,
         "references": 3,
         "refs": [
-          "col_dec__pcont_CDNS_782117841190",
-          "col_dec__M2_M1_CDNS_782117841190",
-          "col_dec__M2_M1_CDNS_782117841190"
+          "amux__pcont_CDNS_782117841190",
+          "amux__M2_M1_CDNS_782117841190",
+          "amux__M2_M1_CDNS_782117841190"
+        ]
+      },
+      "direct_parents": [
+        {
+          "cell": "analog_mux_2to1_diff_nmos",
+          "references": 3
+        }
+      ],
+      "prefix": "amux__",
+      "source_cell": "nfet_W6u_L5",
+      "target_cell": "amux__nfet_W6u_L5"
+    },
+    {
+      "after": {
+        "bbox": [
+          [
+            0.28,
+            0.31
+          ],
+          [
+            29.8975,
+            59.1575
+          ]
+        ],
+        "labels": 4,
+        "paths": 0,
+        "polygons": 12,
+        "references": 3,
+        "refs": [
+          "col_dec__pcont_CDNS_782127390580",
+          "col_dec__M2_M1_CDNS_782127390580",
+          "col_dec__M2_M1_CDNS_782127390580"
         ]
       },
       "ancestor_cells": [
@@ -346,9 +410,11 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
+        "references": 3,
         "refs": [
-          "col_dec__pcont_CDNS_781250019470"
+          "col_dec__pcont_CDNS_782117841190",
+          "col_dec__M2_M1_CDNS_782117841190",
+          "col_dec__M2_M1_CDNS_782117841190"
         ]
       },
       "direct_parents": [
@@ -373,14 +439,14 @@
             59.1575
           ]
         ],
-        "labels": 5,
+        "labels": 4,
         "paths": 0,
-        "polygons": 15,
+        "polygons": 12,
         "references": 3,
         "refs": [
-          "decmap__pcont_CDNS_782117841190",
-          "decmap__M2_M1_CDNS_782117841190",
-          "decmap__M2_M1_CDNS_782117841190"
+          "decmap__pcont_CDNS_782127390580",
+          "decmap__M2_M1_CDNS_782127390580",
+          "decmap__M2_M1_CDNS_782127390580"
         ]
       },
       "ancestor_cells": [
@@ -405,9 +471,11 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
+        "references": 3,
         "refs": [
-          "decmap__pcont_CDNS_780998839040"
+          "decmap__pcont_CDNS_782117841190",
+          "decmap__M2_M1_CDNS_782117841190",
+          "decmap__M2_M1_CDNS_782117841190"
         ]
       },
       "direct_parents": [
@@ -432,14 +500,14 @@
             59.1575
           ]
         ],
-        "labels": 5,
+        "labels": 4,
         "paths": 0,
-        "polygons": 15,
+        "polygons": 12,
         "references": 3,
         "refs": [
-          "pch__pcont_CDNS_782117841190",
-          "pch__M2_M1_CDNS_782117841190",
-          "pch__M2_M1_CDNS_782117841190"
+          "pch__pcont_CDNS_782127390580",
+          "pch__M2_M1_CDNS_782127390580",
+          "pch__M2_M1_CDNS_782127390580"
         ]
       },
       "ancestor_cells": [
@@ -464,9 +532,11 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
+        "references": 3,
         "refs": [
-          "pch__pcont_CDNS_780998839040"
+          "pch__pcont_CDNS_782117841190",
+          "pch__M2_M1_CDNS_782117841190",
+          "pch__M2_M1_CDNS_782117841190"
         ]
       },
       "direct_parents": [
@@ -495,14 +565,14 @@
             59.1575
           ]
         ],
-        "labels": 5,
+        "labels": 4,
         "paths": 0,
-        "polygons": 15,
+        "polygons": 12,
         "references": 3,
         "refs": [
-          "sa_w6__pcont_CDNS_782117841190",
-          "sa_w6__M2_M1_CDNS_782117841190",
-          "sa_w6__M2_M1_CDNS_782117841190"
+          "sa_w6__pcont_CDNS_782127390580",
+          "sa_w6__M2_M1_CDNS_782127390580",
+          "sa_w6__M2_M1_CDNS_782127390580"
         ]
       },
       "ancestor_cells": [
@@ -524,9 +594,11 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
+        "references": 3,
         "refs": [
-          "sa_w6__pcont_CDNS_780998839040"
+          "sa_w6__pcont_CDNS_782117841190",
+          "sa_w6__M2_M1_CDNS_782117841190",
+          "sa_w6__M2_M1_CDNS_782117841190"
         ]
       },
       "direct_parents": [
@@ -551,14 +623,14 @@
             59.1575
           ]
         ],
-        "labels": 5,
+        "labels": 4,
         "paths": 0,
-        "polygons": 15,
+        "polygons": 12,
         "references": 3,
         "refs": [
-          "sel__pcont_CDNS_782117841190",
-          "sel__M2_M1_CDNS_782117841190",
-          "sel__M2_M1_CDNS_782117841190"
+          "sel__pcont_CDNS_782127390580",
+          "sel__M2_M1_CDNS_782127390580",
+          "sel__M2_M1_CDNS_782127390580"
         ]
       },
       "ancestor_cells": [
@@ -580,9 +652,11 @@
         "labels": 5,
         "paths": 0,
         "polygons": 15,
-        "references": 1,
+        "references": 3,
         "refs": [
-          "sel__pcont_CDNS_781016356330"
+          "sel__pcont_CDNS_782117841190",
+          "sel__M2_M1_CDNS_782117841190",
+          "sel__M2_M1_CDNS_782117841190"
         ]
       },
       "direct_parents": [
