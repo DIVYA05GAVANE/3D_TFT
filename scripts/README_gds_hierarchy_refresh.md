@@ -113,3 +113,37 @@ On Windows:
 ```powershell
 Get-FileHash pdk/tft3d_platform/libs.ref/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds -Algorithm SHA256
 ```
+
+## Padframe Route ECOs
+
+`padframe_to_macro_routes` is a top-level hierarchy route cell, not a leaf macro
+that can be refreshed from `--source`. If a pad assignment changes, update this
+route cell directly and audit it separately from the leaf-cell refresh.
+
+For precharge/equalizer and sense-amplifier bottom-pad reroutes, keep the
+wrapper mapping and GDS labels aligned:
+
+```text
+PAD_S08 eq
+PAD_S09 pchg
+PAD_S10 precharge
+PAD_S11 vpre
+PAD_S18 vdd_sense
+PAD_S19 vdd_inv_sense
+PAD_S20 vth_sense
+PAD_S21 vss_sense
+PAD_S22..PAD_S29 sense_out<0>..sense_out<7>
+```
+
+After editing the route cell, verify that every moved net has exactly one
+connected route component, no component contains labels from two moved nets, and
+all route endpoints overlap the intended padframe and macro pin metal. The
+current audit report for that ECO is:
+
+```text
+pdk/tft3d_platform/libs.ref/tft3d_macros/gds/f5_precharge_opamp_bottom_pad_reroute.json
+```
+
+Older audit flows may only check internal route cells such as
+`precharge_to_mux_routes` or `sl_mux_routes`; include `padframe_to_macro_routes`
+when the ECO touches padframe-to-macro wiring.
