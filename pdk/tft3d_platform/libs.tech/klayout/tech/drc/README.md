@@ -29,12 +29,16 @@ The rule values are the final chat-update values:
 | q | Source diffusion width, right | 20 um |
 | x | Gate to channel overlap, horizontal | 3 um |
 
-Additional rule: minimum trace width outside the PR boundary is 10 um.
+Additional trace-width rules:
+
+| ID | Description | Minimum |
+| --- | --- | --- |
+| TRACE_SHORT_WIRE_WIDTH | Routing traces with run length <= 500 um | 5 um |
+| TRACE_LONG_WIRE_WIDTH | Routing traces with run length > 500 um | 10 um |
 
 The FlexIC documentation was used only to confirm layer naming and layer-map
 consistency. The deck uses the local layermap values: `SEMI` on 3/0, `SD` on
-10/0, `GATE` on 11/0, `MT1` on 20/0, `MT2` on 21/0, `RDL` on 54/0, `BOUND` on
-150/5, and `CHIPOUTLINE` on 153/5.
+10/0, `GATE` on 11/0, `MT1` on 20/0, `MT2` on 21/0, and `RDL` on 54/0.
 
 KLayout will discover DRC scripts from a `drc` folder under the technology base
 path. You can also load the deck manually from KLayout's DRC dialog.
@@ -47,10 +51,9 @@ klayout -b -r pdk/tft3d_platform/libs.tech/klayout/tech/drc/tft3d_platform_updat
   -rd report=/path/to/tft3d_platform_update.lyrdb
 ```
 
-Assumption: the PDF says `PR boundary`, but the repo/FlexIC layermap has no
-layer by that name. The deck uses `BOUND` when present, otherwise
-`CHIPOUTLINE`; if neither exists, it checks all trace metal widths against the
-10 um requirement.
+Trace length note: the deck classifies trace runs by the longer side of each
+orthogonal trace shape bbox. The shorter side of that bbox is treated as the
+trace width. This rule is applied to `MT1`, `MT2`, and `RDL`.
 
 Source/drain note: GDS data does not encode the words `source`, `drain`,
 `top`, `bottom`, `left`, or `right`. The DRC categories keep those names so the
