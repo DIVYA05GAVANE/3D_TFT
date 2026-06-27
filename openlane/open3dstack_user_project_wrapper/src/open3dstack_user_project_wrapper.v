@@ -433,8 +433,8 @@ module open3dstack_user_project_wrapper (
     tran pad_e11_conn (PAD_E11, vplb_sl_column_decoder);
     tran pad_e12_conn (PAD_E12, vpl_bl_column_decoder);
     tran pad_e13_conn (PAD_E13, vpl_sl_column_decoder);
-    tran pad_e18_conn (PAD_E18, sel_mux);
-    tran pad_e19_conn (PAD_E19, selb_mux);
+    tran pad_e18_conn (PAD_E18, selb_mux);
+    tran pad_e19_conn (PAD_E19, sel_mux);
     tran pad_s08_conn (PAD_S08, eq);
     tran pad_s09_conn (PAD_S09, pchg);
     tran pad_s10_conn (PAD_S10, precharge);
