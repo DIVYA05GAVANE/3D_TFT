@@ -1,0 +1,339 @@
+{
+  "after": {
+    "bbox": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "labels": 12,
+    "layers": [
+      [
+        8,
+        0
+      ],
+      [
+        9,
+        0
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        150,
+        5
+      ],
+      [
+        152,
+        5
+      ]
+    ],
+    "paths": 0,
+    "polygons": 17,
+    "references": 4,
+    "refs": [
+      "amux__nfet_W24u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__nfet_W6u_L5"
+    ]
+  },
+  "backup_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds.pre_analog_mux_hierarchy_20260622_165124.bak",
+  "before": {
+    "bbox": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "labels": 12,
+    "layers": [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        8,
+        0
+      ],
+      [
+        9,
+        0
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        150,
+        5
+      ],
+      [
+        152,
+        5
+      ]
+    ],
+    "paths": 0,
+    "polygons": 10111,
+    "references": 0
+  },
+  "cell": "analog_mux_2to1_diff_nmos",
+  "child_cells": {
+    "amux__M2_M1_CDNS_781016356330": {
+      "bbox": [
+        [
+          -5.0,
+          -5.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ],
+      "labels": 0,
+      "paths": 0,
+      "polygons": 5043,
+      "references": 0,
+      "refs": []
+    },
+    "amux__M2_M1_CDNS_782117841190": {
+      "bbox": [
+        [
+          -5.0,
+          -5.035
+        ],
+        [
+          5.0,
+          5.035
+        ]
+      ],
+      "labels": 0,
+      "paths": 0,
+      "polygons": 3,
+      "references": 0,
+      "refs": []
+    },
+    "amux__nfet_W24u_L5": {
+      "bbox": [
+        [
+          0.335,
+          0.535
+        ],
+        [
+          31.61,
+          72.577
+        ]
+      ],
+      "labels": 4,
+      "paths": 0,
+      "polygons": 12,
+      "references": 3,
+      "refs": [
+        "amux__pcont_CDNS_781016356330",
+        "amux__M2_M1_CDNS_781016356330",
+        "amux__M2_M1_CDNS_781016356330"
+      ]
+    },
+    "amux__nfet_W6u_L5": {
+      "bbox": [
+        [
+          0.28,
+          0.31
+        ],
+        [
+          29.897000000000002,
+          59.157000000000004
+        ]
+      ],
+      "labels": 5,
+      "paths": 0,
+      "polygons": 15,
+      "references": 3,
+      "refs": [
+        "amux__pcont_CDNS_782117841190",
+        "amux__M2_M1_CDNS_782117841190",
+        "amux__M2_M1_CDNS_782117841190"
+      ]
+    },
+    "amux__pcont_CDNS_781016356330": {
+      "bbox": null,
+      "labels": 0,
+      "paths": 0,
+      "polygons": 0,
+      "references": 0,
+      "refs": []
+    },
+    "amux__pcont_CDNS_782117841190": {
+      "bbox": [
+        [
+          -0.037,
+          -0.068
+        ],
+        [
+          0.037,
+          0.068
+        ]
+      ],
+      "labels": 0,
+      "paths": 0,
+      "polygons": 3,
+      "references": 0,
+      "refs": []
+    }
+  },
+  "clip_window": [
+    [
+      128.0,
+      0.0
+    ],
+    [
+      260.0,
+      620.0
+    ]
+  ],
+  "flattened_equivalent_check": {
+    "bbox": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "labels": 31,
+    "layers": [
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        8,
+        0
+      ],
+      [
+        9,
+        0
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        150,
+        5
+      ],
+      [
+        152,
+        5
+      ]
+    ],
+    "polygons": 10187
+  },
+  "labels_preserved": [
+    "bl0",
+    "blb0",
+    "gbl",
+    "gblb",
+    "pre",
+    "pre_b",
+    "sel",
+    "selb"
+  ],
+  "parents": [
+    {
+      "cell": "open3dstack_user_project_wrapper",
+      "references": 16
+    }
+  ],
+  "readback": {
+    "bbox": [
+      [
+        128.0,
+        0.0
+      ],
+      [
+        260.0,
+        620.0
+      ]
+    ],
+    "labels": 12,
+    "paths": 0,
+    "polygons": 17,
+    "references": 4,
+    "refs": [
+      "amux__nfet_W24u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__nfet_W6u_L5",
+      "amux__nfet_W6u_L5"
+    ]
+  },
+  "source_mux_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/analog_mux_bl_sl_pitch260.gds",
+  "source_mux_sha256": "92ca1b5069dda37d87bc5ac464a6584d8e794fcaf9341e6f2a573e0455d2bd23",
+  "source_refs_used": [
+    {
+      "origin": [
+        159.273,
+        350.0
+      ],
+      "source_ref": "sel__nfet_W24u_L5",
+      "target_ref": "amux__nfet_W24u_L5"
+    },
+    {
+      "origin": [
+        159.281,
+        245.0
+      ],
+      "source_ref": "sel__nfet_W6u_L5",
+      "target_ref": "amux__nfet_W6u_L5"
+    },
+    {
+      "origin": [
+        173.427,
+        445.0
+      ],
+      "source_ref": "sel__nfet_W6u_L5",
+      "target_ref": "amux__nfet_W6u_L5"
+    },
+    {
+      "origin": [
+        173.427,
+        160.0
+      ],
+      "source_ref": "sel__nfet_W6u_L5",
+      "target_ref": "amux__nfet_W6u_L5"
+    }
+  ],
+  "source_w6_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/nfet_W6u_L5.gds",
+  "source_w6_sha256": "b021940aa9856705f8367e40a7c9d71e8fb0dd78fe8de7022966581b725ba864",
+  "status": "pass",
+  "target_gds": "/home/vboxuser/codex_tft3d_cdslib_ngspice_check_20260620/tft3d_macros/gds/open3dstack_f5_decoder_compact_spice_dual_sided_with_sense_amp_precharge_col_driver_folded.gds",
+  "target_sha256_after": "6d852755e1ebe5f0fb82f255962da1dff36319b423beef07301225071f4b7600",
+  "target_sha256_before": "61d08d10497aec2c462babe442e4dbf248ab6a4dfb3c6431986fa9b985522ef9"
+}

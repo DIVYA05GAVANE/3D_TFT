@@ -1,0 +1,31 @@
+* Master/slave D flip-flop test structure built only from:
+*   - NAND3_X4RL_T5
+*   - INV_X4PC_T5_nmos
+*
+* NGspice sweep note:
+*   Using pdk/tft3d_platform/libs.ref/tft3d_macros/sim/NG_spice_TFT,
+*   the allowed NAND/INV latch combinations are ratioed and do not produce
+*   clean rail-to-rail Q/QB with the measured-table TFT model.  The classic
+*   NAND-latch topology with NAND3 A3 tied to VDD was the least-bad option
+*   among the constrained NAND3-as-NAND2 tie choices and is used here for
+*   the physical test structure.
+*
+* Include 3d_tft_macros.spice before this file to provide the leaf gates.
+
+.subckt NAND2_TIE_A3_X4RL_T5 A B VDD VSS Y
+XNAND A B VDD VDD VSS Y NAND3_X4RL_T5
+.ends NAND2_TIE_A3_X4RL_T5
+
+.subckt d_latch_nand3_inv_A3 D E Q QB VDD VSS
+XI_DINV D DN VDD VSS INV_X4PC_T5_nmos
+XN_S D E VDD VSS S_N NAND2_TIE_A3_X4RL_T5
+XN_R DN E VDD VSS R_N NAND2_TIE_A3_X4RL_T5
+XN_Q S_N QB VDD VSS Q NAND2_TIE_A3_X4RL_T5
+XN_QB R_N Q VDD VSS QB NAND2_TIE_A3_X4RL_T5
+.ends d_latch_nand3_inv_A3
+
+.subckt master_slave_DFF D CLK Q QB VDD VSS
+XI_CLK CLK CLKB VDD VSS INV_X4PC_T5_nmos
+XMASTER D CLKB MASTER_Q MASTER_QB VDD VSS d_latch_nand3_inv_A3
+XSLAVE MASTER_Q CLK Q QB VDD VSS d_latch_nand3_inv_A3
+.ends master_slave_DFF

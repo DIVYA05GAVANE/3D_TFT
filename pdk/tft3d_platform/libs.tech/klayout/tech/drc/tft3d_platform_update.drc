@@ -12,18 +12,14 @@
 #   MT1        20/0    routing metal
 #   MT2        21/0    routing metal
 #   RDL        54/0    redistribution metal
-#   BOUND     150/5    local PR/boundary fallback, when present
-#   CHIPOUTLINE 153/5  chip boundary fallback
 #
 # Notes:
 # - Annotation and fill datatypes are merged with drawing datatypes for mask
 #   layers, matching the FlexIC reference deck style. Pin/blockage datatypes are
 #   intentionally excluded from physical mask checks.
-# - The update PDF says "Minimum trace width outside PR boundary >= 10um" but no
-#   explicit PR boundary layer exists in this repo or the FlexIC layer map. This
-#   runset uses BOUND if present, otherwise CHIPOUTLINE. If neither exists, the
-#   trace width check is applied to all trace metals and the category name says
-#   so.
+# - Trace-width checks are length-dependent: short trace runs up to 500um must
+#   be at least 5um wide, and trace runs longer than 500um must be at least
+#   10um wide.
 # - Source and drain labels are not encoded in GDS. Checks that mention source
 #   or drain are applied symmetrically to SD features related to the device.
 #
@@ -51,6 +47,106 @@ def emit(errors, rule_id, description)
   errors.output(rule_id, "#{rule_id}: #{description}")
 end
 
+def route_rects(layer_obj, gds_layer)
+  rects = []
+  layer_obj.raw.each do |shape|
+    poly = RBA::DPolygon::new(shape)
+    bbox = poly.bbox
+    width = bbox.right - bbox.left
+    height = bbox.top - bbox.bottom
+    next if width <= 0.0 || height <= 0.0
+
+    orientation = if width > height
+                    "H"
+                  elsif height > width
+                    "V"
+                  else
+                    "S"
+                  end
+    next if orientation == "S"
+
+    rects << {
+      :layer => gds_layer,
+      :bbox => bbox,
+      :orientation => orientation
+    }
+  end
+  rects
+end
+
+def route_bend_full_overlap_errors(route_source, gds_layers)
+  markers = polygons
+  tolerance = 0.001
+
+  gds_layers.each do |gds_layer|
+    rects = route_rects(route_source.input(gds_layer, 0), gds_layer)
+    horizontal = rects.select { |rect| rect[:orientation] == "H" }
+    vertical = rects.select { |rect| rect[:orientation] == "V" }
+
+    horizontal.each do |h_rect|
+      h_bbox = h_rect[:bbox]
+      vertical.each do |v_rect|
+        v_bbox = v_rect[:bbox]
+        ix0 = [h_bbox.left, v_bbox.left].max
+        ix1 = [h_bbox.right, v_bbox.right].min
+        iy0 = [h_bbox.bottom, v_bbox.bottom].max
+        iy1 = [h_bbox.top, v_bbox.top].min
+        next if ix1 <= ix0 + tolerance || iy1 <= iy0 + tolerance
+
+        missing_vertical_width = (ix1 - ix0) < (v_bbox.right - v_bbox.left) - tolerance
+        missing_horizontal_height = (iy1 - iy0) < (h_bbox.top - h_bbox.bottom) - tolerance
+        next unless missing_vertical_width || missing_horizontal_height
+
+        markers.insert(box(v_bbox.left, h_bbox.bottom, v_bbox.right, h_bbox.top))
+      end
+    end
+  end
+
+  markers
+end
+
+def trace_width_by_run_length_errors(layer_objs, minimum_width, max_run_length, min_run_length)
+  markers = polygons
+  tolerance = 0.001
+  layers = layer_objs.is_a?(Array) ? layer_objs : [layer_objs]
+
+  layers.each do |layer_obj|
+    layer_obj.raw.each do |shape|
+      poly = RBA::DPolygon::new(shape)
+      bbox = poly.bbox
+      width = bbox.right - bbox.left
+      height = bbox.top - bbox.bottom
+      next if width <= tolerance || height <= tolerance
+
+      run_length = [width, height].max
+      trace_width = [width, height].min
+      next if max_run_length && run_length > max_run_length + tolerance
+      next if min_run_length && run_length <= min_run_length + tolerance
+      next if trace_width + tolerance >= minimum_width
+
+      markers.insert(box(bbox.left, bbox.bottom, bbox.right, bbox.top))
+    end
+  end
+
+  markers
+end
+
+def source_for_cell(cell_name)
+  if defined?($input) && $input
+    begin
+      return layout($input, cell_name)
+    rescue
+      # Fall through to the default source if the requested cell is absent.
+    end
+  end
+
+  begin
+    layout.cell(cell_name)
+  rescue
+    layout
+  end
+end
+
 # Drawing/annotation/fill mask layers. Pin and blockage datatypes are not merged.
 semi = physical_mask_layer(input(3, 0),  input(3, 1),  input(3, 2))
 sd   = physical_mask_layer(input(10, 0), input(10, 1), input(10, 2))
@@ -59,16 +155,13 @@ mt1  = physical_mask_layer(input(20, 0), input(20, 1), input(20, 2))
 mt2  = physical_mask_layer(input(21, 0), input(21, 1), input(21, 2))
 rdl  = physical_mask_layer(input(54, 0), input(54, 1), input(54, 2))
 
-bound = input(150, 5)
-chipoutline = input(153, 5)
-
 # Device helper layers for the supplied SEMI/SD/GATE drawing.
 active_channel = semi & gate
 sd_on_channel = sd & semi
 sd_diffusion = sd.interacting(semi)
 gate_extensions = gate - semi
 device_region = (semi + sd_diffusion + gate).merged
-trace_metals = sd + gate + mt1 + mt2 + rdl
+routing_trace_layers = [mt1, mt2, rdl]
 
 # Updated rules from the PDF/chat table.
 emit(sd_diffusion.drc(bbox_height < 8.0.um),
@@ -135,24 +228,19 @@ emit(active_channel.drc(bbox_width < 3.0.um),
      "X_GATE_TO_CHANNEL_OVERLAP_HORIZONTAL",
      "Gate-to-channel overlap must be >= 3um")
 
-# Additional PDF/chat rule.
-if !bound.is_empty?
-  pr_boundary = bound
-  boundary_name = "BOUND"
-elsif !chipoutline.is_empty?
-  pr_boundary = chipoutline
-  boundary_name = "CHIPOUTLINE"
-else
-  pr_boundary = nil
-  boundary_name = nil
-end
+# Same-layer orthogonal route joins must cover the full 90-degree corner square.
+# The padframe route ECO GDS uses imported route layers 8/0, 9/0, and 10/0.
+# A partial L or T overlap like the screenshot is reported at the expected full
+# overlap box for the horizontal/vertical route pair.
+emit(route_bend_full_overlap_errors(source_for_cell("padframe_to_macro_routes"), [8, 9, 10]),
+     "TRACE_90_BEND_FULL_OVERLAP",
+     "Padframe-to-macro same-layer 90-degree route bends must fully overlap at the corner")
 
-if pr_boundary
-  emit((trace_metals - pr_boundary).width(10.0.um),
-       "TRACE_WIDTH_OUTSIDE_PR_BOUNDARY",
-       "Trace width outside #{boundary_name} must be >= 10um")
-else
-  emit(trace_metals.width(10.0.um),
-       "TRACE_WIDTH_NO_PR_BOUNDARY_FOUND",
-       "No BOUND or CHIPOUTLINE found; checking all trace metal widths against >= 10um")
-end
+# Length-dependent trace-width rule.
+emit(trace_width_by_run_length_errors(routing_trace_layers, 5.0, 500.0, nil),
+     "TRACE_SHORT_WIRE_WIDTH",
+     "Routing traces with run length <= 500um must be >= 5um wide")
+
+emit(trace_width_by_run_length_errors(routing_trace_layers, 10.0, nil, 500.0),
+     "TRACE_LONG_WIRE_WIDTH",
+     "Routing traces with run length > 500um must be >= 10um wide")

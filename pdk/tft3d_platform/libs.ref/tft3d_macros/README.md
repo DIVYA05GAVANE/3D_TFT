@@ -44,17 +44,17 @@ the file. That is intentional and matches normal PDK/library organization.
 The following stack map applies to every `stack_sram_array_f*` GDS file, ordered
 from layer 1 to layer 2:
 
-| Stack level | Source layer | Final GDS layer/datatype | Meaning |
-| --- | --- | --- | --- |
-| Layer 1 FEFET | `L31` | `31/0` | FEFET gate, metal -2 |
-| Layer 1 FEFET | `L32` | `32/0` | FEFET channel |
-| Layer 1 FEFET | `L33` | `33/0` | FEFET source/drain, metal -1 |
-| Layer 1 FEFET | `L36` | `36/0` | FEFET M-1/M-2 via connect |
-| Layer 2 upper TFT | `L35` | `3/0` | Upper channel active area |
-| Layer 2 upper TFT | `L34` | `8/0` | Upper gate and M1 conductor |
-| Layer 2 upper TFT | `L36` | `9/0` | Upper M1-M2 via open/connect |
-| Layer 2 upper TFT | `L37` | `10/0` | Upper M2 source/drain conductor |
-| Annotation | `L40` | `40/0` | Drawn WL-number geometry |
+| Stack level | Final GDS layer/datatype | Meaning |
+| --- | --- | --- |
+| Layer 1 FEFET | `31/0` | FEFET gate, metal -2 |
+| Layer 1 FEFET | `32/0` | FEFET channel |
+| Layer 1 FEFET | `33/0` | FEFET source/drain, metal -1 |
+| Layer 1 FEFET | `36/0` | FEFET M-1/M-2 via connect |
+| Layer 2 upper TFT | `3/0` | Upper channel active area |
+| Layer 2 upper TFT | `8/0` | Upper gate and M1 conductor |
+| Layer 2 upper TFT | `9/0` | Upper M1-M2 via open/connect |
+| Layer 2 upper TFT | `10/0` | Upper M2 source/drain conductor |
+| Annotation | `40/0` | Drawn WL-number geometry |
 
 For stack SRAM arrays, `L36` appears in both layer contexts: layer 1 `L36`
 remains `36/0`, while layer 2 upper TFT `L36` maps to `9/0`.
