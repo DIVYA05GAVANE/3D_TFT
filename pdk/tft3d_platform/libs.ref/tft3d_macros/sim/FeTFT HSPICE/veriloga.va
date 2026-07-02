@@ -1,0 +1,49 @@
+// VerilogA for igzo, fetft_nf1, veriloga
+
+`include "constants.vams"
+`include "disciplines.vams"
+module fetft_nf1(g, d, s);
+
+inout g, d, s;
+electrical g, d, s;
+
+parameter real pinit = 0;
+parameter real vw = 4;
+real vgs;
+real vds;
+real polar;
+real gch;
+
+analog begin
+
+	if (V(s) < V(d)) begin
+		vgs = V(g, s);
+	end
+	else begin
+		vgs = V(g, d);
+	end
+
+	vds = abs(V(d, s));
+	@(initial_step) begin
+		polar = pinit;
+	end
+
+	@(cross(vgs - vw, +1)) begin
+		polar = 1;
+	end
+
+	@(cross(vgs - (-vw), -1)) begin
+		polar = 0;
+	end
+
+	if (polar == 0) begin
+		gch = $table_model(vds, vgs, "g_nf1_hvt_tbl.tbl", "1LL, 1LL");
+	end else begin
+		gch = $table_model(vds, vgs, "g_nf1_lvt_tbl.tbl", "1LL, 1LL");
+	end
+
+	I(d, s) <+ V(d, s) * gch;
+
+end
+
+endmodule
