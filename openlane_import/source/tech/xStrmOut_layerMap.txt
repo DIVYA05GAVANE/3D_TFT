@@ -1,0 +1,47 @@
+####################################################################
+# Corrected Cadence XStream stream-out layer map.
+#
+# Format:
+#   OA_Layer      OA_Purpose     Stream_LayerNum     Stream_Datatype
+#
+# Main correction versus the generated map:
+#   poly must not share GDS 8/0 with metal1.  Use poly -> 4/0.
+####################################################################
+
+# FreePDK45-style frontend layers
+nwell        drawing        1        0
+pwell        drawing        2        0
+active       drawing        3        0
+poly         drawing        4        0
+nimplant     drawing        5        0
+pimplant     drawing        6        0
+contact      drawing        7        0
+
+# Interconnect stack
+metal1       drawing        8        0
+via1         drawing        9        0
+metal2       drawing        10       0
+via2         drawing        11       0
+metal3       drawing        12       0
+via3         drawing        13       0
+metal4       drawing        14       0
+via4         drawing        15       0
+metal5       drawing        16       0
+via5         drawing        17       0
+metal6       drawing        18       0
+via6         drawing        19       0
+metal7       drawing        20       0
+via7         drawing        21       0
+metal8       drawing        22       0
+via8         drawing        23       0
+metal9       drawing        24       0
+via9         drawing        25       0
+metal10      drawing        26       0
+
+# Optional higher layers if present in the OA technology.
+via10        drawing        27       0
+metal11      drawing        28       0
+
+# Text and boundary
+text         drawing        230      0
+prBoundary   boundary       150      5
