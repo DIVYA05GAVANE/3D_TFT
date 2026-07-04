@@ -1,0 +1,64 @@
+{
+  "created_on": "Ubuntu-rv5-tci-BMServer",
+  "upstream_update": {
+    "repository": "DIVYA05GAVANE/3D_TFT",
+    "commit": "3bc9023a5257655b884f1c6a7126b325a8d1f195",
+    "path": "pdk/tft3d_platform/libs.ref/tft3d_macros/gds/opamp_6u_v3.gds"
+  },
+  "inputs": {
+    "opamp_6u.gds": {
+      "path": "/home/vboxuser/test_fixture_v3_work_20260703_142137/source_gds/opamp_6u.gds",
+      "sha256": "1a6aa5831040ccc88f71c81a32cae1e867205fa6236f83761b6445a02525ed3d",
+      "bytes": 986346
+    },
+    "INV_X4PC_T5_nmos_v3.gds": {
+      "path": "/home/vboxuser/test_fixture_v3_work_20260703_142137/source_gds/INV_X4PC_T5_nmos_v3.gds",
+      "sha256": "2bba72f256bcd3a3a742a32226ab6745838392eb6f293e30041609db64daaed0",
+      "bytes": 981396
+    },
+    "wl_pad.gds": {
+      "path": "/home/vboxuser/test_fixture_v3_work_20260703_142137/source_gds/wl_pad.gds",
+      "sha256": "e6639dda798c40e6e82b0d93c93414baaaa39b5321dfb15c926b585a33f9310b",
+      "bytes": 240
+    }
+  },
+  "outputs": {
+    "opamp_6u_V3.gds": {
+      "path": "/home/vboxuser/test_fixture_v3_work_20260703_142137/output/opamp_6u_V3.gds",
+      "sha256": "c34cdbd4b8d83cc29f1b3492588e3af3e78d141060c170cdfed3d0986a8e4e95",
+      "bytes": 987126
+    },
+    "test_fixture_V3.gds": {
+      "path": "/home/vboxuser/test_fixture_v3_work_20260703_142137/output/test_fixture_V3.gds",
+      "sha256": "83ef1f0da7313c55db93f73072d1c7eb85425dfd8f53a7efdeb27674cd6e6461",
+      "bytes": 1969474
+    }
+  },
+  "top_cells": {
+    "opamp_6u_V3.gds": "opamp_6u_V3",
+    "test_fixture_V3.gds": "TEST_FIXTURE_V3"
+  },
+  "wl_pad_macro": "wl_pad",
+  "pad_placement_um": {
+    "left_origin": [
+      -150.0,
+      184.0365
+    ],
+    "right_origin": [
+      1655.0,
+      176.8115
+    ],
+    "left_pad_box": [
+      -150.0,
+      184.0365,
+      -50.0,
+      314.0365
+    ],
+    "right_pad_box": [
+      1655.0,
+      176.8115,
+      1755.0,
+      306.8115
+    ]
+  }
+}
