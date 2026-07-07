@@ -1,0 +1,398 @@
+*  Generated for: HSPICE
+*  Generated on: Jul  7 16:17:10 2026
+*  Design library name: CAM_Circuits
+*  Design cell name: tb_Peripheral_IC
+*  Design view name: schematic
+.include '/apps/PDK/NCSU/FreePDK/FreePDK45/1.4/ncsu_basekit/models/hspice/hspice_nom.include'
+*  Library name: CAM_Circuits
+*  Cell name: nfet_W24u_L5
+*  View name: schematic
+.subckt nfet_w24u_l5 d g s
++   l=5e-6 w=24e-6 m=1
+    m0 d g s s NMOS_VTG L=l W=w AD=2.52e-12 AS=2.52e-12 PD=24.21e-6 PS=24.21e-6 M=m
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: nfet_W20p825_L5
+*  View name: schematic
+.subckt nfet_w20p825_l5 d g s
++   l=5e-6 w=20.825e-6 m=1
+    m0 d g s s NMOS_VTG L=l W=w AD=2.18663e-12 AS=2.18663e-12 PD=21.035e-6 PS=21.035e-6 M=m
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: INV_X4PC_T5_nmos
+*  View name: schematic
+.subckt inv_x4pc_t5_nmos in out vdd vss
+    xi10 vdd vdd net5 nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi6 net5 in vss nfet_w20p825_l5 m=4 l=5e-6 w=20.825e-6 m=4
+    xi8 out in vss nfet_w20p825_l5 m=8 l=5e-6 w=20.825e-6 m=8
+    xi7 vdd net5 out nfet_w20p825_l5 m=8 l=5e-6 w=20.825e-6 m=8
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: wl_inv
+*  View name: schematic
+.subckt wl_inv vdd vss wl_en wl_enb
+    xi5 wl_en wl_enb vdd vss inv_x4pc_t5_nmos
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: nfet_W6u_L5
+*  View name: schematic
+.subckt nfet_w6u_l5 d g s
+    m0 d g s s NMOS_VTG L=5e-6 W=6e-6 AD=630e-15 AS=630e-15 PD=6.21e-6 PS=6.21e-6 M=1
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: wl_sel
+*  View name: schematic
+.subckt wl_sel s1 s2 s3 vwl_n vwl_p wl_en wl_enb wl_out
+    xi15 s3 wl_out vwl_p vwl_n inv_x4pc_t5_nmos
+    xi13 s1 s2 vwl_p vwl_n inv_x4pc_t5_nmos
+    xi12 wl_en s1 vwl_p vwl_n inv_x4pc_t5_nmos
+    xi14 s2 s3 vwl_p vwl_n inv_x4pc_t5_nmos
+    xi19 wl_out wl_enb vwl_n nfet_w6u_l5
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: wl_prebuffer
+*  View name: schematic
+.subckt wl_prebuffer vdd vss wl_en wl_in wl_mid
+    xi7 wl_in wl_mid vdd vss inv_x4pc_t5_nmos
+    xi8 wl_mid wl_en vdd vss inv_x4pc_t5_nmos
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: wl_driver_nmos
+*  View name: schematic
+.subckt wl_driver_nmos vdd vss vwl_n vwl_p wl_in wl_out
+    xi33 vdd vss net1 net2 wl_inv
+    xi36 net013 net012 net011 vwl_n vwl_p net1 net2 wl_out wl_sel
+    xi35 vdd vss net1 wl_in net014 wl_prebuffer
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: NAND3_X4RL_T5
+*  View name: schematic
+.subckt nand3_x4rl_t5 a1 a2 a3 vdd vss y
+    xi33 y a1 net016 nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi42 net011 a3 vss nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi41 net016 a2 net011 nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi40 vdd vdd y nfet_w6u_l5
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: row_decoder_3to8_nmos
+*  View name: schematic
+.subckt row_decoder_3to8_nmos a1 a2 a3 d0 d1 d2 nand_1 nand_2 q0 q1 q2 q3 q4 q5 q6 q7 vdd vdda vss vssa
+    xi106 net025 q7 vdda vssa inv_x4pc_t5_nmos
+    xi103 net020 q4 vdda vssa inv_x4pc_t5_nmos
+    xi104 net023 q5 vdda vssa inv_x4pc_t5_nmos
+    xi105 net021 q6 vdda vssa inv_x4pc_t5_nmos
+    xi102 net019 q3 vdda vssa inv_x4pc_t5_nmos
+    xi101 net022 q2 vdda vssa inv_x4pc_t5_nmos
+    xi100 nand_2 q1 vdda vssa inv_x4pc_t5_nmos
+    xi99 nand_1 q0 vdda vssa inv_x4pc_t5_nmos
+    xi107 d0 a1 vdd vss inv_x4pc_t5_nmos
+    xi108 d1 a2 vdd vss inv_x4pc_t5_nmos
+    xi109 d2 a3 vdd vss inv_x4pc_t5_nmos
+    xi80 a1 a2 d2 vdd vss nand_2 nand3_x4rl_t5
+    xi84 d0 a2 d2 vdd vss net023 nand3_x4rl_t5
+    xi87 a1 a2 a3 vdd vss nand_1 nand3_x4rl_t5
+    xi83 d0 a2 a3 vdd vss net020 nand3_x4rl_t5
+    xi86 d0 d1 a3 vdd vss net021 nand3_x4rl_t5
+    xi81 a1 d1 a3 vdd vss net022 nand3_x4rl_t5
+    xi82 a1 d1 d2 vdd vss net019 nand3_x4rl_t5
+    xi85 d0 d1 d2 vdd vss net025 nand3_x4rl_t5
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: column_decoder_3to8_nmos
+*  View name: schematic
+.subckt column_decoder_3to8_nmos a1 a2 a3 c0 c1 c2 col0 col1 col2 col3 col4 col5 col6 col7 nand_1 nand_2 vdd vdda vss vssa
+    xi106 net025 col7 vdda vssa inv_x4pc_t5_nmos
+    xi103 net020 col4 vdda vssa inv_x4pc_t5_nmos
+    xi104 net023 col5 vdda vssa inv_x4pc_t5_nmos
+    xi105 net021 col6 vdda vssa inv_x4pc_t5_nmos
+    xi102 net019 col3 vdda vssa inv_x4pc_t5_nmos
+    xi101 net022 col2 vdda vssa inv_x4pc_t5_nmos
+    xi100 nand_2 col1 vdda vssa inv_x4pc_t5_nmos
+    xi99 nand_1 col0 vdda vssa inv_x4pc_t5_nmos
+    xi107 c0 a1 vdd vss inv_x4pc_t5_nmos
+    xi108 c1 a2 vdd vss inv_x4pc_t5_nmos
+    xi109 c2 a3 vdd vss inv_x4pc_t5_nmos
+    xi80 a1 a2 c2 vdd vss nand_2 nand3_x4rl_t5
+    xi84 c0 a2 c2 vdd vss net023 nand3_x4rl_t5
+    xi87 a1 a2 a3 vdd vss nand_1 nand3_x4rl_t5
+    xi83 c0 a2 a3 vdd vss net020 nand3_x4rl_t5
+    xi86 c0 c1 a3 vdd vss net021 nand3_x4rl_t5
+    xi81 a1 c1 a3 vdd vss net022 nand3_x4rl_t5
+    xi82 a1 c1 c2 vdd vss net019 nand3_x4rl_t5
+    xi85 c0 c1 c2 vdd vss net025 nand3_x4rl_t5
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: write_driver
+*  View name: schematic
+.subckt write_driver bl blb col_sel din sl slb vdd vdda vphb_bl vphb_sl vph_bl vph_sl vplb_bl vplb_sl vpl_bl vpl_sl vss vssa we wl_in
+    xi27 din net036 vdd vss inv_x4pc_t5_nmos
+    xi30 nwr1 net025 vdda vssa inv_x4pc_t5_nmos
+    xi31 nwr0 net027 vdda vssa inv_x4pc_t5_nmos
+    xi28 din net014 net024 vdd vss nwr1 nand3_x4rl_t5
+    xi29 net036 net014 net024 vdd vss nwr0 nand3_x4rl_t5
+    xi43 sl net027 vpl_sl nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi42 vphb_sl net027 slb nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi41 slb net025 vplb_sl nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi40 vph_sl net025 sl nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi32 vph_bl net025 bl nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi33 bl net027 vpl_bl nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi34 vphb_bl net027 blb nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi35 blb net025 vplb_bl nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi38 vdd vss net024 col_sel net45 wl_prebuffer
+    xi39 vdd vss net014 we net44 wl_prebuffer
+    xi36 vdd vss din wl_in net46 wl_prebuffer
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: precharge_equalizer_nmos_6u
+*  View name: schematic
+.subckt precharge_equalizer_nmos_6u bl blb eq pchg vdd vpre
+    xi28 bl eq blb nfet_w6u_l5
+    xi27 bl eq blb nfet_w6u_l5
+    xi26 net10 pchg blb nfet_w6u_l5
+    xi25 net10 pchg blb nfet_w6u_l5
+    xi24 net10 pchg bl nfet_w6u_l5
+    xi23 net10 pchg bl nfet_w6u_l5
+    xi22 vdd vpre net10 nfet_w6u_l5
+    xi21 vdd vpre net10 nfet_w6u_l5
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: analog_mux_2to1_diff_nmos
+*  View name: schematic
+.subckt analog_mux_2to1_diff_nmos bl0 blb0 gbl gblb pre pre_b sel selb
+    xi11 blb0 sel gblb nfet_w24u_l5 m=1 l=5e-6 w=24e-6 m=1
+    xi13 pre_b selb gblb nfet_w6u_l5
+    xi12 pre selb gbl nfet_w6u_l5
+    xi15 bl0 sel gbl nfet_w6u_l5
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: opamp_6u
+*  View name: schematic
+.subckt opamp_6u out sl slb vdd vdd_inv vss vth
+    xi25 vdd vth sl nfet_w6u_l5
+    xi29 sl sl vss nfet_w6u_l5
+    xi30 slb sl vss nfet_w6u_l5
+    xi31 slb sl vss nfet_w6u_l5
+    xi24 vdd vth sl nfet_w6u_l5
+    xi28 sl sl vss nfet_w6u_l5
+    xi17 slb out vdd_inv vss inv_x4pc_t5_nmos
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: BitCell
+*  View name: schematic
+.subckt bitcell bl blb p_nf1 p_nf2 sl slb wl
+    c16 slb 0 c=2e-12
+    c0 sl 0 c=2e-12
+    xi19 bl net011 wl tft_n1
+    xi20 blb net025 wl tft_n2
+    xi17 net011 net025 slb p_nf2 fetft_nf2_debug pinit=0 vw=4
+    xi18 net025 net011 sl p_nf1 fetft_nf1_debug pinit=1 vw=4
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: Bitcell_row
+*  View name: schematic
+.subckt bitcell_row bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> p_nf1 p_nf2 sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<0>
+    xi512<0> bl<0> blb<0> p_nf1 p_nf2 sl<0> slb<0> wl<0> bitcell
+    xi512<1> bl<1> blb<1> p_nf1 p_nf2 sl<1> slb<1> wl<0> bitcell
+    xi512<2> bl<2> blb<2> p_nf1 p_nf2 sl<2> slb<2> wl<0> bitcell
+    xi512<3> bl<3> blb<3> p_nf1 p_nf2 sl<3> slb<3> wl<0> bitcell
+    xi512<4> bl<4> blb<4> p_nf1 p_nf2 sl<4> slb<4> wl<0> bitcell
+    xi512<5> bl<5> blb<5> p_nf1 p_nf2 sl<5> slb<5> wl<0> bitcell
+    xi512<6> bl<6> blb<6> p_nf1 p_nf2 sl<6> slb<6> wl<0> bitcell
+    xi512<7> bl<7> blb<7> p_nf1 p_nf2 sl<7> slb<7> wl<0> bitcell
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: stack_sram_array_F5
+*  View name: schematic
+.subckt stack_sram_array_f5 bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<0> wl<1> wl<2> wl<3> wl<4> wl<5> wl<6> wl<7> wl<8> wl<9> wl<10> wl<11> wl<12> wl<13> wl<14> wl<15> wl<16> wl<17> wl<18> wl<19> wl<20> wl<21> wl<22> wl<23> wl<24> wl<25> wl<26> wl<27> wl<28> wl<29> wl<30> wl<31>
+    xi1024<0> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<0> net2<0> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<0> bitcell_row
+    xi1024<1> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<1> net2<1> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<1> bitcell_row
+    xi1024<2> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<2> net2<2> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<2> bitcell_row
+    xi1024<3> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<3> net2<3> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<3> bitcell_row
+    xi1024<4> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<4> net2<4> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<4> bitcell_row
+    xi1024<5> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<5> net2<5> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<5> bitcell_row
+    xi1024<6> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<6> net2<6> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<6> bitcell_row
+    xi1024<7> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<7> net2<7> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<7> bitcell_row
+    xi1024<8> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<8> net2<8> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<8> bitcell_row
+    xi1024<9> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<9> net2<9> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<9> bitcell_row
+    xi1024<10> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<10> net2<10> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<10> bitcell_row
+    xi1024<11> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<11> net2<11> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<11> bitcell_row
+    xi1024<12> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<12> net2<12> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<12> bitcell_row
+    xi1024<13> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<13> net2<13> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<13> bitcell_row
+    xi1024<14> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<14> net2<14> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<14> bitcell_row
+    xi1024<15> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<15> net2<15> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<15> bitcell_row
+    xi1024<16> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<16> net2<16> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<16> bitcell_row
+    xi1024<17> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<17> net2<17> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<17> bitcell_row
+    xi1024<18> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<18> net2<18> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<18> bitcell_row
+    xi1024<19> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<19> net2<19> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<19> bitcell_row
+    xi1024<20> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<20> net2<20> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<20> bitcell_row
+    xi1024<21> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<21> net2<21> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<21> bitcell_row
+    xi1024<22> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<22> net2<22> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<22> bitcell_row
+    xi1024<23> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<23> net2<23> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<23> bitcell_row
+    xi1024<24> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<24> net2<24> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<24> bitcell_row
+    xi1024<25> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<25> net2<25> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<25> bitcell_row
+    xi1024<26> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<26> net2<26> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<26> bitcell_row
+    xi1024<27> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<27> net2<27> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<27> bitcell_row
+    xi1024<28> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<28> net2<28> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<28> bitcell_row
+    xi1024<29> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<29> net2<29> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<29> bitcell_row
+    xi1024<30> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<30> net2<30> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<30> bitcell_row
+    xi1024<31> bl<0> bl<1> bl<2> bl<3> bl<4> bl<5> bl<6> bl<7> blb<0> blb<1> blb<2> blb<3> blb<4> blb<5> blb<6> blb<7> net1<31> net2<31> sl<0> sl<1> sl<2> sl<3> sl<4> sl<5> sl<6> sl<7> slb<0> slb<1> slb<2> slb<3> slb<4> slb<5> slb<6> slb<7> wl<31> bitcell_row
+.ends 
+*  End of subcircuit definition.
+*  Library name: CAM_Circuits
+*  Cell name: Peripheral_IC
+*  View name: schematic
+.subckt peripheral_ic c0 c1 c2 d0 d1 d10 d11 d2 d3 d4 d5 d6 d7 d8 d9 din_column_driver eq pchg precharge selb_mux sel_mux sense_out<0> sense_out<1> sense_out<2> sense_out<3> sense_out<4> sense_out<5> sense_out<6> sense_out<7> sen_bl<0> sen_bl<1> sen_bl<2> sen_bl<3> sen_bl<4> sen_bl<5> sen_bl<6> sen_bl<7> sen_blb<0> sen_blb<1> sen_blb<2> sen_blb<3> sen_blb<4> sen_blb<5> sen_blb<6> sen_blb<7> vdda_column_decoder vdda_column_driver vdda_decoder_wl vdd_column_decoder vdd_column_driver vdd_decoder_wl vdd_driver_wl vdd_inv_sense vdd_sense vphb_bl_column_driver vphb_sl_column_driver vph_bl_column_driver vph_sl_column_driver vplb_bl_column_decoder vplb_sl_column_decoder vpl_bl_column_decoder vpl_sl_column_decoder vpre vssa_column_decoder vssa_decoder_wl vss_column_decoder vss_decoder_wl vss_driver_wl vss_sense vwl_n_wl_driver vwl_p_wl_driver vth_sense we wl_in
+    xi7<0> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<0> wl_out<0> wl_driver_nmos
+    xi7<1> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<1> wl_out<1> wl_driver_nmos
+    xi7<2> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<2> wl_out<2> wl_driver_nmos
+    xi7<3> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<3> wl_out<3> wl_driver_nmos
+    xi7<4> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<4> wl_out<4> wl_driver_nmos
+    xi7<5> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<5> wl_out<5> wl_driver_nmos
+    xi7<6> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<6> wl_out<6> wl_driver_nmos
+    xi7<7> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<7> wl_out<7> wl_driver_nmos
+    xi6<8> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<8> wl_out<8> wl_driver_nmos
+    xi6<9> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<9> wl_out<9> wl_driver_nmos
+    xi6<10> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<10> wl_out<10> wl_driver_nmos
+    xi6<11> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<11> wl_out<11> wl_driver_nmos
+    xi6<12> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<12> wl_out<12> wl_driver_nmos
+    xi6<13> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<13> wl_out<13> wl_driver_nmos
+    xi6<14> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<14> wl_out<14> wl_driver_nmos
+    xi6<15> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<15> wl_out<15> wl_driver_nmos
+    xi3<16> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<16> wl_out<16> wl_driver_nmos
+    xi3<17> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<17> wl_out<17> wl_driver_nmos
+    xi3<18> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<18> wl_out<18> wl_driver_nmos
+    xi3<19> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<19> wl_out<19> wl_driver_nmos
+    xi3<20> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<20> wl_out<20> wl_driver_nmos
+    xi3<21> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<21> wl_out<21> wl_driver_nmos
+    xi3<22> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<22> wl_out<22> wl_driver_nmos
+    xi3<23> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<23> wl_out<23> wl_driver_nmos
+    xi<24> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<24> wl_out<24> wl_driver_nmos
+    xi<25> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<25> wl_out<25> wl_driver_nmos
+    xi<26> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<26> wl_out<26> wl_driver_nmos
+    xi<27> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<27> wl_out<27> wl_driver_nmos
+    xi<28> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<28> wl_out<28> wl_driver_nmos
+    xi<29> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<29> wl_out<29> wl_driver_nmos
+    xi<30> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<30> wl_out<30> wl_driver_nmos
+    xi<31> vdd_driver_wl vss_driver_wl vwl_p_wl_driver vwl_n_wl_driver wl<31> wl_out<31> wl_driver_nmos
+    xi5 net28 net29 net30 d3 d4 d5 net31 net32 wl<8> wl<9> wl<10> wl<11> wl<12> wl<13> wl<14> wl<15> vdd_decoder_wl vdda_decoder_wl vss_decoder_wl vssa_decoder_wl row_decoder_3to8_nmos
+    xi4 net40 net41 net42 d0 d1 d2 net43 net44 wl<0> wl<1> wl<2> wl<3> wl<4> wl<5> wl<6> wl<7> vdd_decoder_wl vdda_decoder_wl vss_decoder_wl vssa_decoder_wl row_decoder_3to8_nmos
+    xi1 net64 net65 net66 d9 d10 d11 net67 net68 wl<24> wl<25> wl<26> wl<27> wl<28> wl<29> wl<30> wl<31> vdd_decoder_wl vdda_decoder_wl vss_decoder_wl vssa_decoder_wl row_decoder_3to8_nmos
+    xi2 net095 net53 net54 d6 d7 d8 net55 net56 wl<16> wl<17> wl<18> wl<19> wl<20> wl<21> wl<22> wl<23> vdd_decoder_wl vdda_decoder_wl vss_decoder_wl vssa_decoder_wl row_decoder_3to8_nmos
+    xi8 net072 net073 net074 c0 c1 c2 col<0> col<1> col<2> col<3> col<4> col<5> col<6> col<7> net075 net076 vdd_column_decoder vdda_column_decoder vss_column_decoder vssa_column_decoder column_decoder_3to8_nmos
+    xi70<0> bl<0> blb<0> col<0> din_column_driver sl<0> slb<0> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<1> bl<1> blb<1> col<1> din_column_driver sl<1> slb<1> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<2> bl<2> blb<2> col<2> din_column_driver sl<2> slb<2> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<3> bl<3> blb<3> col<3> din_column_driver sl<3> slb<3> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<4> bl<4> blb<4> col<4> din_column_driver sl<4> slb<4> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<5> bl<5> blb<5> col<5> din_column_driver sl<5> slb<5> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<6> bl<6> blb<6> col<6> din_column_driver sl<6> slb<6> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi70<7> bl<7> blb<7> col<7> din_column_driver sl<7> slb<7> vdd_column_driver vdda_column_driver vph_bl_column_driver vphb_bl_column_driver vph_sl_column_driver vphb_sl_column_driver vpl_bl_column_decoder vplb_bl_column_decoder vpl_sl_column_decoder vplb_sl_column_decoder vss_column_decoder vssa_column_decoder we wl_in write_driver
+    xi10<0> p_bl<0> p_blb<0> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<1> p_bl<1> p_blb<1> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<2> p_bl<2> p_blb<2> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<3> p_bl<3> p_blb<3> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<4> p_bl<4> p_blb<4> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<5> p_bl<5> p_blb<5> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<6> p_bl<6> p_blb<6> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi10<7> p_bl<7> p_blb<7> eq pchg precharge vpre precharge_equalizer_nmos_6u
+    xi19<0> sl<0> slb<0> array_sl<0> array_slb<0> sen_bl<0> sen_blb<0> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<1> sl<1> slb<1> array_sl<1> array_slb<1> sen_bl<1> sen_blb<1> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<2> sl<2> slb<2> array_sl<2> array_slb<2> sen_bl<2> sen_blb<2> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<3> sl<3> slb<3> array_sl<3> array_slb<3> sen_bl<3> sen_blb<3> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<4> sl<4> slb<4> array_sl<4> array_slb<4> sen_bl<4> sen_blb<4> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<5> sl<5> slb<5> array_sl<5> array_slb<5> sen_bl<5> sen_blb<5> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<6> sl<6> slb<6> array_sl<6> array_slb<6> sen_bl<6> sen_blb<6> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi19<7> sl<7> slb<7> array_sl<7> array_slb<7> sen_bl<7> sen_blb<7> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<0> bl<0> blb<0> array_bl<0> array_blb<0> p_bl<0> p_blb<0> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<1> bl<1> blb<1> array_bl<1> array_blb<1> p_bl<1> p_blb<1> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<2> bl<2> blb<2> array_bl<2> array_blb<2> p_bl<2> p_blb<2> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<3> bl<3> blb<3> array_bl<3> array_blb<3> p_bl<3> p_blb<3> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<4> bl<4> blb<4> array_bl<4> array_blb<4> p_bl<4> p_blb<4> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<5> bl<5> blb<5> array_bl<5> array_blb<5> p_bl<5> p_blb<5> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<6> bl<6> blb<6> array_bl<6> array_blb<6> p_bl<6> p_blb<6> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi11<7> bl<7> blb<7> array_bl<7> array_blb<7> p_bl<7> p_blb<7> sel_mux selb_mux analog_mux_2to1_diff_nmos
+    xi21<0> sense_out<0> sen_bl<0> sen_blb<0> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<1> sense_out<1> sen_bl<1> sen_blb<1> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<2> sense_out<2> sen_bl<2> sen_blb<2> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<3> sense_out<3> sen_bl<3> sen_blb<3> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<4> sense_out<4> sen_bl<4> sen_blb<4> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<5> sense_out<5> sen_bl<5> sen_blb<5> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<6> sense_out<6> sen_bl<6> sen_blb<6> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi21<7> sense_out<7> sen_bl<7> sen_blb<7> vdd_sense vdd_inv_sense vss_sense vth_sense opamp_6u
+    xi69 array_bl<0> array_bl<1> array_bl<2> array_bl<3> array_bl<4> array_bl<5> array_bl<6> array_bl<7> array_blb<0> array_blb<1> array_blb<2> array_blb<3> array_blb<4> array_blb<5> array_blb<6> array_blb<7> array_sl<0> array_sl<1> array_sl<2> array_sl<3> array_sl<4> array_sl<5> array_sl<6> array_sl<7> array_slb<0> array_slb<1> array_slb<2> array_slb<3> array_slb<4> array_slb<5> array_slb<6> array_slb<7> wl_out<0> wl_out<1> wl_out<2> wl_out<3> wl_out<4> wl_out<5> wl_out<6> wl_out<7> wl_out<8> wl_out<9> wl_out<10> wl_out<11> wl_out<12> wl_out<13> wl_out<14> wl_out<15> wl_out<16> wl_out<17> wl_out<18> wl_out<19> wl_out<20> wl_out<21> wl_out<22> wl_out<23> wl_out<24> wl_out<25> wl_out<26> wl_out<27> wl_out<28> wl_out<29> wl_out<30> wl_out<31> stack_sram_array_f5
+.ends 
+*  End of subcircuit definition.
+
+*  Library name: CAM_Circuits
+*  Cell name: tb_Peripheral_IC
+*  View name: schematic
+xi1 c0 c1 c2 d0 d1 d10 d11 d2 d3 d4 d5 d6 d7 d8 d9 din_column_driver eq pchg precharge selb_mux sel_mux sense_out sense_out sense_out sense_out sense_out sense_out sense_out sense_out sen_bl sen_bl sen_bl sen_bl sen_bl sen_bl sen_bl sen_bl sen_blb sen_blb sen_blb sen_blb sen_blb sen_blb sen_blb sen_blb net029 net030 net031 net075 net073 net042 net041 net040 net039 net038 net037 net051 net049 0 0 0 0 0 0 0 0 0 0 0 net032 net033 net034 we_column_driver wl_in_column_driver peripheral_ic
+v44 net034 0 dc=1
+v43 net033 0 dc=3
+v42 net032 0 dc=0
+v41 net049 0 dc=2
+v40 net051 0 dc=3
+v39 net037 0 dc=2
+v38 net038 0 AC=3
+v34 net039 0 dc=2.5
+v32 net040 0 dc=2
+v31 net041 0 dc=1.5
+v30 net042 0 dc=2
+v29 net073 0 dc=1.5
+v28 net075 0 dc=1.5
+v27 net031 0 dc=3
+v26 net030 0 dc=3
+v25 net029 0 dc=3
+v23 we_column_driver 0 dc=0
+v45 sel_mux 0 dc=2
+v46 selb_mux 0 dc=-2
+v19 precharge 0 dc=3
+v16 din_column_driver 0 dc=0
+v15 d11 0 dc=0
+v14 d10 0 dc=0
+v13 d9 0 dc=0
+v12 d8 0 dc=0
+v11 d7 0 dc=0
+v10 d6 0 dc=0
+v9 d5 0 dc=0
+v8 d4 0 dc=0
+v7 d3 0 dc=0
+v6 d2 0 dc=0
+v5 d1 0 dc=0
+v4 d0 0 dc=0
+v3 c2 0 dc=0
+v2 c1 0 dc=0
+v0 c0 0 dc=0
+v24 wl_in_column_driver 0 PULSE ( 0 1.2 10.5e-6 100e-9 100e-9 5e-6 20e-6 )
+v33 pchg 0 PULSE ( 0 3.5 0 100e-9 100e-9 10e-6 20e-6 )
+v1 eq 0 PULSE ( 0 3 0 100e-9 100e-9 10e-6 20e-6 )
+i7 0 sen_blb PULSE ( 70e-6 40e-6 10.5e-6 100e-9 100e-9 5e-6 20e-6 )
+i5 0 sen_bl PULSE ( 40e-6 70e-6 10.5e-6 100e-9 100e-9 5e-6 20e-6 )
+.temp 27.0
+.option GEN_CUR_POL=ON
+.option ARTIST=2 PSF=2 WARN_SEP=1
+.option VECBUS=1 LIS_NEW=1 CONVERGE=100 
+.tran 10e-9 25e-6 start=0.0
+.option hier_delim=1
+.hdl "/users/grad/divyagavane/FET_Models/igzo/tft_n1/veriloga/veriloga.va"
+.hdl "/users/grad/divyagavane/FET_Models/igzo/tft_n2/veriloga/veriloga.va"
+.hdl "/users/grad/divyagavane/FET_Models/igzo/fetft_nf2_debug/veriloga/veriloga.va"
+.hdl "/users/grad/divyagavane/FET_Models/igzo/fetft_nf1_debug/veriloga/veriloga.va"
+.end
